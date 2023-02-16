@@ -107,6 +107,11 @@ h4 {
   margin-left: 10px;
   padding-top: 0px;
 }
+.box-2 ul li {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 footer {
   position: relative;
   background-color: rgb(243, 243, 21);
