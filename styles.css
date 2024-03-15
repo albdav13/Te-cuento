@@ -131,6 +131,14 @@ h4 {
   margin-top: 10px;
 }
 
+.box-2 tr td {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  height: 20px;
+}
+
 footer {
   position: relative;
   background-color: rgb(243, 243, 21);
