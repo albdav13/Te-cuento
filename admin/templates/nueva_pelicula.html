@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Nueva película | Te cuento la película</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1040px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #efe6d8;
+            color: #202020;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            color: #8f261f;
+        }
+
+        .intro {
+            color: #625a50;
+            margin-bottom: 28px;
+        }
+
+        form {
+            display: grid;
+            gap: 22px;
+        }
+
+        fieldset {
+            border: 1px solid #d9cbb4;
+            border-radius: 14px;
+            background: #fffaf0;
+            padding: 22px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 8px;
+            color: #8f261f;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        label {
+            display: grid;
+            gap: 6px;
+            font-weight: bold;
+        }
+
+        small {
+            color: #625a50;
+            font-weight: normal;
+        }
+
+        input,
+        textarea {
+            font: inherit;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #d9cbb4;
+            background: white;
+        }
+
+        textarea {
+            min-height: 260px;
+            resize: vertical;
+        }
+
+        .short-textarea {
+            min-height: 120px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        button {
+            justify-self: start;
+            border: 0;
+            border-radius: 999px;
+            padding: 14px 24px;
+            background: #b7352d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #8f261f;
+        }
+
+        .hint {
+            background: #f7f1e6;
+            border: 1px solid #e4d7c1;
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #625a50;
+        }
+
+        @media (max-width: 760px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Nueva película</h1>
+
+<p class="intro">
+    Rellena los datos y se generará automáticamente la página de la película, los listados por título,
+    décadas, directores y el buscador.
+</p>
+
+<div class="hint">
+    La película se colocará por la primera letra literal del título. Por ejemplo:
+    <strong>El padrino</strong> irá por la E, <strong>La habitación</strong> irá por la L.
+</div>
+
+<form action="/crear" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Datos principales</legend>
+
+        <div class="grid">
+            <label>
+                Título en España *
+                <input name="title" required>
+            </label>
+
+            <label>
+                Título original
+                <input name="original_title">
+            </label>
+
+            <label>
+                Año *
+                <input name="year" required placeholder="2024">
+            </label>
+
+            <label>
+                País
+                <input name="country" placeholder="España">
+            </label>
+
+            <label>
+                Duración
+                <input name="duration" placeholder="120 min.">
+            </label>
+
+            <label>
+                Calificación
+                <input name="rating" placeholder="3">
+            </label>
+
+            <label class="full">
+                Otros títulos / también conocida como
+                <textarea class="short-textarea" name="other_titles" placeholder='Ejemplo:
+"La conspiración" (Argentina, Chile y Venezuela)
+"En el valle de las sombras" (México, Perú)'></textarea>
+            </label>
+
+            <label class="full">
+                Póster
+                <input type="file" name="poster" accept="image/*">
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Equipo técnico</legend>
+
+        <div class="grid">
+            <label>
+                Música
+                <input name="music">
+            </label>
+
+            <label>
+                Fotografía
+                <input name="photography">
+            </label>
+
+            <label>
+                Guion
+                <input name="script">
+            </label>
+
+            <label>
+                Dirección *
+                <input name="director" required placeholder="Miguel Albaladejo">
+            </label>
+
+            <label class="full">
+                Nombre del director en el índice
+                <input name="director_index" placeholder="Albaladejo, Miguel">
+                <small>
+                    Si se deja vacío, la herramienta intentará convertir “Miguel Albaladejo” en “Albaladejo, Miguel”.
+                    Para nombres compuestos o casos raros, mejor rellenarlo a mano.
+                </small>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Reparto</legend>
+
+        <label>
+            Intérpretes
+            <textarea class="short-textarea" name="cast" placeholder="Actor 1 (Personaje), Actor 2 (Personaje)..."></textarea>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Resumen</legend>
+
+        <label>
+            Texto del resumen *
+            <textarea name="summary" required placeholder="Escribe el resumen. Deja una línea en blanco entre párrafos."></textarea>
+        </label>
+    </fieldset>
+
+    <button type="submit">Crear película y actualizar la web</button>
+</form>
+</body>
+</html>

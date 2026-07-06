@@ -256,7 +256,7 @@ def main():
                     report_lines.append(f"  - {issue}")
                 report_lines.append("")
 
-            print(f"✅ {movie['title']}")
+            print(f"OK {movie['title']}")
 
     movies.sort(key=lambda item: item["title"].lower())
 
@@ -269,11 +269,11 @@ def main():
         REPORT_FILE.write_text("\n".join(report_lines), encoding="utf-8")
 
     print("")
-    print(f"✅ movies.json generado con {len(movies)} películas")
-    print(f"📄 {OUTPUT_FILE}")
+    print(f"OK movies.json generado con {len(movies)} peliculas")
+    print(f"Archivo: {OUTPUT_FILE}")
 
     if report_lines:
-        print(f"🔎 Informe generado: {REPORT_FILE}")
+        print(f"Informe generado: {REPORT_FILE}")
 
 
 if __name__ == "__main__":
