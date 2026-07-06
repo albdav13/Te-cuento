@@ -1,212 +1,170 @@
-<!doctype html>
-<html lang="es">
+(function () {
+    console.log("Buscador: search-widget.js cargado.");
 
-<head>
-<meta charset="utf-8" />
+    const form = document.querySelector(".site-search");
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag("js", new Date());
-gtag("config", "UA-68812128-1");
-</script>
+    if (!form) {
+        console.warn("Buscador: no existe .site-search en esta página.");
+        return;
+    }
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    const input = form.querySelector('input[type="search"]');
+    const suggestions = form.querySelector(".search-suggestions");
+    const rootPrefix = form.dataset.root || "";
 
-<title>Fuentes consultadas | Te cuento la película</title>
-<meta name="description" content="Fuentes consultadas para la elaboración de los resúmenes de películas de Te cuento la película." />
-<meta name="author" content="Isaías Riesco Rodríguez" />
+    console.log("Buscador: rootPrefix =", rootPrefix || "(raíz)");
 
-<link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/objetos/favicons/apple-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/objetos/favicons/apple-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/objetos/favicons/apple-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/objetos/favicons/apple-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/objetos/favicons/apple-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/objetos/favicons/apple-icon-180x180.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/objetos/favicons/android-icon-192x192.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/objetos/favicons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png" />
-<link rel="manifest" href="/objetos/favicons/manifest.json" />
+    if (!input) {
+        console.warn("Buscador: no se encontró el input de búsqueda.");
+        return;
+    }
 
-<meta name="msapplication-TileColor" content="#1f1f1f" />
-<meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png" />
-<meta name="theme-color" content="#1f1f1f" />
+    if (!suggestions) {
+        console.warn("Buscador: no se encontró .search-suggestions.");
+        return;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    if (typeof Fuse === "undefined") {
+        console.warn("Buscador: Fuse.js no está cargado. Revisa vendor/fuse.min.js.");
+        return;
+    }
 
-<link rel="stylesheet" href="normalize.css" />
-<link rel="stylesheet" href="styles.css" />
-</head>
+    console.log("Buscador: Fuse.js cargado correctamente.");
 
-<body>
-<header class="site-header">
-<a href="/index.html" class="logo-link">
-<img src="objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
-</a>
+    let fuse = null;
+    let currentResults = [];
 
-<div>
-<p class="site-kicker">Archivo personal de cine</p>
-<h1 class="title-1">Te cuento la película</h1>
-</div>
-</header>
+    fetch(rootPrefix + "movies.json")
+        .then((response) => {
+        console.log("Buscador: respuesta movies.json =", response.status, response.url);
 
-<nav class="main-nav" aria-label="Navegación principal">
-<a href="index.html">Portada</a>
-<a href="peliculas/peliculas.html">Películas</a>
-<a href="decadas/decadas.html">Años</a>
-<a href="directores/directores.html">Directores</a>
-<a href="novedades.html">Novedades</a>
-</nav>
+        if (!response.ok) {
+            throw new Error("No se pudo cargar movies.json");
+        }
 
-<main>
-<section class="page-hero">
-<p class="eyebrow">Documentación</p>
-<h2>Fuentes consultadas</h2>
-<p>
-Una recopilación de revistas, enciclopedias, libros, colecciones multimedia y páginas web que han servido
-como apoyo para elaborar los resúmenes y completar datos cinematográficos.
-</p>
-</section>
+        return response.json();
+    })
+        .then((movies) => {
+        console.log("Buscador: movies.json cargado:", movies.length, "películas.");
 
-<section class="content-card">
-<div class="text-block">
-<p>Aunque sin duda hoy en día la información a través de Internet está facilitando el acceso rápido a numerosos datos, algunos de los resúmenes presentados son de tiempo anterior a la explosión de dicho medio, siendo preciso de vez en cuando volver a recurrir a los viejos libros y enciclopedias.</p>
+        fuse = new Fuse(movies, {
+            keys: [
+                { name: "title", weight: 0.45 },
+                { name: "director", weight: 0.22 },
+                { name: "cast", weight: 0.18 },
+                { name: "description", weight: 0.10 },
+                { name: "year", weight: 0.05 }
+            ],
+            threshold: 0.38,
+            ignoreLocation: true,
+            minMatchCharLength: 2
+        });
+    })
+        .catch((error) => {
+        console.warn("Buscador: error cargando movies.json.", error);
+        hideSuggestions();
+    });
 
-<p>Como señalaba, son muchas las fuentes a las que hemos recurrido a lo largo de tantos y tantos años, desde tomarlos directamente de la propia película, hasta, hoy en día ya, recurrir a las páginas oficiales de las mismas, pasando por tantos y tantos medios.</p>
+    input.addEventListener("input", () => {
+        const query = input.value.trim();
 
-<p>Aunque soy consciente de que alguno me dejaré, señalaré la mayor parte de los medios de los que he obtenido algún dato en un momento determinado, con mi más profundo agradecimiento.</p>
-</div>
+        console.log("Buscador: buscando", query);
 
-<div class="sources-grid">
-<article class="source-section">
-<h3>Revistas</h3>
-<ul class="source-list">
-<li>Fotogramas</li>
-<li>Casablanca</li>
-<li>Cinema 2002</li>
-<li>Acción</li>
-</ul>
-</article>
+        if (!fuse || query.length < 2) {
+            hideSuggestions();
+            return;
+        }
 
-<article class="source-section">
-<h3>Enciclopedias</h3>
-<ul class="source-list">
-<li>Historia Universal del cine <span>Planeta</span></li>
-<li>El Cine <span>Salvat</span></li>
-<li>El cine, de Edmond Orts <span>Ediciones Mensajero</span></li>
-<li>Gran historia ilustrada del cine <span>Sarpe</span></li>
-<li>Enciclopedia Espasa del cine <span>Espasa</span></li>
-<li>Historia del Cine de Diario16</li>
-</ul>
-</article>
+        currentResults = fuse.search(query).slice(0, 7);
+        console.log("Buscador: resultados", currentResults.length);
 
-<article class="source-section source-section-wide">
-<h3>Bibliografía</h3>
-<ul class="source-list">
-<li>Diccionario del cine <span>Ediciones Rialp</span></li>
-<li>Movie movie, guía de Films de Teo Calderón <span>De Calderón &amp; Villamandos editor</span></li>
-<li>Videoteca básica de cine, de Augusto M. Torres <span>Alianza Editorial</span></li>
-<li>Diccionario del cine español, de Augusto M. Torres <span>Espasa Calpe</span></li>
-<li>Guía del Videocine, de Carlos Aguilar <span>Cátedra</span></li>
-<li>Historia del cine español, de Fernando Méndez Leite <span>Guía del Ocio</span></li>
-<li>Un siglo de cine español, de Luis Gasca <span>Planeta</span></li>
-<li>El libro de oro del cine mundial, de Edmond Orts <span>Ediciones B</span></li>
-<li>Cine para leer, del Equipo Reseña <span>Mensajero</span></li>
-<li>Todos los estrenos <span>Ediciones JC</span></li>
-</ul>
-</article>
+        renderSuggestions(currentResults);
+    });
 
-<article class="source-section">
-<h3>Enciclopedias multimedia en CD-ROM</h3>
-<ul class="source-list">
-<li>Cinemania 96 <span>Microsoft</span></li>
-<li>Cinemedia <span>Canal+</span></li>
-<li>Enciclopedia del cine español <span>Micronet</span></li>
-<li>Cineguía <span>Ris Multimedia</span></li>
-<li>Historia multimedia de los géneros del cine <span>Fotogramas</span></li>
-</ul>
-</article>
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-<article class="source-section">
-<h3>Páginas web</h3>
-<ul class="source-list source-links">
-<li>
-<a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">The Internet Movie Database, IMDb</a>
-</li>
-<li>
-<a href="http://www.culturaydeporte.gob.es/cultura/areas/cine/mc/catalogodecine/inicio.html" target="_blank" rel="noopener noreferrer">Datos de películas del Ministerio de Cultura</a>
-</li>
-<li>
-<a href="https://www.filmaffinity.com/es/main.html" target="_blank" rel="noopener noreferrer">Filmaffinity</a>
-</li>
-</ul>
-</article>
-</div>
-</section>
-</main>
+        const query = input.value.trim();
 
-<footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-links">
-<p class="footer-heading">Contacto y enlaces</p>
+        if (!query || !fuse) {
+            return;
+        }
 
-<a href="mailto:isaiasriesco@gmail.com" class="footer-card">
-<span class="footer-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
-<path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
-</svg>
-</span>
-<span class="footer-card-text">
-<strong>Comentarios y peticiones</strong>
-<small>Escríbeme por correo</small>
-</span>
-</a>
+        const results = currentResults.length > 0
+            ? currentResults
+            : fuse.search(query);
 
-<a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
-<span class="footer-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
-</svg>
-</span>
-<span class="footer-card-text">
-<strong>Síguenos en Twitter / X</strong>
-<small>Novedades y publicaciones</small>
-</span>
-</a>
+        if (results.length > 0) {
+            window.location.href = rootPrefix + results[0].item.url;
+        }
+    });
 
-<a href="documentacion.html" class="footer-card">
-<span class="footer-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
-<path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
-<path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
-</svg>
-</span>
-<span class="footer-card-text">
-<strong>Fuentes consultadas</strong>
-<small>Documentación y referencias</small>
-</span>
-</a>
-</div>
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            hideSuggestions();
+            input.blur();
+        }
+    });
 
-<div class="footer-brand">
-<img src="objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
-<p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
-</div>
-</div>
-</footer>
-</body>
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".site-search")) {
+            hideSuggestions();
+        }
+    });
 
-</html>
+    function renderSuggestions(results) {
+        if (results.length === 0) {
+            suggestions.innerHTML = `
+        <div class="search-suggestion-empty">
+          No se encontraron resultados
+        </div>
+      `;
+            suggestions.hidden = false;
+            return;
+        }
+
+        suggestions.innerHTML = results
+            .map(({ item }) => {
+            const posterHtml = item.poster
+                ? `<img src="${rootPrefix}${escapeAttribute(item.poster)}" alt="" />`
+                : `<span class="search-suggestion-placeholder">🎬</span>`;
+
+            const meta = [
+                item.countryYear || item.year,
+                item.director
+            ].filter(Boolean).join(" · ");
+
+            return `
+          <a class="search-suggestion-item" href="${rootPrefix}${escapeAttribute(item.url)}">
+            ${posterHtml}
+            <span class="search-suggestion-content">
+              <strong>${escapeHtml(item.title)}</strong>
+              <small>${escapeHtml(meta)}</small>
+            </span>
+          </a>
+        `;
+        })
+            .join("");
+
+        suggestions.hidden = false;
+    }
+
+    function hideSuggestions() {
+        suggestions.hidden = true;
+        suggestions.innerHTML = "";
+        currentResults = [];
+    }
+
+    function escapeHtml(value) {
+        return String(value || "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+    function escapeAttribute(value) {
+        return escapeHtml(value);
+    }
+})();
