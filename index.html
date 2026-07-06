@@ -62,13 +62,29 @@
 </header>
 
 <nav class="main-nav" aria-label="Navegación principal">
-    <a href="index.html" class="active">Portada</a>
-    <a href="peliculas/peliculas.html">Películas</a>
-    <a href="decadas/decadas.html">Años</a>
-    <a href="directores/directores.html">Directores</a>
-    <a href="novedades.html">Novedades</a>
-</nav>
+    <div class="nav-links">
+        <a href="index.html" class="active">Portada</a>
+        <a href="peliculas/peliculas.html">Películas</a>
+        <a href="decadas/decadas.html">Años</a>
+        <a href="directores/directores.html">Directores</a>
+        <a href="novedades.html">Novedades</a>
+    </div>
 
+    <form class="site-search" role="search" data-root="">
+        <label class="sr-only" for="site-search-input">Buscar película</label>
+
+        <input
+                id="site-search-input"
+                type="search"
+                placeholder="Buscar película..."
+                autocomplete="off"
+        />
+
+        <button type="submit" aria-label="Buscar">🔎</button>
+
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+    </form>
+</nav>
 <main>
     <section class="hero">
         <p class="eyebrow">Resúmenes completos de cine</p>
@@ -168,6 +184,9 @@
             <p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
         </div>
     </div>
-</footer></body>
+</footer>
+<script src="vendor/fuse.min.js"></script>
+<script src="search-widget.js"></script>
+</body>
 
 </html>

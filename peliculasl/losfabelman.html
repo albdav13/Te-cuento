@@ -67,11 +67,28 @@
 </header>
 
 <nav class="main-nav" aria-label="Navegación principal">
-    <a href="../index.html">Portada</a>
-    <a href="../peliculas/peliculas.html" class="active">Películas</a>
-    <a href="../decadas/decadas.html">Años</a>
-    <a href="../directores/directores.html">Directores</a>
-    <a href="../novedades.html">Novedades</a>
+    <div class="nav-links">
+        <a href="../index.html">Portada</a>
+        <a href="../peliculas/peliculas.html" class="active">Películas</a>
+        <a href="../decadas/decadas.html">Años</a>
+        <a href="../directores/directores.html">Directores</a>
+        <a href="../novedades.html">Novedades</a>
+    </div>
+
+    <form class="site-search" role="search" data-root="../">
+        <label class="sr-only" for="site-search-input">Buscar película</label>
+
+        <input
+            id="site-search-input"
+            type="search"
+            placeholder="Buscar película..."
+            autocomplete="off"
+        />
+
+        <button type="submit" aria-label="Buscar">🔎</button>
+
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+    </form>
 </nav>
 
 
@@ -434,6 +451,11 @@
         </svg>
     </a>
 </nav>
+
+    
+    
+<script src="../vendor/fuse.min.js"></script>
+<script src="../search-widget.js"></script>
 
 </body>
 

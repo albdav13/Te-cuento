@@ -83,14 +83,30 @@ HEADER = """
 </header>
 
 <nav class="main-nav" aria-label="Navegación principal">
-    <a href="../index.html">Portada</a>
-    <a href="../peliculas/peliculas.html" class="active">Películas</a>
-    <a href="../decadas/decadas.html">Años</a>
-    <a href="../directores/directores.html">Directores</a>
-    <a href="../novedades.html">Novedades</a>
+    <div class="nav-links">
+        <a href="../index.html">Portada</a>
+        <a href="../peliculas/peliculas.html" class="active">Películas</a>
+        <a href="../decadas/decadas.html">Años</a>
+        <a href="../directores/directores.html">Directores</a>
+        <a href="../novedades.html">Novedades</a>
+    </div>
+
+    <form class="site-search" role="search" data-root="../">
+        <label class="sr-only" for="site-search-input">Buscar película</label>
+
+        <input
+            id="site-search-input"
+            type="search"
+            placeholder="Buscar película..."
+            autocomplete="off"
+        />
+
+        <button type="submit" aria-label="Buscar">🔎</button>
+
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+    </form>
 </nav>
 """
-
 
 FOOTER = """
 <footer class="site-footer">
@@ -165,6 +181,10 @@ FLOATING_NAV = """
 </nav>
 """
 
+SEARCH_SCRIPTS = """
+<script src="../vendor/fuse.min.js"></script>
+<script src="../search-widget.js"></script>
+"""
 
 # ============================================================
 # FUNCIONES
@@ -241,6 +261,29 @@ def build_rating_tag(soup: BeautifulSoup, rating_tag):
     rating.append(value)
 
     return rating
+def find_movie_title(section):
+    """
+    Busca el título aunque el HTML antiguo esté mal cerrado,
+    por ejemplo <h6>...</h1>.
+    """
+    # Caso normal
+    title = section.find("h6")
+    if title:
+        return title
+
+    # Casos raros por HTML mal formado
+    title = section.find(["h1", "h2", "h3", "h4", "h5"])
+    if title:
+        return title
+
+    # Último recurso: primer texto directo de la sección
+    for child in section.children:
+        if getattr(child, "get_text", None):
+            text = child.get_text(" ", strip=True)
+            if text and not text.lower().startswith(("duración:", "duracion:", "música:", "musica:", "fotografía:", "fotografia:", "guion:", "guión:", "dirección:", "direccion:", "intérpretes:", "interpretes:", "calificación:")):
+                return child
+
+    return None
 
 def normalize_movie_section(section) -> str:
     """
@@ -256,7 +299,7 @@ def normalize_movie_section(section) -> str:
     section["class"] = "movie-detail-card"
 
     cover = section.find("div", class_="caratula")
-    title = section.find("h6")
+    title = find_movie_title(section)
     original_rating = section.find("h5")
     rating = build_rating_tag(section, original_rating) if original_rating else None
 
@@ -339,12 +382,40 @@ def normalize_movie_section(section) -> str:
         section.append(rating)
 
     return str(section)
+def fix_common_html_issues(raw_html: str) -> str:
+    """
+    Corrige errores HTML frecuentes de las páginas antiguas antes de parsearlas.
+    No cambia textos, solo etiquetas claramente mal cerradas.
+    """
+    replacements = {
+        "</h1>": "</h6>",
+        "</h2>": "</h6>",
+        "</h3>": "</h6>",
+        "</h4>": "</h6>",
+    }
+
+    # Solo hacemos estos reemplazos dentro de section.resumen sería más fino,
+    # pero para esta web antigua normalmente estos cierres raros vienen del título.
+    fixed_html = raw_html
+
+    # Arreglo específico: apertura h6 cerrada como h1/h2/h3/h4.
+    import re
+
+    fixed_html = re.sub(
+        r"(<h6[^>]*>.*?)(</h[1-4]>)",
+        lambda m: m.group(1) + "</h6>",
+        fixed_html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    return fixed_html
 
 def modernize_file(source_file: Path, output_file: Path):
     """
     Moderniza una página individual de película.
     """
     raw_html = read_html(source_file)
+    raw_html = fix_common_html_issues(raw_html)
     soup = BeautifulSoup(raw_html, "html.parser")
 
     title_tag = soup.find("title")
@@ -399,6 +470,8 @@ def modernize_file(source_file: Path, output_file: Path):
     {FOOTER}
 
     {FLOATING_NAV}
+    
+    {SEARCH_SCRIPTS}
 </body>
 
 </html>
