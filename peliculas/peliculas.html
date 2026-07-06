@@ -2,78 +2,98 @@
 <html lang="es">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-68812128-1');
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+		gtag("config", "UA-68812128-1");
 	</script>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Películas - Resúmenes de películas por título</title>
-	<meta name="description" content="Resúmenes de películas">
-	<link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/objetos/favicons/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/objetos/favicons/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/objetos/favicons/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/objetos/favicons/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/objetos/favicons/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/objetos/favicons/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/objetos/favicons/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/objetos/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/objetos/favicons/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Sriracha&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/styles-dist.css">
-	<link rel="stylesheet" href="/normalize.css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Películas por título | Te cuento la película</title>
+	<meta name="description" content="Resúmenes de películas ordenados por título." />
+	<meta name="author" content="Isaías Riesco Rodríguez" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../objetos/favicons/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="../objetos/favicons/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="../objetos/favicons/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../objetos/favicons/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="../objetos/favicons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="../objetos/favicons/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="../objetos/favicons/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="../objetos/favicons/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../objetos/favicons/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="../objetos/favicons/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../objetos/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="../objetos/favicons/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../objetos/favicons/favicon-16x16.png" />
+	<link rel="manifest" href="../objetos/favicons/manifest.json" />
+
+	<meta name="msapplication-TileColor" content="#1f1f1f" />
+	<meta name="msapplication-TileImage" content="../objetos/favicons/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#1f1f1f" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../normalize.css" />
+	<link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
-	<header>
-		<a href="/index.html"><img src="/objetos/logotipo.jpg" alt="Haz clic aquí para volver a la página de inicio"
-				class="logo"></a>
-		<h1 class="title-1">Te cuento la película</h1>
-	</header>
-	<main>
-		<div class="menu">
-			<table>
-				<tbody>
-					<tr>
-						<th> <a href="/index.html"><b>Portada</b></a></th>
-						<th><a href="/peliculas/peliculas.html"><b>Películas</b></a></th>
-						<th><a href="/decadas/decadas.html"><b>Años</b></a></th>
-						<th><a href="/directores/directores.html"><b>Directores</b></a></th>
-						<th><a href="/novedades.html"><b>Novedades</b></a></th>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="box-2">
+<div id="top"></div>
 
-			<h3>PELÍCULAS</h3>
-			<ul>
-				<li><a href="0-d.html">0-D</a></li>
-				<li><a href="e.html">E</a></li>
-				<li><a href="f-k.html">F-K</a></li>
-				<li><a href="l.html">L</a></li>
-				<li><a href="m-r.html">M-R</a></li>
-				<li><a href="s-z.html">S-Z</a></li>
-			</ul>
+<header class="site-header">
+	<a href="../index.html" class="logo-link">
+		<img src="../objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+	</a>
+
+	<div>
+		<p class="site-kicker">Archivo personal de cine</p>
+		<h1 class="title-1">Te cuento la película</h1>
+	</div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+	<a href="../index.html">Portada</a>
+	<a href="peliculas.html" class="active">Películas</a>
+	<a href="../decadas/decadas.html">Años</a>
+	<a href="../directores/directores.html">Directores</a>
+	<a href="../novedades.html">Novedades</a>
+</nav>
+
+<main>
+	<section class="page-hero">
+		<p class="eyebrow">Archivo por título</p>
+		<h2>Películas</h2>
+		<p>
+			Accede a los resúmenes de películas ordenados alfabéticamente por título. Cada bloque agrupa un tramo
+			de letras para facilitar la búsqueda.
+		</p>
+	</section>
+
+	<section class="content-card movie-landing-card">
+		<div class="movie-range-grid" aria-label="Listado de películas por título">
+			<a href="0-d.html" class="movie-range-card">0-D</a>
+			<a href="e.html" class="movie-range-card">E</a>
+			<a href="f-k.html" class="movie-range-card">F-K</a>
+			<a href="l.html" class="movie-range-card">L</a>
+			<a href="m-r.html" class="movie-range-card">M-R</a>
+			<a href="s-z.html" class="movie-range-card">S-Z</a>
 		</div>
-		<h1 class="title-2">¿QUIERES QUE TE CUENTE LA PELÍCULA?</h1>
-		<div class="intro">
+
+		<div class="movie-note text-block">
+			<h3>¿Quieres que te cuente la película?</h3>
+
 			<p>Como señalaba en la portada de mi página, lo que aquí os ofrezco es un resumen en que aparecen los hechos
 				más relevantes de la película, incluyendo el final de la misma.</p>
 			<p>No la he concebido como un spoiler, pues no se trata de "destriparlas", ni servirá para que quien no las
@@ -95,53 +115,135 @@
 				el 0 y el 5.</p>
 			<p>La estructura seguida será siempre la misma:</p>
 		</div>
-		<ul>
-			<li class="estructura"> Título de la película en España (Indicando el de su estreno en los cines, o, en caso
-				de que no fuera estrenada en las salas, el título que se le dio en televisión, video, etc.)</li>
-			<li class="estructura"> Título original, con indicación del año de la película (preferentemente, si me
-				consta, el del copyright, poniendo en los casos en que es así un asterisco junto al año), y pais/es de
-				la película.
-			</li>
-			<li class="estructura"> Título con el que es conocida la película en Hispanoamérica si me consta.</li>
-			<li class="estructura"> Duración de la película.(Referida a la versión que yo he visto)</li>
-			<li class="estructura"> Música.</li>
-			<li class="estructura"> Fotografía.</li>
-			<li class="estructura"> Guión, con referencia al autor de la obra original en que se basa.</li>
-			<li class="estructura"> Dirección.</li>
-			<li class="estructura"> Intérpretes principales y nombre de sus personajes. No he puesto este dato en el
-				caso de las películas de dibujos animados, puesto que, por muy meritorio que sea el trabajo de doblaje,
-				este suele variar de un país a otro, siendo por otro lado muy reciente el fenómeno de poner voces de
-				actores conocidos a los personajes de los dibujos, y, como señalo, muchas veces ni siquiera se
-				estrena, al menos en España, con el doblaje original, por lo que no tiene mucho sentido poner el
-				nombre de unos actores cuyas voces no he podido apreciar.</li>
-			<li class="estructura"> Se incluye tras ello el resumen de la película.</li>
-			<li class="estructura"> Calificación. En la que, como indicaba anteriormente introduzco mi valoración
-				personal, que puede variar del 0 al 5, aunque en las películas que he visto en los últimos años he
-				procedido a puntuar entre 0 y 10, lo que lamentablemente dará lugar a que haya grandísimas películas que
-				figuren con un 4, que en realidad sería un 8, y otras o con un 5 qie sería un 10. Lo iré cambiando, pero
-				son ya muchas películas y me llevará tiempo.</li>
-		</ul>
-	</main>
-	<footer>
-		<div class="box-3">
-			<table>
-				<tr class="enlace">
-					<td><a href="mailto:isaiasriesco@gmail.com"><b>Comentarios y peticiones</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank"><b>Síguenos en
-								Twitter</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="/documentacion.html"><b>Fuentes consultadas</b></a></td>
-				</tr>
-			</table>
+
+		<section class="summary-structure">
+			<h3>Estructura de cada resumen</h3>
+
+			<ol class="summary-structure-list">
+				<li>
+					<strong>Título de la película en España.</strong>
+					Se indica el título de estreno en cines o, si no fue estrenada en salas, el título usado en
+					televisión, vídeo u otros formatos.
+				</li>
+
+				<li>
+					<strong>Título original, año y país.</strong>
+					Se indica el año de la película, preferentemente el del copyright. Cuando consta, aparece un
+					asterisco junto al año.
+				</li>
+
+				<li>
+					<strong>Título en Hispanoamérica.</strong>
+					Se incluye cuando consta.
+				</li>
+
+				<li>
+					<strong>Duración.</strong>
+					Referida a la versión vista para elaborar el resumen.
+				</li>
+
+				<li>
+					<strong>Música.</strong>
+					Información sobre la composición musical.
+				</li>
+
+				<li>
+					<strong>Fotografía.</strong>
+					Datos de dirección de fotografía.
+				</li>
+
+				<li>
+					<strong>Guion.</strong>
+					Con referencia al autor de la obra original cuando la película se basa en una obra previa.
+				</li>
+
+				<li>
+					<strong>Dirección.</strong>
+					Nombre del director o directores.
+				</li>
+
+				<li>
+					<strong>Intérpretes principales.</strong>
+					Se indican los actores principales y sus personajes. En películas de animación este dato puede
+					omitirse, ya que el doblaje varía mucho según el país.
+				</li>
+
+				<li>
+					<strong>Resumen de la película.</strong>
+					Desarrollo de los hechos principales de la trama.
+				</li>
+
+				<li>
+					<strong>Calificación.</strong>
+					Valoración personal, inicialmente entre 0 y 5 y, en los últimos años, entre 0 y 10.
+				</li>
+			</ol>
+		</section>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-links">
+			<p class="footer-heading">Contacto y enlaces</p>
+
+			<a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Comentarios y peticiones</strong>
+                        <small>Escríbeme por correo</small>
+                    </span>
+			</a>
+
+			<a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Síguenos en Twitter / X</strong>
+                        <small>Novedades y publicaciones</small>
+                    </span>
+			</a>
+
+			<a href="../documentacion.html" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Fuentes consultadas</strong>
+                        <small>Documentación y referencias</small>
+                    </span>
+			</a>
 		</div>
-		<div class="box-4">
-			<a href="/index.html"><img src="/objetos/tira.jpg" width="400" height="70"
-					alt="Haz clic aquí para volver a la página de inicio" class="logo"></a>
+
+		<div class="footer-brand">
+			<img src="../objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+			<p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
 		</div>
-	</footer>
+	</div>
+</footer>
+<div id="bottom"></div>
+
+<nav class="floating-page-nav" aria-label="Navegación rápida de página">
+	<a href="#top" aria-label="Volver arriba" title="Volver arriba">
+		↑
+	</a>
+	<a href="#bottom" aria-label="Ir al final" title="Ir al final">
+		↓
+	</a>
+</nav>
+
 </body>
 
 </html>

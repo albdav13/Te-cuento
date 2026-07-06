@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
     <script>
@@ -11,19 +12,21 @@
             dataLayer.push(arguments);
         }
         gtag("js", new Date());
-
         gtag("config", "UA-68812128-1");
     </script>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Isaías Riesco Rodríguez" />
     <meta name="keywords" content="resumenes, peliculas, resumen, pelicula, sinopsis, argumento, trama" />
+    <meta name="description" content="Resúmenes completos de películas, argumentos y finales explicados para recordar los detalles de cada historia." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Sriracha&display=swap"
-        rel="stylesheet" />
-    <title>Resúmenes de películas</title>
-    <meta name="description" content="Resúmenes de peliculas" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>Te cuento la película | Resúmenes de películas</title>
+
     <link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png" />
@@ -38,113 +41,133 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png" />
     <link rel="manifest" href="/objetos/favicons/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <meta name="msapplication-TileColor" content="#1f1f1f" />
     <meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="/styles-dist.css" />
-    <link rel="stylesheet" href="/normalize.css" />
+    <meta name="theme-color" content="#1f1f1f" />
+
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <a href="/index.html"><img src="/objetos/logotipo.jpg" alt="Haz clic aquí para volver a la página de inicio"
-                class="logo"></a>
+<header class="site-header">
+    <a href="index.html" class="logo-link">
+        <img src="objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+    </a>
+    <div>
+        <p class="site-kicker">Archivo personal de cine</p>
         <h1 class="title-1">Te cuento la película</h1>
-    </header>
-    <main>
-        <div class="menu">
-            <table>
-                <tbody>
-                    <tr>
-                        <th> <a href="/index.html"><b>Portada</b></a></th>
-                        <th><a href="/peliculas/peliculas.html"><b>Películas</b></a></th>
-                        <th><a href="/decadas/decadas.html"><b>Años</b></a></th>
-                        <th><a href="/directores/directores.html"><b>Directores</b></a></th>
-                        <th><a href="/novedades.html"><b>Novedades</b></a></th>
-                    </tr>
-                </tbody>
-            </table>
+    </div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+    <a href="index.html" class="active">Portada</a>
+    <a href="peliculas/peliculas.html">Películas</a>
+    <a href="decadas/decadas.html">Años</a>
+    <a href="directores/directores.html">Directores</a>
+    <a href="novedades.html">Novedades</a>
+</nav>
+
+<main>
+    <section class="hero">
+        <p class="eyebrow">Resúmenes completos de cine</p>
+        <h2>¿Quieres que te cuente la película?</h2>
+        <p>
+            Una web para recordar argumentos, resolver dudas y recuperar esos detalles que se pierden
+            cuando ha pasado tiempo desde que vimos una película.
+        </p>
+
+        <div class="hero-actions">
+            <a href="peliculas/peliculas.html" class="button-primary">Ver películas</a>
+            <a href="novedades.html" class="button-secondary">Últimas novedades</a>
         </div>
-        <h1 class="title-2">¿QUIERES QUE TE CUENTE LA PELÍCULA?</h1>
-        <section class="resumen">
-            <p>Bienvenidos a mi página de cine desde la que os voy a resumir algunas de las películas que he ido viendo
-                a lo largo de los años.</p>
-            <p>No es una página de críticas ni se trata de las breves sinopsis que podéis encontrar en otros cientos de
-                páginas.</p>
-            <p>Lo que os ofrezco es un resumen en que aparecen los hechos más relevantes de la película, incluyendo el
-                final de la misma.</p>
-            <p>No se trata solo de "destriparlas", ni servirá para que quien no las haya visto se crea que sí lo ha
-                hecho. La he creado con el ánimo de que sirva de recordatorio para quienes vieron la película y deseen
-                consultar aquel detalle que se les olvidó o resolver alguna duda que les quedó - aunque a veces yo mismo
-                las tengo -, pues a la mayoría nos ocurre a menudo que, pasado un tiempo desde que vimos una película,
-                se nos han olvidado muchos detalles, y en los resúmenes habituales no se nos cuentan aspectos
-                colaterales a la trama principal que son importantes, y, en casi ningún caso, nos recuerdan cómo acababa
-                la película.</p>
-            <p>Evitaré incluir las películas aun en cartelera para no desanimar a nadie a, conociendo el final, no
-                acudir al gran espectáculo que es ver una película en pantalla grande, pues como queda dicho no es esa
-                la finalidad de esta página, ya que los resúmenes no pueden reflejar ni la fotografía, ni la
-                interpretación de los actores, ni la música, ni tantos y tantos detalles.</p>
-            <p>Cuando, hace ya unos años, decidí empezar a hacer estos resúmenes, no pretendía compartirlos con nadie,
-                siendo por ello muy variables en cuanto a su extensión y estructura, en función de la importancia que
-                les daba entonces.</p>
-            <p>Al crear la página web procedí a subir una parte de esos resúmenes, tal como los había creado en su
-                momento.</p>
-            <p>Pero el hecho de exponerlos al público ha hecho que cada vez sea más exigente conmigo mismo, y por ello
-                se podrá observar que los últimos resúmenes subidos son mucho más exhaustivos y los he redactado
-                procurando seguir el mismo orden en que los hechos suceden en pantalla.</p>
-            <p>Me animé a subirlos al ver que existía un vacío en este campo, ya que yo mismo a veces me desesperaba al
-                tratar de encontrar, en vano, dichas informaciones, y esperando que mi página pueda servir de ayuda a
-                alguien, ya que la mayoría de las páginas de resúmenes existentes son en inglés y referidas a películas
-                americanas - en muchos casos los resúmenes que están en español son traducciones de dichas páginas -
-                existiendo un gran vacío respecto al cine del resto del mundo, y, en especial del cine en español, que
-                podreís observar, en mi página es muy importante, por lo que espero poder paliar, modestamente, dicho
-                vacío.</p>
-            <p>Mi intención es seguir subiendo resúmenes nuevos, aunque sin renunciar a revisar, en la medida de lo
-                posible, los más antiguos, algo que ya he hecho con algunas películas.</p>
-            <p>Tal como indicaba más arriba, no hago críticas de las películas, aunque sí incluyo, al final de cada uno
-                de los resúmenes, la valoración que a mí me merece, valiéndome del método tradicional de los críticos de
-                poner una nota entre el 0 y el 5.</p>
-            <p>Actualmente, y desde 2023 he decidido ser más preciso en mis valoraciones y por ello las valoraciones
-                serán entre 0 y 10, y trataré de actualizar las anteriores, aunque es un proceso que me llevará bastante
-                tiempo.</p>
-            <p>Bienvenidos y espero que disfrutéis de mi página.</p>
-            <br>
-            <p>Cada año se estrena un gran número de películas, lo que hace imposible verlas todas, por ello es muy
-                posible que no encontréis la que buscáis.</p>
-            <p>No obstante, aparte de los resúmenes ya incluidos, como indicaba con anterioridad, tengo otros muchos
-                que, tras la correspondiente revisión, irán apareciendo poco a poco, por lo que, invito a los más
-                impacientes a solicitar los que les gustaría que estuvieran en esta página, pues si los tengo en mis
-                archivos, adelantaré gustosamente su subida.</p>
-            <p>Invito igualmente a quienes detecten la existencia de algún error para que me hagan las sugerencias que
-                crean oportunas, que yo atenderé en la medida de lo posible.</p>
-        </section>
-    </main>
-    <footer>
-        <div class="box-3">
-            <table>
-                <tr class="enlace">
-                    <td>
-                        <a href="mailto:isaiasriesco@gmail.com"><b>Comentarios y peticiones</b></a>
-                    </td>
-                </tr>
-                <tr class="enlace">
-                    <td>
-                        <a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank"><b>Síguenos en
-                                Twitter</b></a>
-                    </td>
-                </tr>
-                <tr class="enlace">
-                    <td>
-                        <a href="documentacion.html"><b>Fuentes consultadas</b></a>
-                    </td>
-                </tr>
-            </table>
+    </section>
+
+    <section class="resumen intro-card">
+        <p>Bienvenidos a mi página de cine desde la que os voy a resumir algunas de las películas que he ido viendo a lo largo de los años.</p>
+
+        <p>No es una página de críticas ni se trata de las breves sinopsis que podéis encontrar en otros cientos de páginas.</p>
+
+        <p>Lo que os ofrezco es un resumen en que aparecen los hechos más relevantes de la película, incluyendo el final de la misma.</p>
+
+        <p>No se trata solo de "destriparlas", ni servirá para que quien no las haya visto se crea que sí lo ha hecho. La he creado con el ánimo de que sirva de recordatorio para quienes vieron la película y deseen consultar aquel detalle que se les olvidó o resolver alguna duda que les quedó - aunque a veces yo mismo las tengo -, pues a la mayoría nos ocurre a menudo que, pasado un tiempo desde que vimos una película, se nos han olvidado muchos detalles, y en los resúmenes habituales no se nos cuentan aspectos colaterales a la trama principal que son importantes, y, en casi ningún caso, nos recuerdan cómo acababa la película.</p>
+
+        <p>Evitaré incluir las películas aun en cartelera para no desanimar a nadie a, conociendo el final, no acudir al gran espectáculo que es ver una película en pantalla grande, pues como queda dicho no es esa la finalidad de esta página, ya que los resúmenes no pueden reflejar ni la fotografía, ni la interpretación de los actores, ni la música, ni tantos y tantos detalles.</p>
+
+        <p>Cuando, hace ya unos años, decidí empezar a hacer estos resúmenes, no pretendía compartirlos con nadie, siendo por ello muy variables en cuanto a su extensión y estructura, en función de la importancia que les daba entonces.</p>
+
+        <p>Al crear la página web procedí a subir una parte de esos resúmenes, tal como los había creado en su momento.</p>
+
+        <p>Pero el hecho de exponerlos al público ha hecho que cada vez sea más exigente conmigo mismo, y por ello se podrá observar que los últimos resúmenes subidos son mucho más exhaustivos y los he redactado procurando seguir el mismo orden en que los hechos suceden en pantalla.</p>
+
+        <p>Me animé a subirlos al ver que existía un vacío en este campo, ya que yo mismo a veces me desesperaba al tratar de encontrar, en vano, dichas informaciones, y esperando que mi página pueda servir de ayuda a alguien, ya que la mayoría de las páginas de resúmenes existentes son en inglés y referidas a películas americanas - en muchos casos los resúmenes que están en español son traducciones de dichas páginas - existiendo un gran vacío respecto al cine del resto del mundo, y, en especial del cine en español, que podréis observar, en mi página es muy importante, por lo que espero poder paliar, modestamente, dicho vacío.</p>
+
+        <p>Mi intención es seguir subiendo resúmenes nuevos, aunque sin renunciar a revisar, en la medida de lo posible, los más antiguos, algo que ya he hecho con algunas películas.</p>
+
+        <p>Tal como indicaba más arriba, no hago críticas de las películas, aunque sí incluyo, al final de cada uno de los resúmenes, la valoración que a mí me merece, valiéndome del método tradicional de los críticos de poner una nota entre el 0 y el 5.</p>
+
+        <p>Actualmente, y desde 2023 he decidido ser más preciso en mis valoraciones y por ello las valoraciones serán entre 0 y 10, y trataré de actualizar las anteriores, aunque es un proceso que me llevará bastante tiempo.</p>
+
+        <p>Bienvenidos y espero que disfrutéis de mi página.</p>
+
+        <p>Cada año se estrena un gran número de películas, lo que hace imposible verlas todas, por ello es muy posible que no encontréis la que buscáis.</p>
+
+        <p>No obstante, aparte de los resúmenes ya incluidos, como indicaba con anterioridad, tengo otros muchos que, tras la correspondiente revisión, irán apareciendo poco a poco, por lo que, invito a los más impacientes a solicitar los que les gustaría que estuvieran en esta página, pues si los tengo en mis archivos, adelantaré gustosamente su subida.</p>
+
+        <p>Invito igualmente a quienes detecten la existencia de algún error para que me hagan las sugerencias que crean oportunas, que yo atenderé en la medida de lo posible.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <p class="footer-heading">Contacto y enlaces</p>
+            <a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Comentarios y peticiones</strong>
+                    <small>Escríbeme por correo</small>
+                </span>
+            </a>
+
+            <a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Síguenos en Twitter / X</strong>
+                    <small>Novedades y publicaciones</small>
+                </span>
+            </a>
+
+            <a href="documentacion.html" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Fuentes consultadas</strong>
+                    <small>Documentación y referencias</small>
+                </span>
+            </a>
         </div>
-        <div class="box-4">
-            <img src="/objetos/tira.jpg" width="400" height="70"
-                alt="Haz clic aquí para volver a la página de inicio" />
+
+        <div class="footer-brand">
+            <img src="objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+            <p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
         </div>
-    </footer>
-</body>
+    </div>
+</footer></body>
 
 </html>

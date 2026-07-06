@@ -2,242 +2,360 @@
 <html lang="es">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-68812128-1');
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+		gtag("config", "UA-68812128-1");
 	</script>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Resúmenes de películas / Novedades</title>
-	<meta name="description" content="Nuevos resúmenes de películas">
-	<link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/objetos/favicons/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/objetos/favicons/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/objetos/favicons/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/objetos/favicons/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/objetos/favicons/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/objetos/favicons/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/objetos/favicons/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/objetos/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/objetos/favicons/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Sriracha&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/styles-dist.css">
-	<link rel="stylesheet" href="/normalize.css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Novedades | Te cuento la película</title>
+	<meta name="description" content="Últimos resúmenes de películas publicados en Te cuento la película." />
+	<meta name="author" content="Isaías Riesco Rodríguez" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="objetos/favicons/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="objetos/favicons/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="objetos/favicons/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="objetos/favicons/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="objetos/favicons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="objetos/favicons/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="objetos/favicons/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="objetos/favicons/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="objetos/favicons/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="objetos/favicons/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="objetos/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="objetos/favicons/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="objetos/favicons/favicon-16x16.png" />
+	<link rel="manifest" href="objetos/favicons/manifest.json" />
+
+	<meta name="msapplication-TileColor" content="#1f1f1f" />
+	<meta name="msapplication-TileImage" content="objetos/favicons/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#1f1f1f" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-	<header>
-		<a href="/index.html"><img src="/objetos/logotipo.jpg" alt="Haz clic aquí para volver a la página de inicio"
-				class="logo"></a>
+<div id="top"></div>
+
+<header class="site-header">
+	<a href="index.html" class="logo-link">
+		<img src="objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+	</a>
+
+	<div>
+		<p class="site-kicker">Archivo personal de cine</p>
 		<h1 class="title-1">Te cuento la película</h1>
-	</header>
-	<main>
-		<div class="menu">
-			<table>
-				<tbody>
-					<tr>
-						<th> <a href="/index.html"><b>Portada</b></a></th>
-						<th><a href="/peliculas/peliculas.html"><b>Películas</b></a></th>
-						<th><a href="/decadas/decadas.html"><b>Años</b></a></th>
-						<th><a href="/directores/directores.html"><b>Directores</b></a></th>
-						<th><a href="/novedades.html"><b>Novedades</b></a></th>
-					</tr>
-				</tbody>
-			</table>
+	</div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+	<a href="index.html">Portada</a>
+	<a href="peliculas/peliculas.html">Películas</a>
+	<a href="decadas/decadas.html">Años</a>
+	<a href="directores/directores.html">Directores</a>
+	<a href="novedades.html" class="active">Novedades</a>
+</nav>
+
+<main>
+	<section class="page-hero">
+		<p class="eyebrow">Últimos resúmenes</p>
+		<h2>Novedades</h2>
+		<p>
+			Los últimos resúmenes de películas añadidos a la web, ordenados por fecha de publicación para acceder
+			rápidamente a los contenidos más recientes.
+		</p>
+	</section>
+
+	<section class="content-card news-card">
+		<div class="news-intro">
+			<h3>Archivo de publicaciones recientes</h3>
+			<p>
+				Cada bloque agrupa las películas incorporadas en una misma fecha. Haz clic en cualquier título para
+				abrir directamente su resumen.
+			</p>
 		</div>
-		<h1 class="title-2">NOVEDADES</h1>
-		<div class="intro">
-			<p>Últimos resúmenes de películas subidos.</p>
-			<p>En esta sección encontraremos un listado con los títulos de los últimos resúmenes incluidos en la
-				web por fecha de subida para poder acceder fácilmente a ellas sin necesidad de buscar por otras
-				vías.</p>
+
+		<div class="news-timeline">
+			<article class="news-group">
+				<h3 class="news-date">10/06/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/casablanca.html">Casablanca</a></li>
+					<li><a href="peliculase/elcomparsa.html">El comparsa</a></li>
+					<li><a href="peliculase/eldesconocidodellago.html">El desconocido del lago</a></li>
+					<li><a href="peliculasl/labuenasuerte.html">La buena suerte</a></li>
+					<li><a href="peliculasl/lostallosamargos.html">Los tallos amargos</a></li>
+					<li><a href="peliculasmr/rondallas.html">Rondallas</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">20/05/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/cantandobajolalluvia.html">Cantando bajo la lluvia</a></li>
+					<li><a href="peliculas0d/confidencial.html">Confidencial (Black Bag)</a></li>
+					<li><a href="peliculase/enemigos.html">Enemigos</a></li>
+					<li><a href="peliculasl/lasemilladelahiguera.html">La semilla de la higuera sagrada</a></li>
+					<li><a href="peliculasmr/parranda.html">Parranda</a></li>
+					<li><a href="peliculassz/sirat.html">Sirât</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">05/05/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculase/elextranjero.html">El extranjero</a></li>
+					<li><a href="peliculasfk/hoyempiezatodo.html">Hoy empieza todo</a></li>
+					<li><a href="peliculasl/lahuelladelmal.html">La huella del mal</a></li>
+					<li><a href="peliculassz/tierradenadie.html">Tierra de nadie</a></li>
+					<li><a href="peliculassz/unfuneraldelocos.html">Un funeral de locos</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">10/04/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/belen.html">Belén</a></li>
+					<li><a href="peliculasl/lalunaselevanta.html">La luna se levanta</a></li>
+					<li><a href="peliculasl/losaitas.html">Los aitas</a></li>
+					<li><a href="peliculassz/theballadofwallis.html">The Ballad of Wallis Island</a></li>
+					<li><a href="peliculassz/wolfgang.html">Wolfgang (Extraordinario)</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">25/03/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/aunestoyaqui.html">Aún estoy aquí</a></li>
+					<li><a href="peliculase/elsecretodelorfebre.html">El secreto del orfebre</a></li>
+					<li><a href="peliculasl/lachicadelaaguja.html">La chica de la aguja</a></li>
+					<li><a href="peliculasl/laconversacion.html">La conversación</a></li>
+					<li><a href="peliculasl/lafuria.html">La furia</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">10/03/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculase/elgrancarnaval.html">El gran carnaval</a></li>
+					<li><a href="peliculasfk/heretic.html">Heretic (Hereje)</a></li>
+					<li><a href="peliculasl/labuenaletra.html">La buena letra</a></li>
+					<li><a href="peliculasmr/mikaela.html">Mikaela</a></li>
+					<li><a href="peliculassz/yiyi.html">Yi yi</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">20/02/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/arealpain.html">A Real Pain</a></li>
+					<li><a href="peliculasl/lacuartaventana.html">La cuarta ventana</a></li>
+					<li><a href="peliculasmr/ohcanada.html">Oh, Canadá</a></li>
+					<li><a href="peliculasmr/punalesporlaespalda3.html">Puñales por la espalda: De entre los muertos</a></li>
+					<li><a href="peliculassz/unabatallatrasotra.html">Una batalla tras otra</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">05/02/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/conclave.html">Cónclave</a></li>
+					<li><a href="peliculase/emiliaperez.html">Emilia Pérez</a></li>
+					<li><a href="peliculasfk/frankenstein.html">Frankenstein</a></li>
+					<li><a href="peliculassz/suenosdetrenes.html">Sueños de trenes</a></li>
+					<li><a href="peliculassz/thebrutalist.html">The Brutalist</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">15/01/2026</h3>
+				<ul class="news-list">
+					<li><a href="peliculasfk/gladiator2.html">Gladiator II</a></li>
+					<li><a href="peliculasl/laescapada.html">La escapada</a></li>
+					<li><a href="peliculasl/losdestellos.html">Los destellos</a></li>
+					<li><a href="peliculasmr/mickey17.html">Mickey 17</a></li>
+					<li><a href="peliculassz/unacasallena.html">Una casa llena de dinamita</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">30/12/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculasl/lasaldelatierra.html">La sal de la tierra</a></li>
+					<li><a href="peliculasl/lasustancia.html">La sustancia</a></li>
+					<li><a href="peliculasmr/marco.html">Marco</a></li>
+					<li><a href="peliculassz/unaquinta.html">Una quinta portuguesa</a></li>
+					<li><a href="peliculassz/weapons.html">Weapons</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">30/11/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculasl/lahabitacionlado.html">La habitación de al lado</a></li>
+					<li><a href="peliculasl/lostortuga.html">Los Tortuga</a></li>
+					<li><a href="peliculasmr/rivaleschallengers.html">Rivales</a></li>
+					<li><a href="peliculassz/soynevenka.html">Soy Nevenka</a></li>
+					<li><a href="peliculassz/suspense.html">Suspense</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">10/11/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculase/eselenemigo.html">¿Es el enemigo? La película de Gila</a></li>
+					<li><a href="peliculasfk/incendies.html">Incendies</a></li>
+					<li><a href="peliculasl/lainfiltrada.html">La infiltrada</a></li>
+					<li><a href="peliculasl/lavirgenroja.html">La virgen roja</a></li>
+					<li><a href="peliculassz/unfantasmabatalla.html">Un fantasma en la batalla</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">05/10/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/anora.html">Anora</a></li>
+					<li><a href="peliculas0d/cristoseparo.html">Cristo se paró en Éboli</a></li>
+					<li><a href="peliculasmr/puntossuspensivos.html">Puntos suspensivos</a></li>
+					<li><a href="peliculassz/sorda.html">Sorda</a></li>
+					<li><a href="peliculassz/tangerine.html">Tangerine</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">15/09/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/acompleteunknown.html">A Complete Unknown</a></li>
+					<li><a href="peliculase/el47.html">El 47</a></li>
+					<li><a href="peliculasfk/justiciaartificial.html">Justicia artificial</a></li>
+					<li><a href="peliculasl/laestrategia.html">La estrategia de la araña</a></li>
+					<li><a href="peliculasl/lamadre.html">La madre</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">30/08/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculasfk/islaperdida.html">Isla perdida</a></li>
+					<li><a href="peliculasmr/misericordia.html">Misericordia</a></li>
+					<li><a href="peliculasmr/muylejos.html">Muy lejos</a></li>
+					<li><a href="peliculassz/tiburon.html">Tiburón</a></li>
+					<li><a href="peliculassz/volvereis.html">Volveréis</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">10/08/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/alienromulus.html">Alien: Romulus</a></li>
+					<li><a href="peliculase/elcondedemontecristo.html">El conde de Montecristo</a></li>
+					<li><a href="peliculasl/lapielquemada.html">La piel quemada</a></li>
+					<li><a href="peliculasl/lospecadores.html">Los pecadores</a></li>
+					<li><a href="peliculassz/surcos.html">Surcos</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">20/07/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/bikeriders.html">Bikeriders. La ley del asfalto</a></li>
+					<li><a href="peliculasl/lagatatejado.html">La gata sobre el tejado de zinc</a></li>
+					<li><a href="peliculasl/latrampa.html">La trampa</a></li>
+					<li><a href="peliculasl/longlegs.html">Longlegs</a></li>
+					<li><a href="peliculasmr/megalopolis.html">Megalópolis</a></li>
+				</ul>
+			</article>
+
+			<article class="news-group">
+				<h3 class="news-date">15/06/2025</h3>
+				<ul class="news-list">
+					<li><a href="peliculas0d/casaenflames.html">Casa en llamas</a></li>
+					<li><a href="peliculasfk/flymetothemoon.html">Fly Me to the Moon</a></li>
+					<li><a href="peliculasmr/parthenope.html">Parthenope</a></li>
+					<li><a href="peliculassz/unamadredetokio.html">Una madre de Tokio</a></li>
+					<li><a href="peliculassz/windriver.html">Wind River</a></li>
+				</ul>
+			</article>
 		</div>
-		<hr style="color:navy; background-color:navy; height: 2px;">
-		<section class="listado">
-			<h4>10/06/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/casablanca.html">- Casablanca</a></li>
-				<li><a href="peliculase/elcomparsa.html">- El comparsa</a></li>
-				<li><a href="peliculase/eldesconocidodellago.html">- El desconocido del lago</a></li>
-				<li><a href="peliculasl/labuenasuerte.html">- La buena suerte</a></li>
-				<li><a href="peliculasl/lostallosamargos.html">- Los tallos amargos</a></li>
-				<li><a href="peliculasmr/rondallas.html">- Rondallas</a></li>
-			</ul>
-			<h4>20/05/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/cantandobajolalluvia.html">- Cantando bajo la lluvia</a></li>
-				<li><a href="peliculas0d/confidencial.html">- Confidencial (Black Bag)</a></li>
-				<li><a href="peliculase/enemigos.html">- Enemigos</a></li>
-				<li><a href="peliculasl/lasemilladelahiguera.html">- La semilla de la higuera sagrada</a></li>
-				<li><a href="peliculasmr/parranda.html">- Parranda</a></li>
-				<li><a href="peliculassz/sirat.html">- Sirât</a></li>
-			</ul>
-			<h4>05/05/2026</h4>
-			<ul>
-				<li><a href="peliculase/elextranjero.html">- El extranjero</a></li>
-				<li><a href="peliculasfk/hoyempiezatodo.html">- Hoy empieza todo</a></li>
-				<li><a href="peliculasl/lahuelladelmal.html">- La huella del mal</a></li>
-				<li><a href="peliculassz/tierradenadie.html">- Tierra de nadie</a></li>
-				<li><a href="peliculassz/unfuneraldelocos.html">- Un funeral de locos</a></li>
-			</ul>
-			<h4>10/04/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/belen.html">- Belén</a></li>
-				<li><a href="peliculasl/lalunaselevanta.html">- La luna se levanta</a></li>
-				<li><a href="peliculasl/losaitas.html">- Los aitas</a></li>
-				<li><a href="peliculassz/theballadofwallis.html">- The Ballad of Wallis Island</a></li>
-				<li><a href="peliculassz/wolfgang.html">- Wolfgang (Extraordinario)</a></li>
-			</ul>
-			<h4>25/03/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/aunestoyaqui.html">- Aún estoy aquí</a></li>
-				<li><a href="peliculase/elsecretodelorfebre.html">- El secreto del orfebre</a></li>
-				<li><a href="peliculasl/lachicadelaaguja.html">- La chica de la aguja</a></li>
-				<li><a href="peliculasl/laconversacion.html">- La conversación</a></li>
-				<li><a href="peliculasl/lafuria.html">- La furia</a></li>
-			</ul>
-			<h4>10/03/2026</h4>
-			<ul>
-				<li><a href="peliculase/elgrancarnaval.html">- El gran carnaval</a></li>
-				<li><a href="peliculasfk/heretic.html">- Heretic (Hereje)</a></li>
-				<li><a href="peliculasl/labuenaletra.html">- La buena letra</a></li>
-				<li><a href="peliculasmr/mikaela.html">- Mikaela</a></li>
-				<li><a href="peliculassz/yiyi.html">- Yi yi</a></li>
-			</ul>
-			<h4>20/02/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/arealpain.html">- A Real Pain</a></li>
-				<li><a href="peliculasl/lacuartaventana.html">- La cuarta ventana</a></li>
-				<li><a href="peliculasmr/ohcanada.html">- Oh, Canadá</a></li>
-				<li><a href="peliculasmr/punalesporlaespalda3.html">- Puñales por la espalda: De entre los muertos</a>
-				</li>
-				<li><a href="peliculassz/unabatallatrasotra.html">- Una batalla tras otra</a></li>
-			</ul>
-			<h4>05/02/2026</h4>
-			<ul>
-				<li><a href="peliculas0d/conclave.html">- Cónclave</a></li>
-				<li><a href="peliculase/emiliaperez.html">- Emilia Pérez</a></li>
-				<li><a href="peliculasfk/frankenstein.html">- Frankenstein</a></li>
-				<li><a href="peliculassz/suenosdetrenes.html">- Sueños de trenes</a></li>
-				<li><a href="peliculassz/thebrutalist.html">- The Brutalist</a></li>
-			</ul>
-			<h4>15/01/2026</h4>
-			<ul>
-				<li><a href="peliculasfk/gladiator2.html">- Gladiator II</a></li>
-				<li><a href="peliculasl/laescapada.html">- La escapada</a></li>
-				<li><a href="peliculasl/losdestellos.html">- Los destellos</a></li>
-				<li><a href="peliculasmr/mickey17.html">- Mickey 17</a></li>
-				<li><a href="peliculassz/unacasallena.html">- Una casa llena de dinamita</a></li>
-			</ul>
-			<h4>30/12/2025</h4>
-			<ul>
-				<li><a href="peliculasl/lasaldelatierra.html">- La sal de la tierra</a></li>
-				<li><a href="peliculasl/lasustancia.html">- La sustancia</a></li>
-				<li><a href="peliculasmr/marco.html">- Marco</a></li>
-				<li><a href="peliculassz/unaquinta.html">- Una quinta portuguesa</a></li>
-				<li><a href="peliculassz/weapons.html">- Weapons</a></li>
-			</ul>
-			<h4>30/11/2025</h4>
-			<ul>
-				<li><a href="peliculasl/lahabitacionlado.html">- La habitación de al lado</a></li>
-				<li><a href="peliculasl/lostortuga.html">- Los Tortuga</a></li>
-				<li><a href="peliculasmr/rivaleschallengers.html">- Rivales</a></li>
-				<li><a href="peliculassz/soynevenka.html">- Soy Nevenka</a></li>
-				<li><a href="peliculassz/suspense.html">- Suspense</a></li>
-			</ul>
-			<h4>10/11/2025</h4>
-			<ul>
-				<li><a href="peliculase/eselenemigo.html">- ¿Es el enemigo? La película de Gila</a></li>
-				<li><a href="peliculasfk/incendies.html">- Incendies</a></li>
-				<li><a href="peliculasl/lainfiltrada.html">- La infiltrada</a></li>
-				<li><a href="peliculasl/lavirgenroja.html">- La virgen roja</a></li>
-				<li><a href="peliculassz/unfantasmabatalla.html">- Un fantasma en la batalla</a></li>
-			</ul>
-			<h4>05/10/2025</h4>
-			<ul>
-				<li><a href="peliculas0d/anora.html">- Anora</a></li>
-				<li><a href="peliculas0d/cristoseparo.html">- Cristo se paró en Éboli</a></li>
-				<li><a href="peliculasmr/puntossuspensivos.html">- Puntos suspensivos</a></li>
-				<li><a href="peliculassz/sorda.html">- Sorda</a></li>
-				<li><a href="peliculassz/tangerine.html">- Tangerine</a></li>
-			</ul>
-			<h4>15/09/2025</h4>
-			<ul>
-				<li><a href="peliculas0d/acompleteunknown.html">- A Complete Unknown</a></li>
-				<li><a href="peliculase/el47.html">- El 47</a></li>
-				<li><a href="peliculasfk/justiciaartificial.html">- Justicia artificial</a></li>
-				<li><a href="peliculasl/laestrategia.html">- La estrategia de la araña</a></li>
-				<li><a href="peliculasl/lamadre.html">- La madre</a></li>
-			</ul>
-			<h4>30/08/2025</h4>
-			<ul>
-				<li><a href="peliculasfk/islaperdida.html">- Isla perdida</a></li>
-				<li><a href="peliculasmr/misericordia.html">- Misericordia</a></li>
-				<li><a href="peliculasmr/muylejos.html">- Muy lejos</a></li>
-				<li><a href="peliculassz/tiburon.html">- Tiburón</a></li>
-				<li><a href="peliculassz/volvereis.html">- Volveréis</a></li>
-			</ul>
-			<h4>10/08/2025</h4>
-			<ul>
-				<li><a href="peliculas0d/alienromulus.html">- Alien: Romulus</a></li>
-				<li><a href="peliculase/elcondedemontecristo.html">- El conde de Montecristo</a></li>
-				<li><a href="peliculasl/lapielquemada.html">- La piel quemada</a></li>
-				<li><a href="peliculasl/lospecadores.html">- Los pecadores</a></li>
-				<li><a href="peliculassz/surcos.html">- Surcos</a></li>
-			</ul>
-			<h4>20/07/2025</h4>
-			<ul>
-				<li><a href="peliculas0d/bikeriders.html">- Bikeriders. La ley del asfalto</a></li>
-				<li><a href="peliculasl/lagatatejado.html">- La gata sobre el tejado de zinc</a></li>
-				<li><a href="peliculasl/latrampa.html">- La trampa</a></li>
-				<li><a href="peliculasl/longlegs.html">- Longlegs</a></li>
-				<li><a href="peliculasmr/megalopolis.html">- Megalópolis</a></li>
-			</ul>
-			<h4>15/06/2025</h4>
-			<ul>
-				<li><a href="peliculas0d/casaenflames.html">- Casa en llamas</a></li>
-				<li><a href="peliculasfk/flymetothemoon.html">- Fly Me to the Moon</a></li>
-				<li><a href="peliculasmr/parthenope.html">- Parthenope</a></li>
-				<li><a href="peliculassz/unamadredetokio.html">- Una madre de Tokio</a></li>
-				<li><a href="peliculassz/windriver.html">- Wind River</a></li>
-			</ul>
-		</section>
-	</main>
-	<footer>
-		<div class="box-3">
-			<table>
-				<tr class="enlace">
-					<td><a href="mailto:isaiasriesco@gmail.com"><b>Comentarios y peticiones</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank"><b>Síguenos en
-								Twitter</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="documentacion.html"><b>Fuentes consultadas</b></a></td>
-				</tr>
-			</table>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-links">
+			<p class="footer-heading">Contacto y enlaces</p>
+
+			<a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Comentarios y peticiones</strong>
+                        <small>Escríbeme por correo</small>
+                    </span>
+			</a>
+
+			<a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Síguenos en Twitter / X</strong>
+                        <small>Novedades y publicaciones</small>
+                    </span>
+			</a>
+
+			<a href="documentacion.html" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Fuentes consultadas</strong>
+                        <small>Documentación y referencias</small>
+                    </span>
+			</a>
 		</div>
-		<div class="box-4">
-			<a href="/index.html"><img src="/objetos/tira.jpg" width="400" height="70"
-					alt="Haz clic aquí para volver a la página de inicio" class="logo"></a>
+
+		<div class="footer-brand">
+			<img src="objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+			<p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
 		</div>
-	</footer>
+	</div>
+</footer>
+<div id="bottom"></div>
+
+<nav class="floating-page-nav" aria-label="Navegación rápida de página">
+	<a href="#top" aria-label="Volver arriba" title="Volver arriba">
+		↑
+	</a>
+	<a href="#bottom" aria-label="Ir al final" title="Ir al final">
+		↓
+	</a>
+</nav>
+
 </body>
 
 </html>

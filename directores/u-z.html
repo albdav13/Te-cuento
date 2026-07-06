@@ -2,708 +2,807 @@
 <html lang="es">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-68812128-1');
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+		gtag("config", "UA-68812128-1");
 	</script>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Directores de cine con apellidos que comienzan entre la U y la Z y resúmenes de sus películas</title>
-	<meta name="description" content="Directores de cine y resumenes de sus peliculas ordenadas por años">
-	<link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/objetos/favicons/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/objetos/favicons/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/objetos/favicons/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/objetos/favicons/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/objetos/favicons/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/objetos/favicons/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/objetos/favicons/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/objetos/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/objetos/favicons/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Sriracha&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/styles-dist.css">
-	<link rel="stylesheet" href="/normalize.css">
-</head>
 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Directores U-Z | Te cuento la película</title>
+	<meta name="description" content="Directores de cine con apellidos entre U-Z y resúmenes de sus películas." />
+	<meta name="author" content="Isaías Riesco Rodríguez" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../objetos/favicons/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="../objetos/favicons/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="../objetos/favicons/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../objetos/favicons/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="../objetos/favicons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="../objetos/favicons/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="../objetos/favicons/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="../objetos/favicons/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../objetos/favicons/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="../objetos/favicons/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../objetos/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="../objetos/favicons/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../objetos/favicons/favicon-16x16.png" />
+	<link rel="manifest" href="../objetos/favicons/manifest.json" />
+
+	<meta name="msapplication-TileColor" content="#1f1f1f" />
+	<meta name="msapplication-TileImage" content="../objetos/favicons/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#1f1f1f" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../normalize.css" />
+	<link rel="stylesheet" href="../styles.css" />
+</head>
 <body>
-	<header>
-		<a href="/index.html"><img src="/objetos/logotipo.jpg" alt="Haz clic aquí para volver a la página de inicio"
-				class="logo"></a>
+<div id="top"></div>
+<header class="site-header">
+	<a href="../index.html" class="logo-link">
+		<img src="../objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+	</a>
+
+	<div>
+		<p class="site-kicker">Archivo personal de cine</p>
 		<h1 class="title-1">Te cuento la película</h1>
-	</header>
-	<main>
-		<div class="menu">
-			<table>
-				<tbody>
-					<tr>
-						<th> <a href="/index.html"><b>Portada</b></a></th>
-						<th><a href="/peliculas/peliculas.html"><b>Películas</b></a></th>
-						<th><a href="/decadas/decadas.html"><b>Años</b></a></th>
-						<th><a href="/directores/directores.html"><b>Directores</b></a></th>
-						<th><a href="/novedades.html"><b>Novedades</b></a></th>
-					</tr>
-				</tbody>
-			</table>
+	</div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+	<a href="../index.html">Portada</a>
+	<a href="../peliculas/peliculas.html">Películas</a>
+	<a href="../decadas/decadas.html">Años</a>
+	<a href="directores.html" class="active">Directores</a>
+	<a href="../novedades.html">Novedades</a>
+</nav>
+<main>
+	<section class="page-hero">
+		<p class="eyebrow">Archivo por directores</p>
+		<h2>Directores U-Z</h2>
+		<p>
+			Directores con apellidos comprendidos entre U-Z, con sus películas ordenadas por año de realización y enlazadas a sus resúmenes.
+		</p>
+	</section>
+
+	<section class="content-card director-archive-card">
+		<div class="director-range-grid" aria-label="Rangos alfabéticos de directores">
+			<a href="a-e.html" class="director-range-card">A-E</a>
+			<a href="f-j.html" class="director-range-card">F-J</a>
+			<a href="k-o.html" class="director-range-card">K-O</a>
+			<a href="p-t.html" class="director-range-card">P-T</a>
+			<a href="u-z.html" class="director-range-card active">U-Z</a>
 		</div>
-		<div class="box-2">
-			<h3>DIRECTORES</h3>
-			<ul>
-				<li><a href="a-e.html">A-E</a></li>
-				<li><a href="f-j.html">F-J</a></li>
-				<li><a href="k-o.html">K-O</a></li>
-				<li><a href="p-t.html">P-T</a></li>
-			</ul>
+
+		<nav class="letter-nav" aria-label="Navegación por letras">
+			<a href="#letrau">U</a>
+			<a href="#letrav">V</a>
+			<a href="#letraw">W</a>
+			<a href="#letrax">X</a>
+			<a href="#letray">Y</a>
+			<a href="#letraz">Z</a>
+		</nav>
+
+		<div class="director-note text-block">
+			<p>En esta sección encontraremos un listado con el nombre de los directores cuyas películas han sido incluidas en la página web, ordenados alfabéticamente por la primera letra de su apellido.</p>
+			<p>En aquellos casos en que haya varias películas del mismo director, estas figurarán ordenadas por año de realización.</p>
+			<p>Se podrá así buscar la película por el nombre de su director, o comprobar si figura alguna película más de ese realizador en esta misma página.</p>
 		</div>
-		<h1 class="title-2">U - Z</h1>
-		<div class="intro">
-			<p>En esta sección encontraremos un listado con el nombre de los directores cuyas películas han sido
-				incluidas en la página web, ordenados alfabéticamente por la primera letra de su apellido. </p>
-			<p>En aquellos casos en que haya varias películas del mismo director, estas figurarán ordenadas por año de
-				realización.</p>
-			<p>Se podrá así buscar la película por el nombre de su director, o comprobar si figura alguna película más
-				de ese realizador en esta misma página.</p>
-		</div>
-		<hr style="color:navy; background-color:navy; height: 2px;">
-		<section class="listado">
-			<a id="letrau"></a>
+
+		<section class="letter-section" id="letrau">
 			<h2>U</h2>
-			<h4>- Unkrich, Lee</h4>
-			<ul>
-				<li><a href="../peliculassz/toystory2.html">Toy story 2. Los juguetes contraatacan</a> (<a
-						href="../decadas/1991-2000.html#1999">1999</a>) (Con <a
-						href="../directores/k-o.html#letrala">John Lasseter</a> y <a
-						href="../directores/a-e.html#letrabr">Ash Brannon</a>)</li>
-				<li><a href="../peliculassz/toystory3.html">Toy story 3</a> (<a
-						href="../decadas/2001-2010.html#20102">2010</a>)</li>
-				<li><a href="../peliculas0d/coco.html">Coco</a> (<a href="../decadas/2011-2020.html#2017">2017</a>) (Con
-					<a href="../directores/k-o.html#letramo">Adrián Molina</a>)
-				</li>
-			</ul>
-			<h4>- Urbizu, Enrique</h4>
-			<ul>
-				<li><a href="../peliculasl/lavidamancha.html">La vida mancha</a> (<a
-						href="../decadas/2001-2010.html#2002">2002</a>)</li>
-				<li><a href="../peliculasmr/nohabrapaz.html">No habrá paz para los malvados</a> (<a
-						href="../decadas/2011-2020.html#20113">2011</a>)</li>
-			</ul>
-			<h4>- Uribe, Imanol</h4>
-			<ul>
-				<li><a href="../peliculasl/lafugadesegovia.html">La fuga de Segovia</a> (<a
-						href="../decadas/1981-1990.html#1981">1981</a>)</li>
-				<li><a href="../peliculasmr/mieldenaranjas.html">Miel de naranjas</a> (<a
-						href="../decadas/2011-2020.html#20122">2012</a>)</li>
-				<li><a href="../peliculasl/lejosdelmar.html">Lejos del mar</a> (<a
-						href="../decadas/2011-2020.html#20152">2015</a>)</li>
-			</ul>
-			<h4>- Urkijo Alijo, Paul</h4>
-			<ul>
-				<li><a href="../peliculasfk/irati.html">Irati</a> (<a href="../decadas/2021-2030.html#20222">2022</a>)
-				</li>
-			</ul>
-			<h4>- Urresola Solaguren, Estíbaliz</h4>
-			<ul>
-				<li><a href="../peliculas0d/20000especies.html">20.000 especies de abejas</a> (<a
-						href="../decadas/2021-2030.html#2023">2023</a>)</li>
-			</ul>
-			<h4>- Urushadze, Zaza</h4>
-			<ul>
-				<li><a href="../peliculasmr/mandarinas.html">Mandarinas</a> (<a
-						href="../decadas/2011-2020.html#20133">2013</a>)</li>
-			</ul>
-			<a id="letrav"></a>
-			<h2>V</h2>
-			<h4>- Vajda, Ladislao</h4>
-			<ul>
-				<li><a href="../peliculasmr/mitiojacinto.html">Mi tío Jacinto</a> (<a
-						href="../decadas/1951-1960.html#1956">1956</a>)</li>
-			</ul>
-			<h4>- Valero, David</h4>
-			<ul>
-				<li><a href="../peliculase/enemigos.html">Enemigos</a> (<a
-						href="../decadas/2021-2030.html#2024">2024</a>)</li>
-			</ul>
-			<h4>- Valleé, Jean-Marc</h4>
-			<ul>
-				<li><a href="../peliculas0d/dallasbuyersclub.html">Dallas Buyers Club</a> (<a
-						href="../decadas/2011-2020.html#2013">2013</a>)</li>
-			</ul>
-			<h4>- Van Dike, W.S.</h4>
-			<ul>
-				<li><a href="../peliculassz/tarzandelosmonos.html">Tarzán de los Monos</a> (<a
-						href="../decadas/1931-1940.html#1932">1932</a>)</li>
-				<li><a href="../peliculasl/lacenaacusados.html">La cena de los acusados</a> (<a
-						href="../decadas/1931-1940.html#1934">1934</a>)</li>
-			</ul>
-			<h4>- Van Groeningen, Felix</h4>
-			<ul>
-				<li><a href="../peliculasl/lasochomontanas.html">Las ocho montañas</a> (<a
-						href="../decadas/2021-2030.html#20222">2022</a>) (Con <a
-						href="../directores/u-z.html#letrav">Vandermeersch, Charlotte</a>)</li>
-			</ul>
-			<h4>- Van Sant, Gus</h4>
-			<ul>
-				<li><a href="../peliculassz/todoporunsueno.html">Todo por un sueño</a> (<a
-						href="../decadas/1991-2000.html#1995">1995</a>)</li>
-				<li><a href="../peliculase/elindomablewillhunting.html">El indomable Will Hunting</a> (<a
-						href="../decadas/1991-2000.html#1997">1997</a>)</li>
-			</ul>
-			<h4>- Vandermeersch, Charlotte</h4>
-			<ul>
-				<li><a href="../peliculasl/lasochomontanas.html">Las ocho montañas</a> (<a
-						href="../decadas/2021-2030.html#20222">2022</a>) (Con <a
-						href="../directores/u-z.html#letrav">Van Groeningen, Felix</a>)</li>
-			</ul>
-			<h4>- Vásquez, Juan Sebastián</h4>
-			<ul>
-				<li><a href="../peliculassz/uponentry.html">Upon Entry (La llegada)</a> (<a
-						href="../decadas/2021-2030.html#20223">2022</a>) (Con <a
-						href="../directores/p-t.html#letraro">Alejandro Rojas</a>)</li>
-			</ul>
-			<h4>- Vaughan, Tom</h4>
-			<ul>
-				<li><a href="../peliculas0d/algopasaenlasvegas.html">Algo pasa en Las Vegas</a> (<a
-						href="../decadas/2001-2010.html#2008">2008</a>)</li>
-			</ul>
-			<h4>- Veber, Francis</h4>
-			<ul>
-				<li><a href="../peliculassz/tresfugitivos.html">Tres fugitivos</a> (<a
-						href="../decadas/1981-1990.html#1989">1989</a>)</li>
-				<li><a href="../peliculasl/lacenadelosidiotas.html">La cena de los idiotas</a> (<a
-						href="../decadas/1991-2000.html#1998">1998</a>)</li>
-			</ul>
-			<h4>- Vega, Paz</h4>
-			<ul>
-				<li><a href="../peliculasmr/rita.html">Rita</a> (<a href="../decadas/2021-2030.html#20243">2024</a>)
-				</li>
-			</ul>
-			<h4>- Verbinski, Gore</h4>
-			<ul>
-				<li><a href="../peliculasmr/piratasdelcaribe1.html">Piratas del Caribe. La maldición de la Perla
-						Negra</a> (<a href="../decadas/2001-2010.html#2003">2003</a>)</li>
-				<li><a href="../peliculasmr/piratasdelcaribe2.html">Piratas del Caribe. El cofre del hombre muerto</a>
-					(<a href="../decadas/2001-2010.html#20062">2006</a>)</li>
-				<li><a href="../peliculasmr/piratasdelcaribe3.html">Piratas del Caribe. En el fin del mundo</a> (<a
-						href="../decadas/2001-2010.html#20072">2007</a>)</li>
-				<li><a href="../peliculasmr/rango.html">Rango</a> (<a href="../decadas/2011-2020.html#20113">2011</a>)
-				</li>
-			</ul>
-			<h4>- Verhoeven, Paul</h4>
-			<ul>
-				<li><a href="../peliculase/ellibronegro.html">El libro negro</a> (<a
-						href="../decadas/2001-2010.html#2006">2006</a>)</li>
-				<li><a href="../peliculase/elle.html">Elle</a> (<a href="../decadas/2011-2020.html#2016">2016</a>)</li>
-			</ul>
-			<h4>- Vermut, Carlos</h4>
-			<ul>
-				<li><a href="../peliculasmr/magicalgirl.html">Magical girl</a> (<a
-						href="../decadas/2011-2020.html#20142">2014</a>)</li>
-				<li><a href="../peliculasmr/quientecantara.html">Quién te cantará</a> (<a
-						href="../decadas/2011-2020.html#20183">2018</a>)</li>
-				<li><a href="../peliculasmr/manticora.html">Mantícora</a> (<a
-						href="../decadas/2021-2030.html#20212">2021</a>)</li>
-			</ul>
-			<h4>- Vernon, Conrad</h4>
-			<ul>
-				<li><a href="../peliculassz/shrek2.html">Shrek 2</a> (<a href="../decadas/2001-2010.html#2004">2004</a>)
-					(con <a href="../directores/a-e.html#letraas">Kelly Asbury</a>) y (con <a
-						href="../directores/a-e.html#letraa">Andrew Adamson</a>)</li>
-				<li><a href="../peliculasmr/monstruoscontraalienigenas.html">Monstruos contra alienígenas</a> (<a
-						href="../decadas/2001-2010.html#20092">2009</a>) (Con <a
-						href="../directores/k-o.html#letralet">Rob Letterman</a>)</li>
-			</ul>
-			<a id="letravi"></a>
-			<h4>- Victori, David</h4>
-			<ul>
-				<li><a href="../peliculasmr/nomataras.html">No matarás</a> (<a
-						href="../decadas/2011-2020.html#20203">2020</a>)</li>
-			</ul>
-			<h4>- Vidor, Charles</h4>
-			<ul>
-				<li><a href="../peliculasfk/gilda.html">Gilda</a> (<a href="../decadas/1941-1950.html#1946">1946</a>)
-				</li>
-			</ul>
-			<h4>- Vidor, King</h4>
-			<ul>
-				<li><a href="../peliculase/elgrandesfile.html">El gran desfile</a> (<a
-						href="../decadas/1900-1930.html#1925">1925</a>)</li>
-				<li><a href="../peliculasl/lapraderasinley.html">La pradera sin ley</a> (<a
-						href="../decadas/1951-1960.html#1955">1955</a>)</li>
-			</ul>
-			<h4>- Vigalondo, Nacho</h4>
-			<ul>
-				<li><a href="../peliculasl/loscronocrimenes.html">Los cronocrímenes</a> (<a
-						href="../decadas/2001-2010.html#20072">2007</a>)</li>
-				<li><a href="../peliculase/extraterrestre.html">Extraterrestre</a> (<a
-						href="../decadas/2011-2020.html#2011">2011</a>)</li>
-				<li><a href="../peliculas0d/colossal.html">Colossal</a> (<a
-						href="../decadas/2011-2020.html#2016">2016</a>)</li>
-			</ul>
-			<h4>- Vigo, Jean</h4>
-			<ul>
-				<li><a href="../peliculasl/latalante.html">L'Atalante</a> (<a
-						href="../decadas/1931-1940.html#1934">1934</a>)</li>
-			</ul>
-			<h4>- Villanueva, Vicente</h4>
-			<ul>
-				<li><a href="../peliculasl/locontrarioalamor.html">Lo contrario al amor</a> (<a
-						href="../decadas/2011-2020.html#20112">2011</a>)</li>
-				<li><a href="../peliculassz/toctoc.html">Toc toc</a> (<a
-						href="../decadas/2011-2020.html#20173">2017</a>)</li>
-			</ul>
-			<h4>- Villaronga, Agustí</h4>
-			<ul>
-				<li><a href="../peliculasmr/pannegro.html">Pan negro</a> (<a
-						href="../decadas/2001-2010.html#20102">2010</a>)</li>
-			</ul>
-			<a id="letravi2"></a>
-			<h4>- Villeneuve, Denis</h4>
-			<ul>
-				<li><a href="../peliculasfk/incendies.html">Incendies</a> (<a
-						href="../decadas/2001-2010.html#2010">2010</a>)</li>
-				<li><a href="../peliculase/enemy.html">Enemy</a> (<a href="../decadas/2011-2020.html#20132">2013</a>)
-				</li>
-				<li><a href="../peliculassz/sicario.html">Sicario</a> (<a
-						href="../decadas/2011-2020.html#20153">2015</a>)</li>
-				<li><a href="../peliculasl/lallegada.html">La llegada</a> (<a
-						href="../decadas/2011-2020.html#20162">2016</a>)</li>
-				<li><a href="../peliculas0d/bladerunner2049.html">Blade Runner 2049</a> (<a
-						href="../decadas/2011-2020.html#2017">2017</a>)</li>
-				<li><a href="../peliculas0d/dune.html">Dune</a> (<a href="../decadas/2021-2030.html#2021">2021</a>)</li>
-				<li><a href="../peliculas0d/dune2.html">Dune: Parte 2</a> (<a
-						href="../decadas/2021-2030.html#2024">2024</a>)</li>
-			</ul>
-			<h4>- Vincent, Christian</h4>
-			<ul>
-				<li><a href="../peliculase/eljuez.html">El juez</a> (<a href="../decadas/2011-2020.html#2015">2015</a>)
-				</li>
-			</ul>
-			<h4>- Vinterberg, Thomas</h4>
-			<ul>
-				<li><a href="../peliculasl/lacaza.html">La caza</a> (<a href="../decadas/2011-2020.html#20122">2012</a>)
-				</li>
-				<li><a href="../peliculasmr/otraronda.html">Otra ronda</a> (<a
-						href="../decadas/2011-2020.html#20203">2020</a>)</li>
-			</ul>
-			<h4>- Virzi, Paolo</h4>
-			<ul>
-				<li><a href="../peliculasl/locasdealegria.html">Locas de alegría</a> (<a
-						href="../decadas/2011-2020.html#20152">2015</a>)</li>
-			</ul>
-			<h4>- Viscarret, Félix</h4>
-			<ul>
-				<li><a href="../peliculassz/vientosdelahabana.html">Vientos de La Habana</a> (<a
-						href="../decadas/2011-2020.html#20153">2015</a>)</li>
-				<li><a href="../peliculasmr/nomiresalosojos.html">No mires a los ojos</a> (<a
-						href="../decadas/2021-2030.html#20213">2021</a>)</li>
-				<li><a href="../peliculassz/unavidanosimple.html">Una vida no tan simple</a> (<a
-						href="../decadas/2021-2030.html#20223">2022</a>)</li>
-			</ul>
-			<h4>- Visconti, Luchino</h4>
-			<ul>
-				<li><a href="../peliculasmr/roccoysushermanos.html">Rocco y sus hermanos</a> (<a
-						href="../decadas/1951-1960.html#1960">1960</a>)</li>
-			</ul>
-			<h4>- Vivas, Miguel Ángel</h4>
-			<ul>
-				<li><a href="../peliculassz/tuhijo.html">Tu hijo</a> (<a
-						href="../decadas/2011-2020.html#20183">2018</a>)</li>
-				<li><a href="../peliculas0d/asedio.html">Asedio</a> (<a href="../decadas/2021-2030.html#2022">2022</a>)
-				</li>
-			</ul>
-			<a id="letravo"></a>
-			<h4>- Vogt-Roberts, Jordan</h4>
-			<ul>
-				<li><a href="../peliculasfk/kong.html">Kong: La isla Calavera</a> (<a
-						href="../decadas/2011-2020.html#20172">2017</a>)</li>
-			</ul>
-			<h4>- Von Horn, Magnus</h4>
-			<ul>
-				<li><a href="../peliculasl/lachicadelaaguja.html">La chica de la aguja</a> (<a
-						href="../decadas/2021-2030.html#20242">2024</a>)</li>
-			</ul>
-			<h4>- Von Sternberg, Josef</h4>
-			<ul>
-				<li><a href="../peliculase/elangelazul.html">El Ángel Azul</a> (<a
-						href="../decadas/1900-1930.html#1930">1930</a>)</li>
-			</ul>
-			<h4>- Von Stroheim, Erich</h4>
-			<ul>
-				<li><a href="../peliculas0d/avaricia.html">Avaricia</a> (<a
-						href="../decadas/1900-1930.html#1924">1924</a>)</li>
-				<li><a href="../peliculasl/lareinakelly.html">La reina Kelly</a> (<a
-						href="../decadas/1931-1940.html#1931">1931</a>)</li>
-			</ul>
-			<h4>- Von Trier, Lars</h4>
-			<ul>
-				<li><a href="../peliculas0d/bailarenlaoscuridad.html">Bailar en la oscuridad</a> (<a
-						href="../decadas/1991-2000.html#2000">2000</a>)</li>
-				<li><a href="../peliculasmr/melancolia.html">Melancolía</a> (<a
-						href="../decadas/2011-2020.html#20113">2011</a>)</li>
-				<li><a href="../peliculasmr/nymphomaniac1.html">Nymphomaniac. Volumen 1</a> (<a
-						href="../decadas/2011-2020.html#20133">2013</a>)</li>
-				<li><a href="../peliculasmr/nymphomaniac2.html">Nymphomaniac. Volumen 2</a> (<a
-						href="../decadas/2011-2020.html#20133">2013</a>)</li>
-			</ul>
-			<h4>- Von Trotta, Margarethe</h4>
-			<ul>
-				<li><a href="../peliculasl/lashermanasalemanas.html">Las hermanas alemanas</a> (<a
-						href="../decadas/1981-1990.html#1981">1981</a>)</li>
-			</ul>
-			<a id="letraw"></a>
-			<h2>W</h2>
-			<h4>- Waddington, Andrucha</h4>
-			<ul>
-				<li><a href="../peliculasl/lope.html">Lope</a> (<a href="../decadas/2001-2010.html#2010">2010</a>)</li>
-			</ul>
-			<h4>- Waititi, Taika</h4>
-			<ul>
-				<li><a href="../peliculasfk/jojorabbit.html">Jojo Rabbit</a> (<a
-						href="../decadas/2011-2020.html#20192">2019</a>)</li>
-			</ul>
-			<h4>- Walsh, Raoul</h4>
-			<ul>
-				<li><a href="../peliculasl/losviolentosanos20.html">Los violentos años veinte</a> (<a
-						href="../decadas/1931-1940.html#1939">1939</a>)</li>
-				<li><a href="../peliculas0d/alrojovivo.html">Al rojo vivo</a> (<a
-						href="../decadas/1941-1950.html#1949">1949</a>)</li>
-				<li><a href="../peliculase/elmundoensusmanos.html">El mundo en sus manos</a> (<a
-						href="../decadas/1951-1960.html#1952">1952</a>)</li>
-			</ul>
-			<h4>- Wan, James</h4>
-			<ul>
-				<li><a href="../peliculase/expedientewarren.html">Expediente Warren: the conjuring</a> (<a
-						href="../decadas/2011-2020.html#20132">2013</a>)</li>
-				<li><a href="../peliculase/expedientewarren2.html">Expediente Warren: El caso Enfield</a> (<a
-						href="../decadas/2011-2020.html#2016">2016</a>)</li>
-			</ul>
-			<h4>- Webb, Marc</h4>
-			<ul>
-				<li><a href="../peliculassz/theamazingspiderman.html">The amazing Spider-Man</a> (<a
-						href="../decadas/2011-2020.html#20122">2012</a>)</li>
-			</ul>
-			<h4>- Webber, Peter</h4>
-			<ul>
-				<li><a href="../peliculasl/lajovendelaperla.html">La joven de la perla</a> (<a
-						href="../decadas/2001-2010.html#2003">2003</a>)</li>
-			</ul>
-			<a id="letrawe"></a>
-			<h4>- Weide, Robert B.</h4>
-			<ul>
-				<li><a href="../peliculassz/woodyalleneldocumental.html">Woody Allen: el documental</a> (<a
-						href="../decadas/2011-2020.html#20113">2011</a>)</li>
-			</ul>
-			<h4>- Weir, Peter</h4>
-			<ul>
-				<li><a href="../peliculase/elanoquevivimospeligrosamente.html">El año que vivimos peligrosamente</a> (<a
-						href="../decadas/1981-1990.html#1982">1982</a>)</li>
-				<li><a href="../peliculassz/unicotestigo.html">Único testigo</a> (<a
-						href="../decadas/1981-1990.html#1985">1985</a>)</li>
-				<li><a href="../peliculase/elclubdelospoetasmuertos.html">El club de los poetas muertos</a> (<a
-						href="../decadas/1981-1990.html#1989">1989</a>)</li>
-				<li><a href="../peliculasmr/matrimoniodeconveniencia.html">Matrimonio de conveniencia</a> (<a
-						href="../decadas/1981-1990.html#1990">1990</a>)</li>
-			</ul>
-			<h4>- Welles, Orson</h4>
-			<ul>
-				<li><a href="../peliculas0d/ciudadanokane.html">Ciudadano Kane</a> (<a
-						href="../decadas/1941-1950.html#1941">1941</a>)</li>
-				<li><a href="../peliculase/elextrano.html">El extraño</a> (<a
-						href="../decadas/1941-1950.html#1946">1946</a>)</li>
-				<li><a href="../peliculassz/seddemal.html">Sed de mal</a> (<a
-						href="../decadas/1951-1960.html#1958">1958</a>)</li>
-			</ul>
-			<h4>- Wells, Charlotte</h4>
-			<ul>
-				<li><a href="../peliculas0d/aftersun.html">Aftersun</a> (<a
-						href="../decadas/2021-2030.html#2022">2022</a>)</li>
-			</ul>
-			<h4>- Wells, John</h4>
-			<ul>
-				<li><a href="../peliculassz/thecompanymen.html">The company men</a> (<a
-						href="../decadas/2001-2010.html#20102">2010</a>)</li>
-				<li><a href="../peliculas0d/agosto.html">Agosto</a> (<a href="../decadas/2011-2020.html#2013">2013</a>)
-				</li>
-			</ul>
-			<h4>- Wenders, Wim</h4>
-			<ul>
-				<li><a href="../peliculas0d/aliciaenlasciudades.html">Alicia en las ciudades</a> (<a
-						href="../decadas/1971-1980.html#1973">1973</a>)</li>
-				<li><a href="../peliculase/elamigoamericano.html">El amigo americano</a> (<a
-						href="../decadas/1971-1980.html#1977">1977</a>)</li>
-				<li><a href="../peliculasmr/paristexas.html">Paris, Texas</a> (<a
-						href="../decadas/1981-1990.html#1984">1984</a>)</li>
-				<li><a href="../peliculasmr/perfectdays.html">Perfect Days</a> (<a
-						href="../decadas/2021-2030.html#20233">2023</a>)</li>
-			</ul>
-			<h4>- Whale, James</h4>
-			<ul>
-				<li><a href="../peliculase/eldrfrankenstein.html">El Doctor Frankenstein</a> (<a
-						href="../decadas/1931-1940.html#1931">1931</a>)</li>
-				<li><a href="../peliculasl/lanoviadefrankenstein.html">La novia de Frankenstein</a> (<a
-						href="../decadas/1931-1940.html#1935">1935</a>)</li>
-			</ul>
-			<h4>- Whannell, Leigh</h4>
-			<ul>
-				<li><a href="../peliculase/elhombreinvisible.html">El Hombre Invisible</a> (<a
-						href="../decadas/2011-2020.html#2020">2020</a>)</li>
-			</ul>
-			<a id="letrawi"></a>
-			<h4>- Wiene, Robert</h4>
-			<ul>
-				<li><a href="../peliculase/elgabinetedeldrcaligari.html">El gabinete del Doctor Caligari</a> (<a
-						href="../decadas/1900-1930.html#1920">1920</a>)</li>
-			</ul>
-			<h4>- Wilde, Ted</h4>
-			<ul>
-				<li><a href="../peliculase/elhermanito.html">El hermanito</a> (<a
-						href="../decadas/1900-1930.html#1927">1927</a>) (Con <a href="../directores/f-j.html#letrahi">J.
-						A. Howe</a>)</li>
-			</ul>
-			<h4>- Wilder, Billy</h4>
-			<ul>
-				<li><a href="../peliculasmr/perdicion.html">Perdición</a> (<a
-						href="../decadas/1941-1950.html#1944">1944</a>)</li>
-				<li><a href="../peliculase/elcrepusculodelosdioses.html">El crepúsculo de los dioses</a> (<a
-						href="../decadas/1941-1950.html#1950">1950</a>)</li>
-				<li><a href="../peliculase/elgrancarnaval.html">El gran carnaval</a> (<a
-						href="../decadas/1951-1960.html#1951">1951</a>)</li>
-				<li><a href="../peliculassz/sabrina.html">Sabrina</a> (<a
-						href="../decadas/1951-1960.html#1954">1954</a>)</li>
-				<li><a href="../peliculasl/latentacionvivearriba.html">La tentación vive arriba</a> (<a
-						href="../decadas/1951-1960.html#1955">1955</a>)</li>
-				<li><a href="../peliculassz/testigodecargo.html">Testigo de cargo</a> (<a
-						href="../decadas/1951-1960.html#1957">1957</a>)</li>
-				<li><a href="../peliculas0d/confaldasyaloloco.html">Con faldas y a lo loco</a> (<a
-						href="../decadas/1951-1960.html#1959">1959</a>)</li>
-				<li><a href="../peliculase/elapartamento.html">El apartamento</a> (<a
-						href="../decadas/1951-1960.html#1960">1960</a>)</li>
-				<li><a href="../peliculas0d/besametonto.html">Bésame, tonto</a> (<a
-						href="../decadas/1961-1970.html#1964">1964</a>)</li>
-				<li><a href="../peliculasl/lavidaprivadadesherlockholmes.html">La vida privada de Sherlock Holmes</a>
-					(<a href="../decadas/1961-1970.html#1970">1970</a>)</li>
-				<li><a href="../peliculasmr/queocurrio.html">¿Qué ocurrió entre mi padre y tu
-						madre?</a> (<a href="../decadas/1971-1980.html#1972">1972</a>)</li>
-				<li><a href="../peliculasfk/fedora.html">Fedora</a> (<a href="../decadas/1971-1980.html#1978">1978</a>)
-				</li>
-			</ul>
-			<h4>- Winding Refn, Nicolas</h4>
-			<ul>
-				<li><a href="../peliculas0d/drive.html">Drive</a> (<a href="../decadas/2011-2020.html#2011">2011</a>)
-				</li>
-			</ul>
-			<h4>- Winograd, Ariel</h4>
-			<ul>
-				<li><a href="../peliculassz/sinhijos.html">Sin hijos</a> (<a
-						href="../decadas/2011-2020.html#20153">2015</a>)</li>
-			</ul>
-			<a id="letrawi2"></a>
-			<h4>- Wise, Kirk</h4>
-			<ul>
-				<li><a href="../peliculasl/labellaylabestia.html">La bella y la bestia</a> (<a
-						href="../decadas/1991-2000.html#1991">1991</a>) (Con <a
-						href="../directores/p-t.html#letratr">Gary Trousdale</a>)</li>
-			</ul>
-			<h4>- Wise, Robert</h4>
-			<ul>
-				<li><a href="../peliculassz/westsidestory.html">West side story</a> (<a
-						href="../decadas/1961-1970.html#1961">1961</a>) (Con <a
-						href="../directores/p-t.html#letraro">Jerome Robbins</a>)</li>
-			</ul>
-			<h4>- Wood, Sam</h4>
-			<ul>
-				<li><a href="../peliculassz/unanocheopera.html">Una noche en la ópera</a> (<a
-						href="../decadas/1931-1940.html#1935">1935</a>)</li>
-			</ul>
-			<h4>- Woods, Bryan</h4>
-			<ul>
-				<li><a href="../peliculasfk/heretic.html">Heretic (Hereje)</a> (<a
-						href="../decadas/2021-2030.html#20242">2024</a>) (Con <a
-						href="../directores/a-e.html#letrabe">Beck, Scott</a>)</li>
-			</ul>
-			<h4>- Wright, Edward</h4>
-			<ul>
-				<li><a href="../peliculas0d/babydriver.html">Baby Driver</a> (<a
-						href="../decadas/2011-2020.html#2017">2017</a>)</li>
-				<li><a href="../peliculassz/ultimanoche.html">Última noche en el Soho</a> (<a
-						href="../decadas/2021-2030.html#20213">2021</a>)</li>
-			</ul>
-			<h4>- Wright, Joe</h4>
-			<ul>
-				<li><a href="../peliculasmr/orgulloyprejuicio.html">Orgullo y prejuicio</a> (<a
-						href="../decadas/2001-2010.html#2005">2005</a>)</li>
-				<li><a href="../peliculas0d/annakarenina.html">Anna Karenina</a> (<a
-						href="../decadas/2011-2020.html#2012">2012</a>)</li>
-			</ul>
-			<h4>- Wyatt, Rupert</h4>
-			<ul>
-				<li><a href="../peliculase/elorigendelplanetadelossimios.html">El origen del Planeta de los Simios</a>
-					(<a href="../decadas/2011-2020.html#2011">2011</a>)</li>
-			</ul>
-			<h4>- Wyler, William</h4>
-			<ul>
-				<li><a href="../peliculas0d/callesinsalida.html">Calle sin salida</a> (<a
-						href="../decadas/1931-1940.html#1937">1937</a>)</li>
-				<li><a href="../peliculasl/lasenoraminiver.html">La señora Miniver</a> (<a
-						href="../decadas/1941-1950.html#1942">1942</a>)</li>
-				<li><a href="../peliculassz/vacacionesenroma.html">Vacaciones en Roma</a> (<a
-						href="../decadas/1951-1960.html#1953">1953</a>)</li>
-				<li><a href="../peliculas0d/benhur.html">Ben-Hur</a> (<a href="../decadas/1951-1960.html#1959">1959</a>)
-				</li>
-				<li><a href="../peliculasl/lacalumnia.html">La calumnia</a> (<a
-						href="../decadas/1961-1970.html#1961">1961</a>)</li>
-			</ul>
-			<a id="letrax"></a>
-			<h2>X</h2>
-			<h4>- Xiaogang, Feng</h4>
-			<ul>
-				<li><a href="../peliculassz/yonosoymadamebovary.html">Yo no soy Madame Bovary</a> (<a
-						href="../decadas/2011-2020.html#20163">2016</a>)</li>
-			</ul>
-			<a id="letray"></a>
-			<h2>Y</h2>
-			<h4>- Yamada, Yôji</h4>
-			<ul>
-				<li><a href="../peliculasl/lacasadeltejadorojo.html">La casa del tejado rojo</a> (<a
-						href="../decadas/2011-2020.html#20142">2014</a>)</li>
-				<li><a href="../peliculassz/unamadredetokio.html">Una madre de Tokio</a> (<a
-						href="../decadas/2021-2030.html#20233">2023</a>)</li>
-			</ul>
-			<h4>- Yang, Edward</h4>
-			<ul>
-				<li><a href="../peliculassz/yiyi.html">Yi yi</a> (<a href="../decadas/1991-2000.html#1999">1999</a>)
-				</li>
-			</ul>
-			<h4>- Yimou, Zhang</h4>
-			<ul>
-				<li><a href="../peliculase/elcaminoacasa.html">El camino a casa</a> (<a
-						href="../decadas/1991-2000.html#2000">2000</a>)</li>
-				<li><a href="../peliculasl/lacasadelasdagasvoladoras.html">La Casa de las Dagas Voladoras</a> (<a
-						href="../decadas/2001-2010.html#2004">2004</a>)</li>
-			</ul>
-			<h4>- Yonggang, Wu</h4>
-			<ul>
-				<li><a href="../peliculasl/ladiosa.html">La diosa</a> (<a
-						href="../decadas/1931-1940.html#1934">1934</a>)</li>
-			</ul>
-			<a id="letraz"></a>
-			<h2>Z</h2>
-			<h4>- Zambrano, Benito</h4>
-			<ul>
-				<li><a href="../peliculasl/lavozdormida.html">La voz dormida</a> (<a
-						href="../decadas/2011-2020.html#20112">2011</a>)</li>
-				<li><a href="../peliculasfk/intemperie.html">Intemperie</a> (<a
-						href="../decadas/2011-2020.html#20192">2019</a>)</li>
-				<li><a href="../peliculasmr/pandelimon.html">Pan de limón con semillas de amapola</a> (<a
-						href="../decadas/2021-2030.html#20213">2021</a>)</li>
-			</ul>
-			<h4>- Zbanic, Jasmila</h4>
-			<ul>
-				<li><a href="../peliculasmr/quovadisaida.html">Quo vadis, Aida?</a> (<a
-						href="../decadas/2011-2020.html#20203">2020</a>)</li>
-			</ul>
-			<h4>- Zeller, Florian</h4>
-			<ul>
-				<li><a href="../peliculase/elpadre.html">El padre</a> (<a
-						href="../decadas/2011-2020.html#2020">2020</a>)</li>
-			</ul>
-			<h4>- Zemeckis, Robert</h4>
-			<ul>
-				<li><a href="../peliculasmr/quienenganoarogerrabbit.html">¿Quién engañó a Roger Rabbit?</a> (<a
-						href="../decadas/1981-1990.html#1988">1988</a>)</li>
-				<li><a href="../peliculasmr/regresoalfuturoii.html">Regreso al futuro II</a> (<a
-						href="../decadas/1981-1990.html#1989">1989</a>)</li>
-				<li><a href="../peliculas0d/aliados.html">Aliados</a> (<a
-						href="../decadas/2011-2020.html#2016">2016</a>)</li>
-			</ul>
-			<h4>- Zhangke, Jia</h4>
-			<ul>
-				<li><a href="../peliculasmr/naturalezamuerta.html">Naturaleza muerta</a> (<a
-						href="../decadas/2001-2010.html#20062">2006</a>)</li>
-				<li><a href="../peliculasl/lacenizaeselblancomaspuro.html">La ceniza es el blanco más puro</a> (<a
-						href="../decadas/2011-2020.html#20182">2018</a>)</li>
-			</ul>
-			<h4>- Zhao, Chloé</h4>
-			<ul>
-				<li><a href="../peliculasmr/nomadland.html">Nomadland</a> (<a
-						href="../decadas/2011-2020.html#20203">2020</a>)</li>
-			</ul>
-			<h4>- Zieff, Howard</h4>
-			<ul>
-				<li><a href="../peliculasfk/infielmentetuya.html">Infielmente tuya</a> (<a
-						href="../decadas/1981-1990.html#1984">1984</a>)</li>
-			</ul>
-			<h4>- Zinnemann, Fred</h4>
-			<ul>
-				<li><a href="../peliculassz/soloanteelpeligro.html">Solo ante el peligro</a> (<a
-						href="../decadas/1951-1960.html#1952">1952</a>)</li>
-				<li><a href="../peliculas0d/deaquialaeternidad.html">De aquí a la eternidad</a> (<a
-						href="../decadas/1951-1960.html#1953">1953</a>)</li>
-				<li><a href="../peliculassz/yllegoeldiadelavenganza.html">Y llegó el día de la venganza</a> (<a
-						href="../decadas/1961-1970.html#1964">1964</a>)</li>
-			</ul>
-			<h4>- Zorrilla, José Antonio</h4>
-			<ul>
-				<li><a href="../peliculase/elarreglo.html">El arreglo</a> (<a
-						href="../decadas/1981-1990.html#1983">1983</a>)</li>
-			</ul>
-			<h4>- Zucker, David</h4>
-			<ul>
-				<li><a href="../peliculas0d/aterrizacomopuedas.html">Aterriza como puedas</a> (<a
-						href="../decadas/1971-1980.html#1980">1980</a>) (Con <a href="../directores/a-e.html#letraa">Jim
-						Abrahams</a> y <a href="../directores/u-z.html#letraz">Jerry Zucker</a>)</li>
-				<li><a href="../peliculas0d/agarralocomopuedas.html">Agárralo como puedas</a> (<a
-						href="../decadas/1981-1990.html#1988">1988</a>)</li>
-				<li><a href="../peliculas0d/agarralocomopuedas2.html">Agárralo como puedas 2 1/2. El aroma del miedo</a>
-					(<a href="../decadas/1991-2000.html#1991">1991</a>)</li>
-			</ul>
-			<h4>- Zucker, Jerry</h4>
-			<ul>
-				<li><a href="../peliculas0d/aterrizacomopuedas.html">Aterriza como puedas</a> (<a
-						href="../decadas/1971-1980.html#1980">1980</a>) (Con <a href="../directores/a-e.html#letraa">Jim
-						Abrahams</a> y <a href="../directores/u-z.html#letraz">David Zucker</a>)</li>
-			</ul>
-			<h4>- Zulawski, Andrzej</h4>
-			<ul>
-				<li><a href="../peliculasl/loimportanteesamar.html">Lo importante es amar</a> (<a
-						href="../decadas/1971-1980.html#1974">1974</a>)</li>
-			</ul>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Unkrich, Lee</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/toystory2.html">Toy story 2. Los juguetes contraatacan</a> (<a href="../decadas/1991-2000.html#1999">1999</a>) (Con <a href="../directores/k-o.html#letrala">John Lasseter</a> y <a href="../directores/a-e.html#letrabr">Ash Brannon</a>)</li>
+						<li><a href="../peliculassz/toystory3.html">Toy story 3</a> (<a href="../decadas/2001-2010.html#20102">2010</a>)</li>
+						<li><a href="../peliculas0d/coco.html">Coco</a> (<a href="../decadas/2011-2020.html#2017">2017</a>) (Con
+							<a href="../directores/k-o.html#letramo">Adrián Molina</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Urbizu, Enrique</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lavidamancha.html">La vida mancha</a> (<a href="../decadas/2001-2010.html#2002">2002</a>)</li>
+						<li><a href="../peliculasmr/nohabrapaz.html">No habrá paz para los malvados</a> (<a href="../decadas/2011-2020.html#20113">2011</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Uribe, Imanol</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lafugadesegovia.html">La fuga de Segovia</a> (<a href="../decadas/1981-1990.html#1981">1981</a>)</li>
+						<li><a href="../peliculasmr/mieldenaranjas.html">Miel de naranjas</a> (<a href="../decadas/2011-2020.html#20122">2012</a>)</li>
+						<li><a href="../peliculasl/lejosdelmar.html">Lejos del mar</a> (<a href="../decadas/2011-2020.html#20152">2015</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Urkijo Alijo, Paul</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/irati.html">Irati</a> (<a href="../decadas/2021-2030.html#20222">2022</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Urresola Solaguren, Estíbaliz</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/20000especies.html">20.000 especies de abejas</a> (<a href="../decadas/2021-2030.html#2023">2023</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Urushadze, Zaza</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/mandarinas.html">Mandarinas</a> (<a href="../decadas/2011-2020.html#20133">2013</a>)</li>
+					</ul>
+				</article>
+			</div>
 		</section>
-	</main>
-	<footer>
-		<div class="box-3">
-			<table>
-				<tr class="enlace">
-					<td><a href="mailto:isaiasriesco@gmail.com"><b>Comentarios y peticiones</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank"><b>Síguenos en
-								Twitter</b></a></td>
-				</tr>
-				<tr class="enlace">
-					<td><a href="/documentacion.html"><b>Fuentes consultadas</b></a></td>
-				</tr>
-			</table>
+		<section class="letter-section" id="letrav">
+			<h2>V</h2>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Vajda, Ladislao</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/mitiojacinto.html">Mi tío Jacinto</a> (<a href="../decadas/1951-1960.html#1956">1956</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Valero, David</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/enemigos.html">Enemigos</a> (<a href="../decadas/2021-2030.html#2024">2024</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Valleé, Jean-Marc</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/dallasbuyersclub.html">Dallas Buyers Club</a> (<a href="../decadas/2011-2020.html#2013">2013</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Van Dike, W.S.</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/tarzandelosmonos.html">Tarzán de los Monos</a> (<a href="../decadas/1931-1940.html#1932">1932</a>)</li>
+						<li><a href="../peliculasl/lacenaacusados.html">La cena de los acusados</a> (<a href="../decadas/1931-1940.html#1934">1934</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Van Groeningen, Felix</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lasochomontanas.html">Las ocho montañas</a> (<a href="../decadas/2021-2030.html#20222">2022</a>) (Con <a href="../directores/u-z.html#letrav">Vandermeersch, Charlotte</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Van Sant, Gus</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/todoporunsueno.html">Todo por un sueño</a> (<a href="../decadas/1991-2000.html#1995">1995</a>)</li>
+						<li><a href="../peliculase/elindomablewillhunting.html">El indomable Will Hunting</a> (<a href="../decadas/1991-2000.html#1997">1997</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vandermeersch, Charlotte</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lasochomontanas.html">Las ocho montañas</a> (<a href="../decadas/2021-2030.html#20222">2022</a>) (Con <a href="../directores/u-z.html#letrav">Van Groeningen, Felix</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vásquez, Juan Sebastián</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/uponentry.html">Upon Entry (La llegada)</a> (<a href="../decadas/2021-2030.html#20223">2022</a>) (Con <a href="../directores/p-t.html#letraro">Alejandro Rojas</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vaughan, Tom</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/algopasaenlasvegas.html">Algo pasa en Las Vegas</a> (<a href="../decadas/2001-2010.html#2008">2008</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Veber, Francis</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/tresfugitivos.html">Tres fugitivos</a> (<a href="../decadas/1981-1990.html#1989">1989</a>)</li>
+						<li><a href="../peliculasl/lacenadelosidiotas.html">La cena de los idiotas</a> (<a href="../decadas/1991-2000.html#1998">1998</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vega, Paz</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/rita.html">Rita</a> (<a href="../decadas/2021-2030.html#20243">2024</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Verbinski, Gore</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/piratasdelcaribe1.html">Piratas del Caribe. La maldición de la Perla
+							Negra</a> (<a href="../decadas/2001-2010.html#2003">2003</a>)</li>
+						<li><a href="../peliculasmr/piratasdelcaribe2.html">Piratas del Caribe. El cofre del hombre muerto</a>
+							(<a href="../decadas/2001-2010.html#20062">2006</a>)</li>
+						<li><a href="../peliculasmr/piratasdelcaribe3.html">Piratas del Caribe. En el fin del mundo</a> (<a href="../decadas/2001-2010.html#20072">2007</a>)</li>
+						<li><a href="../peliculasmr/rango.html">Rango</a> (<a href="../decadas/2011-2020.html#20113">2011</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Verhoeven, Paul</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/ellibronegro.html">El libro negro</a> (<a href="../decadas/2001-2010.html#2006">2006</a>)</li>
+						<li><a href="../peliculase/elle.html">Elle</a> (<a href="../decadas/2011-2020.html#2016">2016</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vermut, Carlos</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/magicalgirl.html">Magical girl</a> (<a href="../decadas/2011-2020.html#20142">2014</a>)</li>
+						<li><a href="../peliculasmr/quientecantara.html">Quién te cantará</a> (<a href="../decadas/2011-2020.html#20183">2018</a>)</li>
+						<li><a href="../peliculasmr/manticora.html">Mantícora</a> (<a href="../decadas/2021-2030.html#20212">2021</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vernon, Conrad</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/shrek2.html">Shrek 2</a> (<a href="../decadas/2001-2010.html#2004">2004</a>)
+							(con <a href="../directores/a-e.html#letraas">Kelly Asbury</a>) y (con <a href="../directores/a-e.html#letraa">Andrew Adamson</a>)</li>
+						<li><a href="../peliculasmr/monstruoscontraalienigenas.html">Monstruos contra alienígenas</a> (<a href="../decadas/2001-2010.html#20092">2009</a>) (Con <a href="../directores/k-o.html#letralet">Rob Letterman</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letravi">
+					<h3>Victori, David</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/nomataras.html">No matarás</a> (<a href="../decadas/2011-2020.html#20203">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vidor, Charles</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/gilda.html">Gilda</a> (<a href="../decadas/1941-1950.html#1946">1946</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vidor, King</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elgrandesfile.html">El gran desfile</a> (<a href="../decadas/1900-1930.html#1925">1925</a>)</li>
+						<li><a href="../peliculasl/lapraderasinley.html">La pradera sin ley</a> (<a href="../decadas/1951-1960.html#1955">1955</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vigalondo, Nacho</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/loscronocrimenes.html">Los cronocrímenes</a> (<a href="../decadas/2001-2010.html#20072">2007</a>)</li>
+						<li><a href="../peliculase/extraterrestre.html">Extraterrestre</a> (<a href="../decadas/2011-2020.html#2011">2011</a>)</li>
+						<li><a href="../peliculas0d/colossal.html">Colossal</a> (<a href="../decadas/2011-2020.html#2016">2016</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vigo, Jean</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/latalante.html">L'Atalante</a> (<a href="../decadas/1931-1940.html#1934">1934</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Villanueva, Vicente</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/locontrarioalamor.html">Lo contrario al amor</a> (<a href="../decadas/2011-2020.html#20112">2011</a>)</li>
+						<li><a href="../peliculassz/toctoc.html">Toc toc</a> (<a href="../decadas/2011-2020.html#20173">2017</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Villaronga, Agustí</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/pannegro.html">Pan negro</a> (<a href="../decadas/2001-2010.html#20102">2010</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letravi2">
+					<h3>Villeneuve, Denis</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/incendies.html">Incendies</a> (<a href="../decadas/2001-2010.html#2010">2010</a>)</li>
+						<li><a href="../peliculase/enemy.html">Enemy</a> (<a href="../decadas/2011-2020.html#20132">2013</a>)
+						</li>
+						<li><a href="../peliculassz/sicario.html">Sicario</a> (<a href="../decadas/2011-2020.html#20153">2015</a>)</li>
+						<li><a href="../peliculasl/lallegada.html">La llegada</a> (<a href="../decadas/2011-2020.html#20162">2016</a>)</li>
+						<li><a href="../peliculas0d/bladerunner2049.html">Blade Runner 2049</a> (<a href="../decadas/2011-2020.html#2017">2017</a>)</li>
+						<li><a href="../peliculas0d/dune.html">Dune</a> (<a href="../decadas/2021-2030.html#2021">2021</a>)</li>
+						<li><a href="../peliculas0d/dune2.html">Dune: Parte 2</a> (<a href="../decadas/2021-2030.html#2024">2024</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vincent, Christian</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/eljuez.html">El juez</a> (<a href="../decadas/2011-2020.html#2015">2015</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vinterberg, Thomas</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lacaza.html">La caza</a> (<a href="../decadas/2011-2020.html#20122">2012</a>)
+						</li>
+						<li><a href="../peliculasmr/otraronda.html">Otra ronda</a> (<a href="../decadas/2011-2020.html#20203">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Virzi, Paolo</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/locasdealegria.html">Locas de alegría</a> (<a href="../decadas/2011-2020.html#20152">2015</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Viscarret, Félix</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/vientosdelahabana.html">Vientos de La Habana</a> (<a href="../decadas/2011-2020.html#20153">2015</a>)</li>
+						<li><a href="../peliculasmr/nomiresalosojos.html">No mires a los ojos</a> (<a href="../decadas/2021-2030.html#20213">2021</a>)</li>
+						<li><a href="../peliculassz/unavidanosimple.html">Una vida no tan simple</a> (<a href="../decadas/2021-2030.html#20223">2022</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Visconti, Luchino</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/roccoysushermanos.html">Rocco y sus hermanos</a> (<a href="../decadas/1951-1960.html#1960">1960</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Vivas, Miguel Ángel</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/tuhijo.html">Tu hijo</a> (<a href="../decadas/2011-2020.html#20183">2018</a>)</li>
+						<li><a href="../peliculas0d/asedio.html">Asedio</a> (<a href="../decadas/2021-2030.html#2022">2022</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letravo">
+					<h3>Vogt-Roberts, Jordan</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/kong.html">Kong: La isla Calavera</a> (<a href="../decadas/2011-2020.html#20172">2017</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Von Horn, Magnus</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lachicadelaaguja.html">La chica de la aguja</a> (<a href="../decadas/2021-2030.html#20242">2024</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Von Sternberg, Josef</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elangelazul.html">El Ángel Azul</a> (<a href="../decadas/1900-1930.html#1930">1930</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Von Stroheim, Erich</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/avaricia.html">Avaricia</a> (<a href="../decadas/1900-1930.html#1924">1924</a>)</li>
+						<li><a href="../peliculasl/lareinakelly.html">La reina Kelly</a> (<a href="../decadas/1931-1940.html#1931">1931</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Von Trier, Lars</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/bailarenlaoscuridad.html">Bailar en la oscuridad</a> (<a href="../decadas/1991-2000.html#2000">2000</a>)</li>
+						<li><a href="../peliculasmr/melancolia.html">Melancolía</a> (<a href="../decadas/2011-2020.html#20113">2011</a>)</li>
+						<li><a href="../peliculasmr/nymphomaniac1.html">Nymphomaniac. Volumen 1</a> (<a href="../decadas/2011-2020.html#20133">2013</a>)</li>
+						<li><a href="../peliculasmr/nymphomaniac2.html">Nymphomaniac. Volumen 2</a> (<a href="../decadas/2011-2020.html#20133">2013</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Von Trotta, Margarethe</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lashermanasalemanas.html">Las hermanas alemanas</a> (<a href="../decadas/1981-1990.html#1981">1981</a>)</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+		<section class="letter-section" id="letraw">
+			<h2>W</h2>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Waddington, Andrucha</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lope.html">Lope</a> (<a href="../decadas/2001-2010.html#2010">2010</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Waititi, Taika</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/jojorabbit.html">Jojo Rabbit</a> (<a href="../decadas/2011-2020.html#20192">2019</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Walsh, Raoul</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/losviolentosanos20.html">Los violentos años veinte</a> (<a href="../decadas/1931-1940.html#1939">1939</a>)</li>
+						<li><a href="../peliculas0d/alrojovivo.html">Al rojo vivo</a> (<a href="../decadas/1941-1950.html#1949">1949</a>)</li>
+						<li><a href="../peliculase/elmundoensusmanos.html">El mundo en sus manos</a> (<a href="../decadas/1951-1960.html#1952">1952</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wan, James</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/expedientewarren.html">Expediente Warren: the conjuring</a> (<a href="../decadas/2011-2020.html#20132">2013</a>)</li>
+						<li><a href="../peliculase/expedientewarren2.html">Expediente Warren: El caso Enfield</a> (<a href="../decadas/2011-2020.html#2016">2016</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Webb, Marc</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/theamazingspiderman.html">The amazing Spider-Man</a> (<a href="../decadas/2011-2020.html#20122">2012</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Webber, Peter</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lajovendelaperla.html">La joven de la perla</a> (<a href="../decadas/2001-2010.html#2003">2003</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letrawe">
+					<h3>Weide, Robert B.</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/woodyalleneldocumental.html">Woody Allen: el documental</a> (<a href="../decadas/2011-2020.html#20113">2011</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Weir, Peter</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elanoquevivimospeligrosamente.html">El año que vivimos peligrosamente</a> (<a href="../decadas/1981-1990.html#1982">1982</a>)</li>
+						<li><a href="../peliculassz/unicotestigo.html">Único testigo</a> (<a href="../decadas/1981-1990.html#1985">1985</a>)</li>
+						<li><a href="../peliculase/elclubdelospoetasmuertos.html">El club de los poetas muertos</a> (<a href="../decadas/1981-1990.html#1989">1989</a>)</li>
+						<li><a href="../peliculasmr/matrimoniodeconveniencia.html">Matrimonio de conveniencia</a> (<a href="../decadas/1981-1990.html#1990">1990</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Welles, Orson</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/ciudadanokane.html">Ciudadano Kane</a> (<a href="../decadas/1941-1950.html#1941">1941</a>)</li>
+						<li><a href="../peliculase/elextrano.html">El extraño</a> (<a href="../decadas/1941-1950.html#1946">1946</a>)</li>
+						<li><a href="../peliculassz/seddemal.html">Sed de mal</a> (<a href="../decadas/1951-1960.html#1958">1958</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wells, Charlotte</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/aftersun.html">Aftersun</a> (<a href="../decadas/2021-2030.html#2022">2022</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wells, John</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/thecompanymen.html">The company men</a> (<a href="../decadas/2001-2010.html#20102">2010</a>)</li>
+						<li><a href="../peliculas0d/agosto.html">Agosto</a> (<a href="../decadas/2011-2020.html#2013">2013</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wenders, Wim</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/aliciaenlasciudades.html">Alicia en las ciudades</a> (<a href="../decadas/1971-1980.html#1973">1973</a>)</li>
+						<li><a href="../peliculase/elamigoamericano.html">El amigo americano</a> (<a href="../decadas/1971-1980.html#1977">1977</a>)</li>
+						<li><a href="../peliculasmr/paristexas.html">Paris, Texas</a> (<a href="../decadas/1981-1990.html#1984">1984</a>)</li>
+						<li><a href="../peliculasmr/perfectdays.html">Perfect Days</a> (<a href="../decadas/2021-2030.html#20233">2023</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Whale, James</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/eldrfrankenstein.html">El Doctor Frankenstein</a> (<a href="../decadas/1931-1940.html#1931">1931</a>)</li>
+						<li><a href="../peliculasl/lanoviadefrankenstein.html">La novia de Frankenstein</a> (<a href="../decadas/1931-1940.html#1935">1935</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Whannell, Leigh</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elhombreinvisible.html">El Hombre Invisible</a> (<a href="../decadas/2011-2020.html#2020">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letrawi">
+					<h3>Wiene, Robert</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elgabinetedeldrcaligari.html">El gabinete del Doctor Caligari</a> (<a href="../decadas/1900-1930.html#1920">1920</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wilde, Ted</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elhermanito.html">El hermanito</a> (<a href="../decadas/1900-1930.html#1927">1927</a>) (Con <a href="../directores/f-j.html#letrahi">J.
+							A. Howe</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wilder, Billy</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/perdicion.html">Perdición</a> (<a href="../decadas/1941-1950.html#1944">1944</a>)</li>
+						<li><a href="../peliculase/elcrepusculodelosdioses.html">El crepúsculo de los dioses</a> (<a href="../decadas/1941-1950.html#1950">1950</a>)</li>
+						<li><a href="../peliculase/elgrancarnaval.html">El gran carnaval</a> (<a href="../decadas/1951-1960.html#1951">1951</a>)</li>
+						<li><a href="../peliculassz/sabrina.html">Sabrina</a> (<a href="../decadas/1951-1960.html#1954">1954</a>)</li>
+						<li><a href="../peliculasl/latentacionvivearriba.html">La tentación vive arriba</a> (<a href="../decadas/1951-1960.html#1955">1955</a>)</li>
+						<li><a href="../peliculassz/testigodecargo.html">Testigo de cargo</a> (<a href="../decadas/1951-1960.html#1957">1957</a>)</li>
+						<li><a href="../peliculas0d/confaldasyaloloco.html">Con faldas y a lo loco</a> (<a href="../decadas/1951-1960.html#1959">1959</a>)</li>
+						<li><a href="../peliculase/elapartamento.html">El apartamento</a> (<a href="../decadas/1951-1960.html#1960">1960</a>)</li>
+						<li><a href="../peliculas0d/besametonto.html">Bésame, tonto</a> (<a href="../decadas/1961-1970.html#1964">1964</a>)</li>
+						<li><a href="../peliculasl/lavidaprivadadesherlockholmes.html">La vida privada de Sherlock Holmes</a>
+							(<a href="../decadas/1961-1970.html#1970">1970</a>)</li>
+						<li><a href="../peliculasmr/queocurrio.html">¿Qué ocurrió entre mi padre y tu
+							madre?</a> (<a href="../decadas/1971-1980.html#1972">1972</a>)</li>
+						<li><a href="../peliculasfk/fedora.html">Fedora</a> (<a href="../decadas/1971-1980.html#1978">1978</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Winding Refn, Nicolas</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/drive.html">Drive</a> (<a href="../decadas/2011-2020.html#2011">2011</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Winograd, Ariel</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/sinhijos.html">Sin hijos</a> (<a href="../decadas/2011-2020.html#20153">2015</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card" id="letrawi2">
+					<h3>Wise, Kirk</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/labellaylabestia.html">La bella y la bestia</a> (<a href="../decadas/1991-2000.html#1991">1991</a>) (Con <a href="../directores/p-t.html#letratr">Gary Trousdale</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wise, Robert</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/westsidestory.html">West side story</a> (<a href="../decadas/1961-1970.html#1961">1961</a>) (Con <a href="../directores/p-t.html#letraro">Jerome Robbins</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wood, Sam</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/unanocheopera.html">Una noche en la ópera</a> (<a href="../decadas/1931-1940.html#1935">1935</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Woods, Bryan</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/heretic.html">Heretic (Hereje)</a> (<a href="../decadas/2021-2030.html#20242">2024</a>) (Con <a href="../directores/a-e.html#letrabe">Beck, Scott</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wright, Edward</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/babydriver.html">Baby Driver</a> (<a href="../decadas/2011-2020.html#2017">2017</a>)</li>
+						<li><a href="../peliculassz/ultimanoche.html">Última noche en el Soho</a> (<a href="../decadas/2021-2030.html#20213">2021</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wright, Joe</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/orgulloyprejuicio.html">Orgullo y prejuicio</a> (<a href="../decadas/2001-2010.html#2005">2005</a>)</li>
+						<li><a href="../peliculas0d/annakarenina.html">Anna Karenina</a> (<a href="../decadas/2011-2020.html#2012">2012</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wyatt, Rupert</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elorigendelplanetadelossimios.html">El origen del Planeta de los Simios</a>
+							(<a href="../decadas/2011-2020.html#2011">2011</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Wyler, William</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/callesinsalida.html">Calle sin salida</a> (<a href="../decadas/1931-1940.html#1937">1937</a>)</li>
+						<li><a href="../peliculasl/lasenoraminiver.html">La señora Miniver</a> (<a href="../decadas/1941-1950.html#1942">1942</a>)</li>
+						<li><a href="../peliculassz/vacacionesenroma.html">Vacaciones en Roma</a> (<a href="../decadas/1951-1960.html#1953">1953</a>)</li>
+						<li><a href="../peliculas0d/benhur.html">Ben-Hur</a> (<a href="../decadas/1951-1960.html#1959">1959</a>)
+						</li>
+						<li><a href="../peliculasl/lacalumnia.html">La calumnia</a> (<a href="../decadas/1961-1970.html#1961">1961</a>)</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+		<section class="letter-section" id="letrax">
+			<h2>X</h2>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Xiaogang, Feng</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/yonosoymadamebovary.html">Yo no soy Madame Bovary</a> (<a href="../decadas/2011-2020.html#20163">2016</a>)</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+		<section class="letter-section" id="letray">
+			<h2>Y</h2>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Yamada, Yôji</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lacasadeltejadorojo.html">La casa del tejado rojo</a> (<a href="../decadas/2011-2020.html#20142">2014</a>)</li>
+						<li><a href="../peliculassz/unamadredetokio.html">Una madre de Tokio</a> (<a href="../decadas/2021-2030.html#20233">2023</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Yang, Edward</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/yiyi.html">Yi yi</a> (<a href="../decadas/1991-2000.html#1999">1999</a>)
+						</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Yimou, Zhang</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elcaminoacasa.html">El camino a casa</a> (<a href="../decadas/1991-2000.html#2000">2000</a>)</li>
+						<li><a href="../peliculasl/lacasadelasdagasvoladoras.html">La Casa de las Dagas Voladoras</a> (<a href="../decadas/2001-2010.html#2004">2004</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Yonggang, Wu</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/ladiosa.html">La diosa</a> (<a href="../decadas/1931-1940.html#1934">1934</a>)</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+		<section class="letter-section" id="letraz">
+			<h2>Z</h2>
+			<div class="director-listing">
+				<article class="director-card">
+					<h3>Zambrano, Benito</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/lavozdormida.html">La voz dormida</a> (<a href="../decadas/2011-2020.html#20112">2011</a>)</li>
+						<li><a href="../peliculasfk/intemperie.html">Intemperie</a> (<a href="../decadas/2011-2020.html#20192">2019</a>)</li>
+						<li><a href="../peliculasmr/pandelimon.html">Pan de limón con semillas de amapola</a> (<a href="../decadas/2021-2030.html#20213">2021</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zbanic, Jasmila</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/quovadisaida.html">Quo vadis, Aida?</a> (<a href="../decadas/2011-2020.html#20203">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zeller, Florian</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elpadre.html">El padre</a> (<a href="../decadas/2011-2020.html#2020">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zemeckis, Robert</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/quienenganoarogerrabbit.html">¿Quién engañó a Roger Rabbit?</a> (<a href="../decadas/1981-1990.html#1988">1988</a>)</li>
+						<li><a href="../peliculasmr/regresoalfuturoii.html">Regreso al futuro II</a> (<a href="../decadas/1981-1990.html#1989">1989</a>)</li>
+						<li><a href="../peliculas0d/aliados.html">Aliados</a> (<a href="../decadas/2011-2020.html#2016">2016</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zhangke, Jia</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/naturalezamuerta.html">Naturaleza muerta</a> (<a href="../decadas/2001-2010.html#20062">2006</a>)</li>
+						<li><a href="../peliculasl/lacenizaeselblancomaspuro.html">La ceniza es el blanco más puro</a> (<a href="../decadas/2011-2020.html#20182">2018</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zhao, Chloé</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasmr/nomadland.html">Nomadland</a> (<a href="../decadas/2011-2020.html#20203">2020</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zieff, Howard</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasfk/infielmentetuya.html">Infielmente tuya</a> (<a href="../decadas/1981-1990.html#1984">1984</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zinnemann, Fred</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculassz/soloanteelpeligro.html">Solo ante el peligro</a> (<a href="../decadas/1951-1960.html#1952">1952</a>)</li>
+						<li><a href="../peliculas0d/deaquialaeternidad.html">De aquí a la eternidad</a> (<a href="../decadas/1951-1960.html#1953">1953</a>)</li>
+						<li><a href="../peliculassz/yllegoeldiadelavenganza.html">Y llegó el día de la venganza</a> (<a href="../decadas/1961-1970.html#1964">1964</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zorrilla, José Antonio</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculase/elarreglo.html">El arreglo</a> (<a href="../decadas/1981-1990.html#1983">1983</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zucker, David</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/aterrizacomopuedas.html">Aterriza como puedas</a> (<a href="../decadas/1971-1980.html#1980">1980</a>) (Con <a href="../directores/a-e.html#letraa">Jim
+							Abrahams</a> y <a href="../directores/u-z.html#letraz">Jerry Zucker</a>)</li>
+						<li><a href="../peliculas0d/agarralocomopuedas.html">Agárralo como puedas</a> (<a href="../decadas/1981-1990.html#1988">1988</a>)</li>
+						<li><a href="../peliculas0d/agarralocomopuedas2.html">Agárralo como puedas 2 1/2. El aroma del miedo</a>
+							(<a href="../decadas/1991-2000.html#1991">1991</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zucker, Jerry</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculas0d/aterrizacomopuedas.html">Aterriza como puedas</a> (<a href="../decadas/1971-1980.html#1980">1980</a>) (Con <a href="../directores/a-e.html#letraa">Jim
+							Abrahams</a> y <a href="../directores/u-z.html#letraz">David Zucker</a>)</li>
+					</ul>
+				</article>
+				<article class="director-card">
+					<h3>Zulawski, Andrzej</h3>
+					<ul class="director-movie-list">
+						<li><a href="../peliculasl/loimportanteesamar.html">Lo importante es amar</a> (<a href="../decadas/1971-1980.html#1974">1974</a>)</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+	</section>
+</main>
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-links">
+			<p class="footer-heading">Contacto y enlaces</p>
+
+			<a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Comentarios y peticiones</strong>
+                        <small>Escríbeme por correo</small>
+                    </span>
+			</a>
+
+			<a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Síguenos en Twitter / X</strong>
+                        <small>Novedades y publicaciones</small>
+                    </span>
+			</a>
+
+			<a href="../documentacion.html" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+				<span class="footer-card-text">
+                        <strong>Fuentes consultadas</strong>
+                        <small>Documentación y referencias</small>
+                    </span>
+			</a>
 		</div>
-		<div class="box-4">
-			<a href="/index.html"><img src="/objetos/tira.jpg" width="400" height="70"
-					alt="Haz clic aquí para volver a la página de inicio" class="logo"></a>
+
+		<div class="footer-brand">
+			<img src="../objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+			<p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
 		</div>
-	</footer>
+	</div>
+</footer>
+<div id="bottom"></div>
+
+<nav class="floating-page-nav" aria-label="Navegación rápida de página">
+	<a href="#top" aria-label="Volver arriba" title="Volver arriba">
+		↑
+	</a>
+	<a href="#bottom" aria-label="Ir al final" title="Ir al final">
+		↓
+	</a>
+</nav>
 </body>
 
 </html>

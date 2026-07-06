@@ -2,218 +2,294 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-68812128-1');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-68812128-1");
   </script>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resúmenes de películas: 1941 a 1950</title>
-  <meta name="description" content="Resumenes de peliculas de los años 40">
-  <link rel="apple-touch-icon" sizes="57x57" href="/objetos/favicons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/objetos/favicons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/objetos/favicons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/objetos/favicons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/objetos/favicons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/objetos/favicons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/objetos/favicons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/objetos/favicons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/objetos/favicons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/objetos/favicons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/objetos/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/objetos/favicons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/objetos/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/objetos/favicons/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/objetos/favicons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Sriracha&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles-dist.css">
-  <link rel="stylesheet" href="/normalize.css">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Películas de 1941 a 1950 | Te cuento la película</title>
+  <meta name="description" content="Resúmenes de películas de 1941 a 1950." />
+  <meta name="author" content="Isaías Riesco Rodríguez" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../objetos/favicons/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../objetos/favicons/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../objetos/favicons/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../objetos/favicons/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../objetos/favicons/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../objetos/favicons/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../objetos/favicons/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../objetos/favicons/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../objetos/favicons/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../objetos/favicons/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../objetos/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../objetos/favicons/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../objetos/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="../objetos/favicons/manifest.json" />
+
+  <meta name="msapplication-TileColor" content="#1f1f1f" />
+  <meta name="msapplication-TileImage" content="../objetos/favicons/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../normalize.css" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
-  <header>
-    <a href="/index.html"><img src="/objetos/logotipo.jpg" alt="Haz clic aquí para volver a la página de inicio"
-        class="logo"></a>
+<div id="top"></div>
+
+<header class="site-header">
+  <a href="../index.html" class="logo-link">
+    <img src="../objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+  </a>
+
+  <div>
+    <p class="site-kicker">Archivo personal de cine</p>
     <h1 class="title-1">Te cuento la película</h1>
-  </header>
-  <main>
-    <div class="menu">
-      <table>
-        <tbody>
-          <tr>
-            <th> <a href="/index.html"><b>Portada</b></a></th>
-            <th><a href="/peliculas/peliculas.html"><b>Películas</b></a></th>
-            <th><a href="/decadas/decadas.html"><b>Años</b></a></th>
-            <th><a href="/directores/directores.html"><b>Directores</b></a></th>
-            <th><a href="/novedades.html"><b>Novedades</b></a></th>
-          </tr>
-        </tbody>
-      </table>
+  </div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+  <a href="../index.html">Portada</a>
+  <a href="../peliculas/peliculas.html">Películas</a>
+  <a href="decadas.html" class="active">Años</a>
+  <a href="../directores/directores.html">Directores</a>
+  <a href="../novedades.html">Novedades</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <p class="eyebrow">Archivo por años</p>
+    <h2>Resúmenes 1941 / 1950</h2>
+    <p>
+      Selección de resúmenes agrupados por año para facilitar la consulta dentro del periodo 1941-1950.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <div class="decade-grid decade-grid-compact" aria-label="Navegación por décadas">
+      <a href="1900-1930.html" class="decade-card">1900-1930</a>
+      <a href="1931-1940.html" class="decade-card">1931-1940</a>
+      <a href="1941-1950.html" class="decade-card active">1941-1950</a>
+      <a href="1951-1960.html" class="decade-card">1951-1960</a>
+      <a href="1961-1970.html" class="decade-card">1961-1970</a>
+      <a href="1971-1980.html" class="decade-card">1971-1980</a>
+      <a href="1981-1990.html" class="decade-card">1981-1990</a>
+      <a href="1991-2000.html" class="decade-card">1991-2000</a>
+      <a href="2001-2010.html" class="decade-card">2001-2010</a>
+      <a href="2011-2020.html" class="decade-card">2011-2020</a>
+      <a href="2021-2030.html" class="decade-card">2021-2030</a>
     </div>
-    <div class="box-2">
-      <h3>AÑOS</h3>
-      <ul>
-        <li><a href="1900-1930.html">1900-1930</a></li>
-        <li><a href="1931-1940.html">1931-1940</a></li>
-        <li><a href="1951-1960.html">1951-1960</a></li>
-        <li><a href="1961-1970.html">1961-1970</a></li>
-        <li><a href="1971-1980.html">1971-1980</a></li>
-        <li><a href="1981-1990.html">1981-1990</a></li>
-        <li><a href="1991-2000.html">1991-2000</a></li>
-        <li><a href="2001-2010.html">2001-2010</a></li>
-        <li><a href="2011-2020.html">2011-2020</a></li>
-        <li><a href="2021-2030.html">2021-2030</a></li>
-      </ul>
+
+    <div class="decade-note text-block">
+      <p>
+        El año de cada película intenta respetar el copyright, el depósito legal u otras fuentes oficiales.
+        Cuando existe constancia de una fuente oficial, el año puede aparecer acompañado de un asterisco.
+      </p>
     </div>
-    <h1 class="title-2">RESÚMENES 1941 / 1950</h1>
-    <div class="intro">
-      <p>Aquí se pueden buscar las películas ordenadas por años. Al respecto he procurado que el año de la película sea
-        el que figura en el Copyright de las mismas, no el del rodaje ni el del estreno, lo que sé que en ocasiones
-        choca con la mayoría de las bases de datos.</p>
-      <p>En caso de que no figure el Copyright en la película me guío por el año del Depósito Legal, y si tampoco
-        tenemos ese dato, procuro buscar en las páginas oficiales de cada país que dan el visado para la explotación: el
-        ICAA en España, el CNC en Francia, el Filmportal de Alemania, o ANICA de Italia, y en caso de carecer de dichos
-        datos me inclino por los datos que figuran en la mayoría de las bases de datos.</p>
-      <p>Si hay conflicto de datos, puesto que en ocasiones el Copyright es anterior al Depósito Legal, me decantaré por
-        la fecha posterior</p>
-      <p>Si tengo constancia del Copyright, Depósito Legal u otra fuente oficial, figurará junto al año un asterístico.
-        Será así: (1998) *.</p>
+
+    <div class="year-listing">
+      <article class="year-group" id="1941">
+        <h3>1941</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/aguaspantanosas.html">Aguas pantanosas</a></li>
+          <li><a href="../peliculas0d/boladefuego.html">Bola de fuego</a></li>
+          <li><a href="../peliculas0d/ciudadanokane.html">Ciudadano Kane</a></li>
+          <li><a href="../peliculasfk/juannadie.html">Juan Nadie</a></li>
+          <li><a href="../peliculasl/lastresnochesdeeva.html">Las tres noches de Eva</a></li>
+          <li><a href="../peliculasl/loquepiensanlasmujeres.html">Lo que piensan las mujeres</a></li>
+          <li><a href="../peliculasl/losviajesdesullivan.html">Los viajes de Sullivan</a></li>
+          <li><a href="../peliculasmr/queverdeeramivalle.html">¡Qué verde era mi valle!</a></li>
+          <li><a href="../peliculassz/sospecha.html">Sospecha</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1942">
+        <h3>1942</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/casablanca.html">Casablanca</a></li>
+          <li><a href="../peliculasl/laextranapasajera.html">La extraña pasajera</a></li>
+          <li><a href="../peliculasl/lamujerpantera.html">La mujer pantera</a></li>
+          <li><a href="../peliculasl/lasenoraminiver.html">La señora Miniver</a></li>
+          <li><a href="../peliculasl/lasombraduda.html">La sombra de una duda</a></li>
+          <li><a href="../peliculassz/seronoser.html">Ser o no ser</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1943">
+        <h3>1943</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/diesirae.html">Dies irae</a></li>
+          <li><a href="../peliculase/estatierraesmia.html">Esta tierra es mía</a></li>
+          <li><a href="../peliculasmr/mariacandelaria.html">María Candelaria (Xochimilco)</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1944">
+        <h3>1944</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/arsenico.html">Arsénico por compasión</a></li>
+          <li><a href="../peliculas0d/citaensanluis.html">Cita en San Luis</a></li>
+          <li><a href="../peliculase/elclavo.html">El clavo</a></li>
+          <li><a href="../peliculase/ellaelysusmillones.html">Ella, él y sus millones</a></li>
+          <li><a href="../peliculasl/lamujerdelcuadro.html">La mujer del cuadro</a></li>
+          <li><a href="../peliculasl/latorre7jorobados.html">La torre de los siete jorobados</a></li>
+          <li><a href="../peliculasl/laura.html">Laura</a></li>
+          <li><a href="../peliculasl/luzqueagoniza.html">Luz que agoniza</a></li>
+          <li><a href="../peliculasmr/perdicion.html">Perdición</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1945">
+        <h3>1945</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/breveencuentro.html">Breve encuentro</a></li>
+          <li><a href="../peliculasl/lavidaenunhilo.html">La vida en un hilo</a></li>
+          <li><a href="../peliculasl/losninosdelparaiso.html">Los niños del paraíso</a></li>
+          <li><a href="../peliculasmr/perversidad.html">Perversidad</a></li>
+          <li><a href="../peliculasmr/romaciudadabierta.html">Roma, ciudad abierta</a></li>
+          <li><a href="../peliculassz/tenerynotener.html">Tener y no tener</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1946">
+        <h3>1946</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculase/elcarterollama.html">El cartero siempre llama dos veces</a></li>
+          <li><a href="../peliculase/elextrano.html">El extraño</a></li>
+          <li><a href="../peliculase/elsuenoeterno.html">El sueno eterno</a></li>
+          <li><a href="../peliculase/encadenados.html">Encadenados</a></li>
+          <li><a href="../peliculasfk/forajidos.html">Forajidos</a></li>
+          <li><a href="../peliculasfk/gilda.html">Gilda</a></li>
+          <li><a href="../peliculasmr/quebelloesvivir.html">¡Qué bello es vivir!</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1947">
+        <h3>1947</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculase/elfantasmaylasenoramuir.html">El fantasma y la señora Muir</a></li>
+          <li><a href="../peliculase/eltesorodesierramadre.html">El tesoro de Sierra Madre</a></li>
+          <li><a href="../peliculasmr/nada.html">Nada</a></li>
+          <li><a href="../peliculasmr/retornoalpasado.html">Retorno al pasado</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1948">
+        <h3>1948</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/alemaniaanocero.html">Alemania, año cero</a></li>
+          <li><a href="../peliculas0d/cartadesconocida.html">Carta de una desconocida</a></li>
+          <li><a href="../peliculasfk/fortapache.html">Fort Apache</a></li>
+          <li><a href="../peliculasl/lasoga.html">La soga</a></li>
+          <li><a href="../peliculasl/ladrondebicicletas.html">Ladrón de bicicletas</a></li>
+          <li><a href="../peliculasl/locuradeamor.html">Locura de amor</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1949">
+        <h3>1949</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculas0d/alrojovivo.html">Al rojo vivo</a></li>
+          <li><a href="../peliculas0d/almasdesnudas.html">Almas desnudas</a></li>
+          <li><a href="../peliculase/eltercerhombre.html">El tercer hombre</a></li>
+          <li><a href="../peliculasl/lacostilladeadan.html">La costilla de Adán</a></li>
+          <li><a href="../peliculasmr/ochosentenciasdemuerte.html">Ocho sentencias de muerte</a></li>
+          <li><a href="../peliculasmr/primaveratardia.html">Primavera tardía</a></li>
+        </ul>
+      </article>
+
+      <article class="year-group" id="1950">
+        <h3>1950</h3>
+        <ul class="movie-link-list">
+          <li><a href="../peliculase/elcrepusculodelosdioses.html">El crepúsculo de los dioses</a></li>
+          <li><a href="../peliculase/eraseunavez.html">Érase una vez...</a></li>
+          <li><a href="../peliculase/evaaldesnudo.html">Eva al desnudo</a></li>
+          <li><a href="../peliculasl/lajungladeasfalto.html">La jungla de asfalto</a></li>
+          <li><a href="../peliculasmr/nacidaparaelmal.html">Nacida para el mal</a></li>
+          <li><a href="../peliculasmr/rashomon.html">Rashomon</a></li>
+        </ul>
+      </article>
     </div>
-    <hr style="color:navy; background-color:navy; height: 2px;">
-    <section class="listado">
-      <a id="1941"></a>
-      <h2>1941</h2>
-      <ul>
-        <li><a href="../peliculas0d/aguaspantanosas.html">- Aguas pantanosas</a></li>
-        <li><a href="../peliculas0d/boladefuego.html">- Bola de fuego</a></li>
-        <li><a href="../peliculas0d/ciudadanokane.html">- Ciudadano Kane</a></li>
-        <li><a href="../peliculasfk/juannadie.html">- Juan Nadie</a></li>
-        <li><a href="../peliculasl/lastresnochesdeeva.html">- Las tres noches de Eva</a></li>
-        <li><a href="../peliculasl/loquepiensanlasmujeres.html">- Lo que piensan las mujeres</a> </li>
-        <li><a href="../peliculasl/losviajesdesullivan.html">- Los viajes de Sullivan</a></li>
-        <li><a href="../peliculasmr/queverdeeramivalle.html">- ¡Qué verde era mi valle!</a></li>
-        <li><a href="../peliculassz/sospecha.html">- Sospecha</a></li>
-      </ul>
-      <a id="1942"></a>
-      <h2>1942</h2>
-      <ul>
-        <li><a href="../peliculas0d/casablanca.html">- Casablanca</a></li>
-        <li><a href="../peliculasl/laextranapasajera.html">- La extraña pasajera</a></li>
-        <li><a href="../peliculasl/lamujerpantera.html">- La mujer pantera</a></li>
-        <li><a href="../peliculasl/lasenoraminiver.html">- La señora Miniver</a></li>
-        <li><a href="../peliculasl/lasombraduda.html">- La sombra de una duda</a></li>
-        <li><a href="../peliculassz/seronoser.html">- Ser o no ser</a></li>
-      </ul>
-      <a id="1943"></a>
-      <h2>1943</h2>
-      <ul>
-        <li><a href="../peliculas0d/diesirae.html">- Dies irae</a></li>
-        <li><a href="../peliculase/estatierraesmia.html">- Esta tierra es mía</a></li>
-        <li><a href="../peliculasmr/mariacandelaria.html">- María Candelaria (Xochimilco)</a></li>
-      </ul>
-      <a id="1944"></a>
-      <h2>1944</h2>
-      <ul>
-        <li><a href="../peliculas0d/arsenico.html">- Arsénico por compasión</a></li>
-        <li><a href="../peliculas0d/citaensanluis.html">- Cita en San Luis</a></li>
-        <li><a href="../peliculase/elclavo.html">- El clavo</a></li>
-        <li><a href="../peliculase/ellaelysusmillones.html">- Ella, él y sus millones</a></li>
-        <li><a href="../peliculasl/lamujerdelcuadro.html">- La mujer del cuadro</a></li>
-        <li><a href="../peliculasl/latorre7jorobados.html">- La torre de los siete jorobados</a></li>
-        <li><a href="../peliculasl/laura.html">- Laura</a></li>
-        <li><a href="../peliculasl/luzqueagoniza.html">- Luz que agoniza</a></li>
-        <li><a href="../peliculasmr/perdicion.html">- Perdición</a></li>
-      </ul>
-      <a id="1945"></a>
-      <h2>1945</h2>
-      <ul>
-        <li><a href="../peliculas0d/breveencuentro.html">- Breve encuentro</a></li>
-        <li><a href="../peliculasl/lavidaenunhilo.html">- La vida en un hilo</a></li>
-        <li><a href="../peliculasl/losninosdelparaiso.html">- Los niños del paraíso</a></li>
-        <li><a href="../peliculasmr/perversidad.html">- Perversidad</a></li>
-        <li><a href="../peliculasmr/romaciudadabierta.html">- Roma, ciudad abierta</a></li>
-        <li><a href="../peliculassz/tenerynotener.html">- Tener y no tener</a></li>
-      </ul>
-      <a id="1946"></a>
-      <h2>1946</h2>
-      <ul>
-        <li><a href="../peliculase/elcarterollama.html">- El cartero siempre llama dos veces</a></li>
-        <li><a href="../peliculase/elextrano.html">- El extraño</a></li>
-        <li><a href="../peliculase/elsuenoeterno.html">- El sueno eterno</a></li>
-        <li><a href="../peliculase/encadenados.html">- Encadenados</a></li>
-        <li><a href="../peliculasfk/forajidos.html">- Forajidos</a></li>
-        <li><a href="../peliculasfk/gilda.html">- Gilda</a></li>
-        <li><a href="../peliculasmr/quebelloesvivir.html">- ¡Qué bello es vivir!</a></li>
-      </ul>
-      <a id="1947"></a>
-      <h2>1947</h2>
-      <ul>
-        <li><a href="../peliculase/elfantasmaylasenoramuir.html">- El fantasma y la señora Muir</a></li>
-        <li><a href="../peliculase/eltesorodesierramadre.html">- El tesoro de Sierra Madre</a></li>
-        <li><a href="../peliculasmr/nada.html">- Nada</a></li>
-        <li><a href="../peliculasmr/retornoalpasado.html">- Retorno al pasado</a></li>
-      </ul>
-      <a id="1948"></a>
-      <h2>1948</h2>
-      <ul>
-        <li><a href="../peliculas0d/alemaniaanocero.html">- Alemania, año cero</a></li>
-        <li><a href="../peliculas0d/cartadesconocida.html">- Carta de una desconocida</a></li>
-        <li><a href="../peliculasfk/fortapache.html">- Fort Apache</a></li>
-        <li><a href="../peliculasl/lasoga.html">- La soga</a></li>
-        <li><a href="../peliculasl/ladrondebicicletas.html">- Ladrón de bicicletas</a></li>
-        <li><a href="../peliculasl/locuradeamor.html">- Locura de amor</a></li>
-      </ul>
-      <a id="1949"></a>
-      <h2>1949</h2>
-      <ul>
-        <li><a href="../peliculas0d/alrojovivo.html">- Al rojo vivo</a></li>
-        <li><a href="../peliculas0d/almasdesnudas.html">- Almas desnudas</a></li>
-        <li><a href="../peliculase/eltercerhombre.html">- El tercer hombre</a></li>
-        <li><a href="../peliculasl/lacostilladeadan.html">- La costilla de Adán</a></li>
-        <li><a href="../peliculasmr/ochosentenciasdemuerte.html">- Ocho sentencias de muerte</a></li>
-        <li><a href="../peliculasmr/primaveratardia.html">- Primavera tardía</a></li>
-      </ul>
-      <a id="1950"></a>
-      <h2>1950</h2>
-      <ul>
-        <li><a href="../peliculase/elcrepusculodelosdioses.html">- El crepúsculo de los dioses</a></li>
-        <li><a href="../peliculase/eraseunavez.html">- Érase una vez...</a></li>
-        <li><a href="../peliculase/evaaldesnudo.html">- Eva al desnudo</a></li>
-        <li><a href="../peliculasl/lajungladeasfalto.html">- La jungla de asfalto</a></li>
-        <li><a href="../peliculasmr/nacidaparaelmal.html">- Nacida para el mal</a></li>
-        <li><a href="../peliculasmr/rashomon.html">- Rashomon</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <div class="box-3">
-      <table>
-        <tr class="enlace">
-          <td><a href="mailto:isaiasriesco@gmail.com"><b>Comentarios y peticiones</b></a></td>
-        </tr>
-        <tr class="enlace">
-          <td><a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank"><b>Síguenos en Twitter</b></a></td>
-        </tr>
-        <tr class="enlace">
-          <td><a href="/documentacion.html"><b>Fuentes consultadas</b></a></td>
-        </tr>
-      </table>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <p class="footer-heading">Contacto y enlaces</p>
+
+      <a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+        <span class="footer-card-text">
+                        <strong>Comentarios y peticiones</strong>
+                        <small>Escríbeme por correo</small>
+                    </span>
+      </a>
+
+      <a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
+                        </svg>
+                    </span>
+        <span class="footer-card-text">
+                        <strong>Síguenos en Twitter / X</strong>
+                        <small>Novedades y publicaciones</small>
+                    </span>
+      </a>
+
+      <a href="../documentacion.html" class="footer-card">
+                    <span class="footer-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
+                            <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
+                        </svg>
+                    </span>
+        <span class="footer-card-text">
+                        <strong>Fuentes consultadas</strong>
+                        <small>Documentación y referencias</small>
+                    </span>
+      </a>
     </div>
-    <div class="box-4">
-      <a href="/index.html"><img src="/objetos/tira.jpg" width="400" height="70"
-          alt="Haz clic aquí para volver a la página de inicio" class="logo"></a>
+
+    <div class="footer-brand">
+      <img src="../objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+      <p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
     </div>
-  </footer>
+  </div>
+</footer>
+<div id="bottom"></div>
+
+<nav class="floating-page-nav" aria-label="Navegación rápida de página">
+  <a href="#top" aria-label="Volver arriba" title="Volver arriba">
+    ↑
+  </a>
+  <a href="#bottom" aria-label="Ir al final" title="Ir al final">
+    ↓
+  </a>
+</nav>
+
 </body>
 
 </html>
