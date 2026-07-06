@@ -1,0 +1,17 @@
+# Backups generados por la herramienta local
+_backups/
+
+# Imágenes subidas temporalmente desde el formulario admin
+admin/uploads/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+
+# IntelliJ / WebStorm / PyCharm
+.idea/
+*.iml
+
+# Archivos temporales de sistema/editor
+.DS_Store
+Thumbs.db
