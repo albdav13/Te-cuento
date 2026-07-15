@@ -634,31 +634,76 @@ def build_rating_html(rating):
     rating = str(rating or "").strip()
 
     try:
-        value = float(rating.replace(",", "."))
+        rating_value = float(rating.replace(",", "."))
     except ValueError:
-        value = 0
+        rating_value = 0
 
-    value = max(0, min(5, value))
-    rounded = int(round(value))
+    if rating_value > 5:
+        scale = 10
+        display_value = max(0, min(10, rating_value))
+        stars_value = display_value / 2
+    else:
+        scale = 5
+        display_value = max(0, min(5, rating_value))
+        stars_value = display_value
+
+    star_states = get_star_states(stars_value)
 
     stars = ""
 
-    for index in range(1, 6):
-        class_name = "star star-filled" if index <= rounded else "star star-empty"
+    for state in star_states:
+        if state == "full":
+            class_name = "star star-filled"
+        elif state == "half":
+            class_name = "star star-half"
+        else:
+            class_name = "star star-empty"
+
         stars += f'<span class="{class_name}">★</span>'
 
-    display_value = int(value) if float(value).is_integer() else value
+    display_text = format_rating(display_value)
 
     return f"""
-            <div class="movie-rating" aria-label="Calificación: {display_value} sobre 5">
+            <div class="movie-rating" aria-label="Calificación: {display_text} sobre {scale}">
                 <span class="movie-rating-label">Calificación</span>
                 <span class="movie-rating-stars" aria-hidden="true">
                     {stars}
                 </span>
-                <span class="movie-rating-value">{display_value}/5</span>
+                <span class="movie-rating-value">{display_text}/{scale}</span>
             </div>
 """
 
+
+def get_star_states(stars_value):
+    stars_value = max(0, min(5, float(stars_value)))
+
+    full_stars = int(stars_value)
+    decimal = stars_value - full_stars
+
+    has_half = decimal >= 0.25 and decimal < 0.75
+
+    if decimal >= 0.75:
+        full_stars += 1
+        has_half = False
+
+    states = []
+
+    for index in range(1, 6):
+        if index <= full_stars:
+            states.append("full")
+        elif index == full_stars + 1 and has_half:
+            states.append("half")
+        else:
+            states.append("empty")
+
+    return states
+
+
+def format_rating(value):
+    if float(value).is_integer():
+        return str(int(value))
+
+    return str(value).replace(".", ",")
 
 def make_soup_fragment(html_text):
     return BeautifulSoup(html_text, "html.parser")

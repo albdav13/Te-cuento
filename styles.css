@@ -1559,8 +1559,26 @@ html {
   display: inline-block;
 }
 
+.star-filled {
+  color: var(--gold);
+}
+
 .star-empty {
   color: rgba(248, 234, 210, 0.28);
+}
+
+.star-half {
+  color: rgba(248, 234, 210, 0.28);
+  background: linear-gradient(
+  90deg,
+  var(--gold) 0%,
+  var(--gold) 50%,
+  rgba(248, 234, 210, 0.28) 50%,
+  rgba(248, 234, 210, 0.28) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .movie-rating-value {

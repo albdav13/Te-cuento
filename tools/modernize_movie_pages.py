@@ -211,8 +211,10 @@ def read_html(path: Path) -> str:
 
 def build_rating_tag(soup: BeautifulSoup, rating_tag):
     """
-    Convierte 'Calificación: 3' en un bloque visual con estrellas.
-    Conserva el valor numérico original.
+    Convierte 'Calificación: X' en un bloque visual con estrellas.
+    Si X <= 5, se interpreta como nota sobre 5.
+    Si X > 5, se interpreta como nota sobre 10 y se convierte visualmente a 5 estrellas.
+    Soporta medias estrellas.
     """
     import re
 
@@ -226,13 +228,20 @@ def build_rating_tag(soup: BeautifulSoup, rating_tag):
     rating_text = match.group(1).replace(",", ".")
     rating_value = float(rating_text)
 
-    # Limitamos entre 0 y 5 por seguridad
-    rating_value = max(0, min(5, rating_value))
-    rounded_rating = int(round(rating_value))
+    if rating_value > 5:
+        scale = 10
+        display_value = max(0, min(10, rating_value))
+        stars_value = display_value / 2
+    else:
+        scale = 5
+        display_value = max(0, min(5, rating_value))
+        stars_value = display_value
+
+    star_states = get_star_states(stars_value)
 
     rating = soup.new_tag("div")
     rating["class"] = "movie-rating"
-    rating["aria-label"] = f"Calificación: {rating_text} sobre 5"
+    rating["aria-label"] = f"Calificación: {format_rating(display_value)} sobre {scale}"
 
     label = soup.new_tag("span")
     label["class"] = "movie-rating-label"
@@ -242,25 +251,73 @@ def build_rating_tag(soup: BeautifulSoup, rating_tag):
     stars["class"] = "movie-rating-stars"
     stars["aria-hidden"] = "true"
 
-    for index in range(1, 6):
+    for state in star_states:
         star = soup.new_tag("span")
-        star["class"] = "star star-filled" if index <= rounded_rating else "star star-empty"
+
+        if state == "full":
+            star["class"] = "star star-filled"
+        elif state == "half":
+            star["class"] = "star star-half"
+        else:
+            star["class"] = "star star-empty"
+
         star.string = "★"
         stars.append(star)
 
     value = soup.new_tag("span")
     value["class"] = "movie-rating-value"
-
-    if float(rating_value).is_integer():
-        value.string = f"{int(rating_value)}/5"
-    else:
-        value.string = f"{rating_text}/5"
+    value.string = f"{format_rating(display_value)}/{scale}"
 
     rating.append(label)
     rating.append(stars)
     rating.append(value)
 
     return rating
+
+
+def get_star_states(stars_value):
+    """
+    Devuelve 5 estados: full, half o empty.
+    Ejemplos:
+    3.0 -> full full full empty empty
+    3.5 -> full full full half empty
+    4.5 -> full full full full half
+    """
+    stars_value = max(0, min(5, float(stars_value)))
+
+    full_stars = int(stars_value)
+    decimal = stars_value - full_stars
+
+    has_half = decimal >= 0.25 and decimal < 0.75
+
+    # Si está más cerca de la siguiente estrella que de media estrella,
+    # redondeamos hacia arriba.
+    if decimal >= 0.75:
+        full_stars += 1
+        has_half = False
+
+    states = []
+
+    for index in range(1, 6):
+        if index <= full_stars:
+            states.append("full")
+        elif index == full_stars + 1 and has_half:
+            states.append("half")
+        else:
+            states.append("empty")
+
+    return states
+
+
+def format_rating(value):
+    """
+    Evita mostrar 3.0 o 7.0 cuando el valor es entero.
+    """
+    if float(value).is_integer():
+        return str(int(value))
+
+    return str(value).replace(".", ",")
+
 def find_movie_title(section):
     """
     Busca el título aunque el HTML antiguo esté mal cerrado,
