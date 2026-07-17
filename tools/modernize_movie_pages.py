@@ -186,6 +186,7 @@ FLOATING_NAV = """
 SEARCH_SCRIPTS = """
 <script src="../vendor/fuse.min.js"></script>
 <script src="../search-widget.js"></script>
+<script src="../share-page.js"></script>
 """
 
 # ============================================================
@@ -344,6 +345,29 @@ def find_movie_title(section):
 
     return None
 
+def build_share_html():
+    return """
+            <div class="movie-share">
+                <p class="movie-share-title">Compartir esta película</p>
+
+                <div class="movie-share-actions">
+                    <a class="movie-share-button" data-share-whatsapp href="#" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+
+                    <a class="movie-share-button" data-share-email href="#">
+                        Email
+                    </a>
+
+                    <button class="movie-share-button" type="button" data-copy-link>
+                        Copiar enlace
+                    </button>
+                </div>
+
+                <p class="movie-share-feedback" data-copy-feedback hidden>Enlace copiado</p>
+            </div>
+"""
+
 def normalize_movie_section(section) -> str:
     """
     Conserva el contenido y los textos originales, pero reorganiza visualmente:
@@ -440,7 +464,13 @@ def normalize_movie_section(section) -> str:
     if rating:
         section.append(rating)
 
+    share = make_soup_fragment(build_share_html()).find("div", class_="movie-share")
+
+    if share:
+        section.append(share)
+
     return str(section)
+
 def fix_common_html_issues(raw_html: str) -> str:
     """
     Corrige errores HTML frecuentes de las páginas antiguas antes de parsearlas.
@@ -628,6 +658,9 @@ def build_movie_meta_tags(title, year, director, summary, movie_url_from_root, p
     <meta name="twitter:description" content="{escape_attr(description)}" />
     <meta name="twitter:image" content="{escape_attr(image_url)}" />
 """
+
+def make_soup_fragment(html_text):
+    return BeautifulSoup(html_text, "html.parser")
 
 def modernize_file(source_file: Path, output_file: Path):
     """

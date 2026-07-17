@@ -198,6 +198,7 @@ FLOATING_NAV = """
 SEARCH_SCRIPTS = """
 <script src="../vendor/fuse.min.js"></script>
 <script src="../search-widget.js"></script>
+<script src="../share-page.js"></script>
 """
 
 
@@ -574,6 +575,7 @@ def build_movie_html(movie, director_index, poster_relative_from_movie, movie_ur
             </div>
 
             {rating_html}
+            {build_share_html()}
         </section>
     </main>
 
@@ -1228,3 +1230,26 @@ def escape_attr(value):
         .replace('"', "&quot;")
         .replace("'", "&#039;")
     )
+
+def build_share_html():
+    return """
+            <div class="movie-share">
+                <p class="movie-share-title">Compartir esta película</p>
+
+                <div class="movie-share-actions">
+                    <a class="movie-share-button" data-share-whatsapp href="#" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+
+                    <a class="movie-share-button" data-share-email href="#">
+                        Email
+                    </a>
+
+                    <button class="movie-share-button" type="button" data-copy-link>
+                        Copiar enlace
+                    </button>
+                </div>
+
+                <p class="movie-share-feedback" data-copy-feedback hidden>Enlace copiado</p>
+            </div>
+"""

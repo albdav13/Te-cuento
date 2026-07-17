@@ -2111,3 +2111,64 @@ html {
   background: var(--accent);
   color: #ffffff;
 }
+
+/* =========================
+   Movie share buttons
+   ========================= */
+
+.movie-share {
+  margin: 30px auto 0;
+  padding: 20px;
+  max-width: 680px;
+  text-align: center;
+  background: #fffaf0;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.movie-share-title {
+  margin: 0 0 14px;
+  color: var(--accent-dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.movie-share-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movie-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(199, 162, 74, 0.55);
+  border-radius: 999px;
+  background: var(--dark);
+  color: var(--gold);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+  transform 0.2s ease,
+  background-color 0.2s ease,
+  color 0.2s ease;
+}
+
+.movie-share-button:hover {
+  transform: translateY(-1px);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.movie-share-feedback {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
