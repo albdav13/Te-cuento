@@ -14,6 +14,8 @@ SOURCE_ROOT = Path(r"C:\Users\riesc\Documents\TCLP")
 # Al principio NO sobrescribimos los originales.
 OUTPUT_ROOT = Path(r"C:\Users\riesc\Documents\TCLP_modernizado")
 
+SITE_URL = "https://www.tecuentolapelicula.com"
+
 # Carpetas donde están las páginas individuales de películas
 MOVIE_FOLDERS = [
     "peliculas0d",
@@ -467,6 +469,166 @@ def fix_common_html_issues(raw_html: str) -> str:
 
     return fixed_html
 
+def build_absolute_url(relative_path):
+    relative_path = str(relative_path).replace("\\", "/").lstrip("/")
+    return f"{SITE_URL}/{relative_path}"
+
+
+def escape_html(value):
+    return (
+        str(value or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def escape_attr(value):
+    return (
+        escape_html(value)
+        .replace('"', "&quot;")
+        .replace("'", "&#039;")
+    )
+
+
+def truncate_text(text, max_length):
+    text = str(text or "").strip()
+
+    if len(text) <= max_length:
+        return text
+
+    return text[:max_length].rsplit(" ", 1)[0].strip() + "..."
+
+
+def clean_text(value):
+    value = value or ""
+    value = value.replace("\xa0", " ")
+    value = " ".join(value.split())
+    return value.strip()
+
+
+def extract_movie_title(movie_section, fallback_title):
+    title_tag = movie_section.find("h2", class_="movie-detail-title")
+
+    if not title_tag:
+        title_tag = movie_section.find(["h6", "h1", "h2", "h3"])
+
+    if title_tag:
+        title = clean_text(title_tag.get_text(" ", strip=True))
+
+        if title:
+            return title
+
+    fallback_title = clean_text(fallback_title)
+
+    if "|" in fallback_title:
+        fallback_title = fallback_title.split("|", 1)[0].strip()
+
+    return fallback_title or "Resumen de película"
+
+
+def extract_movie_year(movie_section):
+    text = movie_section.get_text(" ", strip=True)
+    match = __import__("re").search(r"\b(18\d{2}|19\d{2}|20\d{2})\b", text)
+
+    if match:
+        return match.group(1)
+
+    return ""
+
+
+def extract_field_from_section(movie_section, labels):
+    for p in movie_section.find_all("p"):
+        text = clean_text(p.get_text(" ", strip=True))
+        lower = text.lower()
+
+        for label in labels:
+            normalized_label = label.lower()
+
+            if lower.startswith(normalized_label):
+                return clean_text(text[len(label):].strip(" :"))
+
+    return ""
+
+
+def extract_summary_from_section(movie_section):
+    summary = movie_section.find("div", class_="movie-summary")
+
+    if summary:
+        paragraphs = [
+            clean_text(p.get_text(" ", strip=True))
+            for p in summary.find_all("p")
+            if clean_text(p.get_text(" ", strip=True))
+        ]
+
+        return " ".join(paragraphs)
+
+    return ""
+
+
+def extract_poster_url_from_root(movie_section):
+    img = movie_section.find("img")
+
+    if not img or not img.get("src"):
+        return "objetos/logotipo.jpg"
+
+    src = img.get("src").replace("\\", "/").strip()
+
+    if src.startswith("../"):
+        src = src[3:]
+
+    return src.lstrip("/")
+
+
+def build_meta_description(title, year, director, summary):
+    parts = []
+
+    if title:
+        if year and director:
+            parts.append(f"Resumen completo de {title}, película de {year} dirigida por {director}.")
+        elif year:
+            parts.append(f"Resumen completo de {title}, película de {year}.")
+        elif director:
+            parts.append(f"Resumen completo de {title}, dirigida por {director}.")
+        else:
+            parts.append(f"Resumen completo de {title}.")
+
+    if summary:
+        parts.append(clean_text(summary))
+
+    description = " ".join(parts).strip()
+
+    return truncate_text(description, 155)
+
+
+def build_movie_meta_tags(title, year, director, summary, movie_url_from_root, poster_url_from_root):
+    page_title = f"{title} | Te cuento la película"
+    description = build_meta_description(title, year, director, summary)
+
+    canonical_url = build_absolute_url(movie_url_from_root)
+    image_url = build_absolute_url(poster_url_from_root or "objetos/logotipo.jpg")
+
+    return f"""
+    <title>{escape_html(page_title)}</title>
+    <meta name="description" content="{escape_attr(description)}" />
+
+    <link rel="canonical" href="{escape_attr(canonical_url)}" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Te cuento la película" />
+    <meta property="og:title" content="{escape_attr(page_title)}" />
+    <meta property="og:description" content="{escape_attr(description)}" />
+    <meta property="og:url" content="{escape_attr(canonical_url)}" />
+    <meta property="og:image" content="{escape_attr(image_url)}" />
+    <meta property="og:image:alt" content="{escape_attr(title)}" />
+    <meta property="og:locale" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{escape_attr(page_title)}" />
+    <meta name="twitter:description" content="{escape_attr(description)}" />
+    <meta name="twitter:image" content="{escape_attr(image_url)}" />
+"""
+
 def modernize_file(source_file: Path, output_file: Path):
     """
     Moderniza una página individual de película.
@@ -476,26 +638,41 @@ def modernize_file(source_file: Path, output_file: Path):
     soup = BeautifulSoup(raw_html, "html.parser")
 
     title_tag = soup.find("title")
-    page_title = (
+    old_page_title = (
         title_tag.get_text(strip=True)
         if title_tag
         else "Resumen de película | Te cuento la película"
     )
 
-    description_tag = soup.find("meta", attrs={"name": "description"})
-    description = (
-        description_tag.get("content", "").strip()
-        if description_tag
-        else ""
-    )
-
     movie_section = soup.find("section", class_="resumen")
 
     if not movie_section:
-        print(f"⚠️  No se encontró section.resumen en {source_file}")
+        print(f"AVISO No se encontró section.resumen en {source_file}")
         return
 
     movie_html = normalize_movie_section(movie_section)
+
+    modernized_section = BeautifulSoup(movie_html, "html.parser")
+
+    movie_url_from_root = source_file.relative_to(SOURCE_ROOT).as_posix()
+
+    movie_title = extract_movie_title(modernized_section, old_page_title)
+    movie_year = extract_movie_year(modernized_section)
+    movie_director = extract_field_from_section(
+        modernized_section,
+        ["Dirección:", "Direccion:"]
+    )
+    movie_summary = extract_summary_from_section(modernized_section)
+    poster_url_from_root = extract_poster_url_from_root(modernized_section)
+
+    meta_tags = build_movie_meta_tags(
+        title=movie_title,
+        year=movie_year,
+        director=movie_director,
+        summary=movie_summary,
+        movie_url_from_root=movie_url_from_root,
+        poster_url_from_root=poster_url_from_root,
+    )
 
     final_html = f"""<!doctype html>
 <html lang="es">
@@ -507,10 +684,9 @@ def modernize_file(source_file: Path, output_file: Path):
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>{html.escape(page_title)}</title>
-    <meta name="description" content="{html.escape(description)}" />
     <meta name="author" content="Isaías Riesco Rodríguez" />
+
+    {meta_tags}
 
     {FAVICONS_AND_FONTS}
 </head>
@@ -537,11 +713,10 @@ def modernize_file(source_file: Path, output_file: Path):
     output_file.parent.mkdir(parents=True, exist_ok=True)
     output_file.write_text(final_html, encoding="utf-8")
 
-    print(f"✅ {source_file.relative_to(SOURCE_ROOT)} → {output_file.relative_to(OUTPUT_ROOT)}")
-
+    print(f"OK {source_file.relative_to(SOURCE_ROOT)} -> {output_file.relative_to(OUTPUT_ROOT)}")
 
 def main():
-    print("🎬 Modernizando páginas individuales de películas...")
+    print("Modernizando páginas individuales de películas...")
     print(f"Origen:  {SOURCE_ROOT}")
     print(f"Destino: {OUTPUT_ROOT}")
     print("")
@@ -553,13 +728,13 @@ def main():
         output_folder = OUTPUT_ROOT / folder
 
         if not source_folder.exists():
-            print(f"⚠️  No existe la carpeta: {source_folder}")
+            print(f"⚠No existe la carpeta: {source_folder}")
             continue
 
         html_files = sorted(source_folder.glob("*.html"))
 
         if not html_files:
-            print(f"⚠️  No hay HTML en: {source_folder}")
+            print(f"No hay HTML en: {source_folder}")
             continue
 
         for source_file in html_files:
@@ -568,7 +743,7 @@ def main():
             total += 1
 
     print("")
-    print(f"✅ Proceso terminado. Páginas generadas: {total}")
+    print(f"Proceso terminado. Páginas generadas: {total}")
     print("")
     print("Recuerda: los originales NO se han sobrescrito.")
     print(f"Revisa primero la carpeta: {OUTPUT_ROOT}")

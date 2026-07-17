@@ -5,10 +5,13 @@ import re
 import shutil
 import subprocess
 import sys
-from datetime import datetime
-
+from datetime import datetime, date
+from xml.sax.saxutils import escape
 
 ROOT = Path(r"C:\Users\riesc\Documents\TCLP")
+
+SITE_URL = "https://www.tecuentolapelicula.com"
+
 BACKUP_ROOT = ROOT / "_backups"
 
 MOVIE_FOLDERS = {
@@ -218,15 +221,17 @@ def add_movie(movie):
     html_filename = get_unique_filename(movie_folder, slug, year, ".html")
     html_path = movie_folder / html_filename
 
-    poster_relative_from_movie = copy_poster(movie, slug, year)
-
     movie_url_from_root = f"{movie_folder_name}/{html_filename}"
     movie_href_from_sections = f"../{movie_url_from_root}"
+
+    poster_relative_from_movie, poster_url_from_root = copy_poster(movie, slug, year)
 
     html_content = build_movie_html(
         movie=movie,
         director_index=director_index,
         poster_relative_from_movie=poster_relative_from_movie,
+        movie_url_from_root=movie_url_from_root,
+        poster_url_from_root=poster_url_from_root,
     )
 
     html_path.write_text(html_content, encoding="utf-8")
@@ -256,6 +261,7 @@ def add_movie(movie):
     )
 
     rebuild_movies_json(changed_files, warnings)
+    rebuild_sitemap(changed_files, warnings)
 
     return {
         "html_path": str(html_path),
@@ -263,7 +269,6 @@ def add_movie(movie):
         "changed_files": changed_files,
         "warnings": warnings,
     }
-
 
 def validate_movie(movie):
     required = ["title", "year", "director", "summary"]
@@ -403,12 +408,12 @@ def copy_poster(movie, slug, year):
     poster_path = movie.get("poster_path")
 
     if not poster_path:
-        return ""
+        return "", ""
 
     source = Path(poster_path)
 
     if not source.exists():
-        return ""
+        return "", ""
 
     extension = source.suffix.lower() or ".jpg"
     poster_filename = get_unique_filename(ROOT / "objetos", slug, year, extension)
@@ -416,8 +421,10 @@ def copy_poster(movie, slug, year):
 
     shutil.copy2(source, destination)
 
-    return f"../objetos/{poster_filename}"
+    poster_relative_from_movie = f"../objetos/{poster_filename}"
+    poster_url_from_root = f"objetos/{poster_filename}"
 
+    return poster_relative_from_movie, poster_url_from_root
 
 def get_decade_file(year):
     try:
@@ -493,7 +500,7 @@ def clean_text(value):
     return value.strip()
 
 
-def build_movie_html(movie, director_index, poster_relative_from_movie):
+def build_movie_html(movie, director_index, poster_relative_from_movie, movie_url_from_root, poster_url_from_root):
     title = movie["title"]
     year = movie["year"]
     country = movie.get("country", "")
@@ -515,8 +522,11 @@ def build_movie_html(movie, director_index, poster_relative_from_movie):
     summary_html = split_summary_into_paragraphs(movie.get("summary", ""))
     rating_html = build_rating_html(movie.get("rating", ""))
 
-    page_title = f"{title} ({year}) - Resumen de la película"
-    description = f"Resumen de la película {title} ({year})"
+    meta_tags = build_movie_meta_tags(
+        movie_data=movie,
+        movie_url_from_root=movie_url_from_root,
+        poster_url_from_root=poster_url_from_root,
+    )
 
     return f"""<!doctype html>
 <html lang="es">
@@ -528,14 +538,12 @@ def build_movie_html(movie, director_index, poster_relative_from_movie):
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>{html.escape(page_title)}</title>
-    <meta name="description" content="{html.escape(description)}" />
     <meta name="author" content="Isaías Riesco Rodríguez" />
+
+    {meta_tags}
 
     {FAVICONS_AND_FONTS}
 </head>
-
 <body>
     <div id="top"></div>
 
@@ -962,7 +970,9 @@ def rebuild_movies_json(changed_files, warnings):
         [sys.executable, str(script)],
         cwd=str(ROOT),
         capture_output=True,
-        text=True
+        text=True,
+        encoding="utf-8",
+        errors="replace",
     )
 
     if result.returncode != 0:
@@ -971,3 +981,250 @@ def rebuild_movies_json(changed_files, warnings):
         return
 
     changed_files.append("movies.json")
+
+def rebuild_sitemap(changed_files, warnings):
+    """
+    Regenera sitemap.xml con las páginas principales y todos los HTML de películas.
+    """
+    sitemap_path = ROOT / "sitemap.xml"
+
+    today = date.today().isoformat()
+
+    static_pages = [
+        "index.html",
+        "novedades.html",
+        "documentacion.html",
+        "search.html",
+        "peliculas/peliculas.html",
+        "peliculas/0-d.html",
+        "peliculas/e.html",
+        "peliculas/f-k.html",
+        "peliculas/l.html",
+        "peliculas/m-r.html",
+        "peliculas/s-z.html",
+        "decadas/decadas.html",
+        "decadas/1900-1930.html",
+        "decadas/1931-1940.html",
+        "decadas/1941-1950.html",
+        "decadas/1951-1960.html",
+        "decadas/1961-1970.html",
+        "decadas/1971-1980.html",
+        "decadas/1981-1990.html",
+        "decadas/1991-2000.html",
+        "decadas/2001-2010.html",
+        "decadas/2011-2020.html",
+        "decadas/2021-2030.html",
+        "directores/directores.html",
+        "directores/a-e.html",
+        "directores/f-j.html",
+        "directores/k-o.html",
+        "directores/p-t.html",
+        "directores/u-z.html",
+    ]
+
+    movie_dirs = [
+        "peliculas0d",
+        "peliculase",
+        "peliculasfk",
+        "peliculasl",
+        "peliculasmr",
+        "peliculassz",
+    ]
+
+    urls = []
+
+    for relative_path in static_pages:
+        file_path = ROOT / relative_path
+
+        if file_path.exists():
+            urls.append({
+                "loc": build_absolute_url(relative_path),
+                "lastmod": get_file_lastmod(file_path),
+                "priority": get_sitemap_priority(relative_path),
+                "changefreq": get_sitemap_changefreq(relative_path),
+            })
+
+    for movie_dir in movie_dirs:
+        folder = ROOT / movie_dir
+
+        if not folder.exists():
+            continue
+
+        for file_path in sorted(folder.glob("*.html")):
+            relative_path = file_path.relative_to(ROOT).as_posix()
+
+            urls.append({
+                "loc": build_absolute_url(relative_path),
+                "lastmod": get_file_lastmod(file_path),
+                "priority": "0.80",
+                "changefreq": "monthly",
+            })
+
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+
+    for item in urls:
+        xml_lines.extend([
+            "  <url>",
+            f"    <loc>{escape(item['loc'])}</loc>",
+            f"    <lastmod>{item['lastmod'] or today}</lastmod>",
+            f"    <changefreq>{item['changefreq']}</changefreq>",
+            f"    <priority>{item['priority']}</priority>",
+            "  </url>",
+        ])
+
+    xml_lines.append("</urlset>")
+
+    backup_file(sitemap_path)
+
+    sitemap_path.write_text(
+        "\n".join(xml_lines) + "\n",
+        encoding="utf-8"
+    )
+
+    changed_files.append("sitemap.xml")
+
+
+def build_absolute_url(relative_path):
+    relative_path = str(relative_path).replace("\\", "/").lstrip("/")
+    return f"{SITE_URL}/{relative_path}"
+
+
+def get_file_lastmod(file_path):
+    try:
+        timestamp = file_path.stat().st_mtime
+        return date.fromtimestamp(timestamp).isoformat()
+    except OSError:
+        return date.today().isoformat()
+
+
+def get_sitemap_priority(relative_path):
+    if relative_path == "index.html":
+        return "1.00"
+
+    if relative_path in [
+        "peliculas/peliculas.html",
+        "decadas/decadas.html",
+        "directores/directores.html",
+        "novedades.html",
+        "search.html",
+    ]:
+        return "0.90"
+
+    if relative_path.startswith("peliculas/"):
+        return "0.75"
+
+    if relative_path.startswith("decadas/"):
+        return "0.75"
+
+    if relative_path.startswith("directores/"):
+        return "0.75"
+
+    return "0.60"
+
+
+def get_sitemap_changefreq(relative_path):
+    if relative_path == "index.html":
+        return "weekly"
+
+    if relative_path in ["novedades.html", "search.html"]:
+        return "weekly"
+
+    if relative_path.startswith("peliculas"):
+        return "monthly"
+
+    if relative_path.startswith("decadas"):
+        return "monthly"
+
+    if relative_path.startswith("directores"):
+        return "monthly"
+
+    return "yearly"
+
+def build_movie_meta_tags(movie_data, movie_url_from_root, poster_url_from_root):
+    title = movie_data.get("title", "").strip()
+    year = movie_data.get("year", "").strip()
+    director = movie_data.get("director", "").strip()
+    summary = movie_data.get("summary", "").strip()
+
+    page_title = f"{title} | Te cuento la película"
+
+    description = build_meta_description(title, year, director, summary)
+
+    canonical_url = build_absolute_url(movie_url_from_root)
+
+    if poster_url_from_root:
+        image_url = build_absolute_url(poster_url_from_root)
+    else:
+        image_url = build_absolute_url("objetos/logotipo.jpg")
+
+    return f"""
+    <title>{escape_html(page_title)}</title>
+    <meta name="description" content="{escape_attr(description)}" />
+
+    <link rel="canonical" href="{escape_attr(canonical_url)}" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Te cuento la película" />
+    <meta property="og:title" content="{escape_attr(page_title)}" />
+    <meta property="og:description" content="{escape_attr(description)}" />
+    <meta property="og:url" content="{escape_attr(canonical_url)}" />
+    <meta property="og:image" content="{escape_attr(image_url)}" />
+    <meta property="og:image:alt" content="{escape_attr(title)}" />
+    <meta property="og:locale" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{escape_attr(page_title)}" />
+    <meta name="twitter:description" content="{escape_attr(description)}" />
+    <meta name="twitter:image" content="{escape_attr(image_url)}" />
+"""
+
+
+def build_meta_description(title, year, director, summary):
+    parts = []
+
+    if title:
+        if year and director:
+            parts.append(f"Resumen completo de {title}, película de {year} dirigida por {director}.")
+        elif year:
+            parts.append(f"Resumen completo de {title}, película de {year}.")
+        elif director:
+            parts.append(f"Resumen completo de {title}, dirigida por {director}.")
+        else:
+            parts.append(f"Resumen completo de {title}.")
+
+    if summary:
+        clean_summary = " ".join(summary.split())
+        parts.append(clean_summary)
+
+    description = " ".join(parts).strip()
+
+    return truncate_text(description, 155)
+
+
+def truncate_text(text, max_length):
+    text = str(text or "").strip()
+
+    if len(text) <= max_length:
+        return text
+
+    return text[:max_length].rsplit(" ", 1)[0].strip() + "..."
+
+
+def escape_html(value):
+    return (
+        str(value or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def escape_attr(value):
+    return (
+        escape_html(value)
+        .replace('"', "&quot;")
+        .replace("'", "&#039;")
+    )
