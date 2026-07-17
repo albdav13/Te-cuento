@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68812128-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-68812128-1");
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Buscar películas | Te cuento la película</title>
+    <meta name="description" content="Busca películas, directores, intérpretes y años dentro de Te cuento la película." />
+    <meta name="author" content="Isaías Riesco Rodríguez" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="objetos/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="objetos/favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="objetos/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="objetos/favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="objetos/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="objetos/favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="objetos/favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="objetos/favicons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="objetos/favicons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="objetos/favicons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="objetos/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="objetos/favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="objetos/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="objetos/favicons/manifest.json" />
+
+    <meta name="msapplication-TileColor" content="#1f1f1f" />
+    <meta name="msapplication-TileImage" content="objetos/favicons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#1f1f1f" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div id="top"></div>
+
+<header class="site-header">
+    <a href="index.html" class="logo-link">
+        <img src="objetos/logotipo.jpg" alt="Te cuento la película" class="logo" />
+    </a>
+
+    <div>
+        <p class="site-kicker">Archivo personal de cine</p>
+        <h1 class="title-1">Te cuento la película</h1>
+    </div>
+</header>
+
+<nav class="main-nav" aria-label="Navegación principal">
+    <div class="nav-links">
+        <a href="index.html">Portada</a>
+        <a href="peliculas/peliculas.html">Películas</a>
+        <a href="decadas/decadas.html">Años</a>
+        <a href="directores/directores.html">Directores</a>
+        <a href="novedades.html">Novedades</a>
+    </div>
+
+    <form class="site-search" role="search" data-root="">
+        <label class="sr-only" for="site-search-input">Buscar película</label>
+
+        <input
+                id="site-search-input"
+                type="search"
+                placeholder="Buscar película..."
+                autocomplete="off"
+        />
+
+        <button type="submit" aria-label="Buscar">🔎</button>
+
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+    </form>
+</nav>
+
+<main>
+    <section class="page-hero search-page-hero">
+        <p class="eyebrow">Buscador</p>
+        <h2>Buscar películas</h2>
+        <p>
+            Busca por título, año, dirección, intérpretes o descripción. Los resultados se actualizan al momento.
+        </p>
+
+        <form class="search-page-form" id="search-page-form" role="search">
+            <label class="sr-only" for="search-page-input">Buscar películas</label>
+
+            <input
+                    id="search-page-input"
+                    type="search"
+                    placeholder="Escribe una película, director, actor o año..."
+                    autocomplete="off"
+            />
+
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <section class="content-card search-results-card">
+        <div class="search-results-header">
+            <h3 id="search-results-title">Resultados</h3>
+            <p id="search-results-count">Introduce una búsqueda para empezar.</p>
+        </div>
+
+        <div class="search-results-tools">
+            <label>
+                Ordenar por
+                <select id="search-sort">
+                    <option value="relevance">Relevancia</option>
+                    <option value="title">Título</option>
+                    <option value="year-desc">Año, más recientes primero</option>
+                    <option value="year-asc">Año, más antiguas primero</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="search-results" id="search-results"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <p class="footer-heading">Contacto y enlaces</p>
+
+            <a href="mailto:isaiasriesco@gmail.com" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Comentarios y peticiones</strong>
+                    <small>Escríbeme por correo</small>
+                </span>
+            </a>
+
+            <a href="https://twitter.com/tecuentolapeli?lang=es" target="_blank" rel="noopener noreferrer" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M17.53 5H20l-5.39 6.16L21 19h-5.03l-3.94-4.8L7.8 19H5.33l5.76-6.58L5 5h5.16l3.56 4.36L17.53 5z" fill="currentColor" />
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Síguenos en Twitter / X</strong>
+                    <small>Novedades y publicaciones</small>
+                </span>
+            </a>
+
+            <a href="documentacion.html" class="footer-card">
+                <span class="footer-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M7 4h8l4 4v12H7V4z" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M15 4v4h4" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" />
+                    </svg>
+                </span>
+                <span class="footer-card-text">
+                    <strong>Fuentes consultadas</strong>
+                    <small>Documentación y referencias</small>
+                </span>
+            </a>
+        </div>
+
+        <div class="footer-brand">
+            <img src="objetos/tira.jpg" width="400" height="70" alt="Tira cinematográfica decorativa" />
+            <p>Un archivo personal para quienes disfrutan recordando el cine con detalle.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="vendor/fuse.min.js"></script>
+<script src="search-widget.js"></script>
+<script src="search-page.js"></script>
+</body>
+
+</html>

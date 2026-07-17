@@ -75,7 +75,11 @@
             return;
         }
 
-        currentResults = fuse.search(query).slice(0, 7);
+        currentResults = fuse
+            .search(query)
+            .filter(({ item }) => explicitMatch(item, query))
+            .slice(0, 7);
+
         console.log("Buscador: resultados", currentResults.length);
 
         renderSuggestions(currentResults);
@@ -86,19 +90,12 @@
 
         const query = input.value.trim();
 
-        if (!query || !fuse) {
+        if (!query) {
             return;
         }
 
-        const results = currentResults.length > 0
-            ? currentResults
-            : fuse.search(query);
-
-        if (results.length > 0) {
-            window.location.href = rootPrefix + results[0].item.url;
-        }
+        window.location.href = rootPrefix + "search.html?q=" + encodeURIComponent(query);
     });
-
     input.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
             hideSuggestions();
@@ -135,16 +132,24 @@
             ].filter(Boolean).join(" · ");
 
             return `
-          <a class="search-suggestion-item" href="${rootPrefix}${escapeAttribute(item.url)}">
-            ${posterHtml}
-            <span class="search-suggestion-content">
-              <strong>${escapeHtml(item.title)}</strong>
-              <small>${escapeHtml(meta)}</small>
-            </span>
-          </a>
-        `;
+      <a class="search-suggestion-item" href="${rootPrefix}${escapeAttribute(item.url)}">
+        ${posterHtml}
+        <span class="search-suggestion-content">
+          <strong>${escapeHtml(item.title)}</strong>
+          <small>${escapeHtml(meta)}</small>
+        </span>
+      </a>
+    `;
         })
             .join("");
+
+        const query = input.value.trim();
+
+        suggestions.innerHTML += `
+  <a class="search-suggestion-all" href="${rootPrefix}search.html?q=${encodeURIComponent(query)}">
+    Ver todos los resultados
+  </a>
+`;
 
         suggestions.hidden = false;
     }
@@ -166,5 +171,41 @@
 
     function escapeAttribute(value) {
         return escapeHtml(value);
+    }
+
+    function explicitMatch(movie, query) {
+        const normalizedQuery = normalizeText(query);
+
+        if (!normalizedQuery) {
+            return false;
+        }
+
+        const searchableText = [
+            movie.title,
+            movie.year,
+            movie.countryYear,
+            movie.director,
+            movie.cast,
+            movie.description,
+            movie.duration,
+            movie.music,
+            movie.photography,
+            movie.script,
+            movie.rating
+        ]
+            .filter(Boolean)
+            .map(normalizeText)
+            .join(" ");
+
+        return searchableText.includes(normalizedQuery);
+    }
+
+    function normalizeText(value) {
+        return String(value || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
     }
 })();
