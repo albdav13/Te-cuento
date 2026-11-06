@@ -131,6 +131,12 @@ h4 {
   margin-top: 10px;
 }
 
+.box-2 ul li a {
+  display: inline-block;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 .box-2 tr td {
   font-size: 15px;
   font-weight: bold;
@@ -179,4 +185,35 @@ hr {
 
 .resumen {
   padding: 3px 40px;
+}
+
+.box-2 ul li a {
+  color: blue !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.box-2 {
+  position: relative;
+  z-index: 10;
+}
+
+.title-1 {
+  z-index: 1;
+}
+
+.box-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.box-2 {
+  position: relative;
+  z-index: 10;
+}
+
+.box-2 a {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
 }
