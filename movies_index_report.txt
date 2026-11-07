@@ -188,6 +188,9 @@ peliculas0d\cassandrasdream.html - Cassandra's Dream
 peliculas0d\cerdita.html - Cerdita
   - sin dirección
 
+peliculas0d\ceroenconducta.html - Cero en conducta
+  - sin dirección
+
 peliculas0d\cestlavie.html - C'est la vie
   - sin dirección
 
@@ -1307,6 +1310,9 @@ peliculassz\uninstanteenlavidaajena.html - Un instante en la vida ajena
   - sin intérpretes
 
 peliculassz\unmonstruoenmipuerta.html - Un monstruo en mi puerta
+  - sin dirección
+
+peliculassz\unsimpleaccidente.html - Un simple accidente
   - sin dirección
 
 peliculassz\up.html - Up
