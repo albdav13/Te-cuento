@@ -648,14 +648,9 @@ def build_rating_html(rating):
     except ValueError:
         rating_value = 0
 
-    if rating_value > 5:
-        scale = 10
-        display_value = max(0, min(10, rating_value))
-        stars_value = display_value / 2
-    else:
-        scale = 5
-        display_value = max(0, min(5, rating_value))
-        stars_value = display_value
+    scale = 10
+    display_value = max(0, min(10, rating_value))
+    stars_value = display_value / 2
 
     star_states = get_star_states(stars_value)
 

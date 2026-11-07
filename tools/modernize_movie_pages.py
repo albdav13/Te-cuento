@@ -231,14 +231,9 @@ def build_rating_tag(soup: BeautifulSoup, rating_tag):
     rating_text = match.group(1).replace(",", ".")
     rating_value = float(rating_text)
 
-    if rating_value > 5:
-        scale = 10
-        display_value = max(0, min(10, rating_value))
-        stars_value = display_value / 2
-    else:
-        scale = 5
-        display_value = max(0, min(5, rating_value))
-        stars_value = display_value
+    scale = 10
+    display_value = max(0, min(10, rating_value))
+    stars_value = display_value / 2
 
     star_states = get_star_states(stars_value)
 
