@@ -188,6 +188,9 @@ peliculas0d\cassandrasdream.html - Cassandra's Dream
 peliculas0d\cerdita.html - Cerdita
   - sin dirección
 
+peliculas0d\ceroenconducta.html - Cero en conducta
+  - sin dirección
+
 peliculas0d\cestlavie.html - C'est la vie
   - sin dirección
 
@@ -476,6 +479,9 @@ peliculasfk\familia.html - Familia
 peliculasfk\fannyyalexander.html - Fanny y Alexander
   - sin dirección
 
+peliculasfk\fathermother.html - Father Mother Sister Brother
+  - sin dirección
+
 peliculasfk\floresrotas.html - Flores rotas
   - sin dirección
 
@@ -608,6 +614,9 @@ peliculasl\ladybird.html - Lady Bird
 peliculasl\laenfermedaddeldomingo.html - La enfermedad del domingo
   - sin dirección
 
+peliculasl\lafelicidad.html - La felicidad
+  - sin dirección
+
 peliculasl\laflordemisecreto.html - La flor de mi secreto
   - sin dirección
 
@@ -632,10 +641,13 @@ peliculasl\laleydeldeseo.html - La ley del deseo
 peliculasl\lallamada.html - La llamada
   - sin dirección
 
-peliculasl\lamaldiciondelescorpiondejade.html - La maldición del escorpión de jade
+peliculasl\lamaldicionescorpion.html - La maldición del escorpión de jade
   - sin dirección
 
 peliculasl\lamaternal.html - La maternal
+  - sin dirección
+
+peliculasl\lamisteriosamirada.html - La misteriosa mirada del flamenco
   - sin dirección
 
 peliculasl\lamujerdelaviador.html - La mujer del aviador
@@ -728,7 +740,7 @@ peliculasl\lavidaenunhilo.html - La vida en un hilo
 peliculasl\lavidaeraeso.html - La vida era eso
   - sin dirección
 
-peliculasl\lavidasecretadelaspalabras.html - La vida secreta de las palabras
+peliculasl\lavidasecreta.html - La vida secreta de las palabras
   - sin dirección
 
 peliculasl\lavisita.html - La visita
@@ -837,7 +849,7 @@ peliculasmr\mandarinas.html - Mandarinas
 peliculasmr\manticora.html - Mantícora
   - sin dirección
 
-peliculasmr\mapadelossonidosdetokio.html - Mapa de los sonidos de Tokio
+peliculasmr\mapasonidos.html - Mapa de los sonidos de Tokio
   - sin dirección
 
 peliculasmr\maridos.html - Maridos
@@ -1020,6 +1032,9 @@ peliculasmr\platoon.html - Platoon
 peliculasmr\poesia.html - Poesía
   - sin dirección
 
+peliculasmr\primaveraverano.html - Primavera, verano, otoño, invierno... y primavera
+  - sin dirección
+
 peliculasmr\primos.html - Primos
   - sin dirección
 
@@ -1065,7 +1080,7 @@ peliculasmr\relatossalvajes.html - Relatos salvajes
 peliculasmr\requisitos.html - Requisitos para ser una persona normal
   - sin dirección
 
-peliculasmr\retratodeunamujerenllamas.html - Retrato de una mujer en llamas
+peliculasmr\retratodeunamujer.html - Retrato de una mujer en llamas
   - sin dirección
 
 peliculasmr\retratosdeunaobsesion.html - Retratos de una obsesión
@@ -1085,6 +1100,9 @@ peliculasmr\robotdreams.html - Robot Dreams
   - sin intérpretes
 
 peliculasmr\roma.html - Roma
+  - sin dirección
+
+peliculasmr\romeria.html - Romería
   - sin dirección
 
 peliculasmr\rondallas.html - Rondallas
@@ -1111,7 +1129,7 @@ peliculassz\senordamepaciencia.html - Señor, dame paciencia
 peliculassz\sexofacilpeliculastristes.html - Sexo fácil, peículas tristes / El amor y otras historias
   - sin dirección
 
-peliculassz\sexomentirasycintasdevideo.html - Sexo, mentiras y cintas de video
+peliculassz\sexomentiras.html - Sexo, mentiras y cintas de video
   - sin dirección
 
 peliculassz\shrek.html - Shrek
@@ -1249,6 +1267,9 @@ peliculassz\tresanuncios.html - Tres anuncios en las afueras
 peliculassz\tresfugitivos.html - Tres fugitivos
   - sin dirección
 
+peliculassz\turnodeguardia.html - Turno de guardia
+  - sin dirección
+
 peliculassz\ultimanochemilan.html - Última noche en Milán
   - sin dirección
 
@@ -1282,13 +1303,16 @@ peliculassz\uncuentochino.html - Un cuento chino
 peliculassz\unfantasmabatalla.html - Un fantasma en la batalla
   - sin dirección
 
-peliculassz\unhombreloboamericanoenlondres.html - Un hombre lobo americano en Londres
+peliculassz\unhombrelobo.html - Un hombre lobo americano en Londres
   - sin dirección
 
 peliculassz\uninstanteenlavidaajena.html - Un instante en la vida ajena
   - sin intérpretes
 
 peliculassz\unmonstruoenmipuerta.html - Un monstruo en mi puerta
+  - sin dirección
+
+peliculassz\unsimpleaccidente.html - Un simple accidente
   - sin dirección
 
 peliculassz\up.html - Up
