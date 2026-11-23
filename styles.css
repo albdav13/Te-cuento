@@ -761,7 +761,7 @@ hr {
 }
 
 .news-list {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0;
@@ -774,22 +774,9 @@ hr {
 }
 
 .news-list a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: #f7f1e6;
-  border: 1px solid var(--border);
-  color: var(--text);
+  color: var(--accent-dark);
   font-weight: 700;
   text-decoration: none;
-  line-height: 1.2;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
 }
 
 .news-list a:hover {
